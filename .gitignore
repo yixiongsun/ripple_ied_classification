@@ -21,6 +21,9 @@ __pycache__/
 /model_training/autoencoder.py
 /model_training/train_autoencoder.ipynb
 
+# Internal project notes
+/LOCAL_NOTES.md
+
 # Archived project material
 /archive/
 

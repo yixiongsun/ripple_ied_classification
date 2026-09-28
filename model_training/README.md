@@ -23,12 +23,7 @@ This folder contains the model-side workflow only.
   plots.
 - `predict_events.py` loads extracted JSON events, predicts them, saves CSVs and
   embeddings, and creates final ripple/IED window arrays.
-- `autoencoder.py` and `train_autoencoder.ipynb` preserve the unsuccessful
-  autoencoder experiment unchanged.
 - `analyze_embeddings.ipynb` analyzes embeddings produced during inference.
-
-The converted CNN notebooks are retained under `archive/model_training/` as
-historical provenance. They are not the current entry points.
 
 Run from the repository root:
 

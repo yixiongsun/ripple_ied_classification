@@ -20,9 +20,8 @@ accuracy.
 
 Generated `dataset/`, CSV files, and PKL files belong at the repository root
 because they are shared artifacts between this pipeline and model training.
-The local `dataset/` currently contains no dataset artifacts. Canonical JSON
-and JPG files remain in the external paths recorded by `updated_labels.csv`,
-except for the 85 known missing references documented in the root README.
+Canonical JSON and JPG files remain in the external paths recorded by the local
+labeling CSV files.
 
 Run scripts and launch Jupyter from the repository root so existing artifact
 paths continue to resolve. For example:

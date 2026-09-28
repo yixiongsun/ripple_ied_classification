@@ -1,156 +1,163 @@
-# Ripple / IED classification
+# Ripple / IED Classification
 
-This folder contains the data preparation, labeling, training, inference, and
-analysis code for classifying LFP events as ripple, IED, or noise. The model
-code was developed with Python 3.13.
+Python tools for detecting and classifying hippocampal local field potential
+(LFP) events as ripples, interictal epileptiform discharges (IEDs), or uncertain
+noise events.
 
-## Repository layout
+The repository covers the complete modeling workflow: candidate-event
+extraction, spectrogram and waveform preparation, manual labeling, subject-wise
+validation, full-dataset training, inference, ablation studies, and loss-function
+comparison.
 
-- `dataset_pipeline/` — candidate extraction, preview/JSON generation,
-  K-means selection, manual labeling, curation, transformation, and final PKL
-  creation.
-- `model_training/` — CNN and autoencoder definitions, cross-validation,
-  full-dataset training, inference, and embedding analysis.
-- `dataset/` (when generated), `*.csv`, and `*.pkl` — shared dataset artifacts
-  at the boundary between the two workflows.
-- `*.pt` — trained checkpoints.
-- `archive/experiments/` — superseded or incomplete model experiments.
+## Highlights
 
-Launch Python and Jupyter from this repository root. The notebooks deliberately
-keep shared artifact paths relative to the root.
+- Multimodal CNN using event waveforms, spectrograms, and global features
+- Subject-wise cross-validation to keep recordings from the same subject within
+  a single fold
+- Explicit uncertainty handling for low-confidence events
+- Reproducible architecture ablations and loss-function comparisons
+- PyQt-based labeling interface and representative-sample selection
+- Committed aggregate experiment results, tables, and figures
 
-## Recommended entry points
+## Repository structure
 
-### Current CNN path
+| Path | Purpose |
+| --- | --- |
+| `dataset_pipeline/` | Event extraction, preprocessing, candidate selection, labeling, and dataset assembly |
+| `model_training/` | Model definitions, training, cross-validation, inference, and analysis |
+| `ablation_results/` | Saved architecture-ablation metrics and comparisons |
+| `cross_validation_results/` | Subject-wise validation results and run metadata |
+| `loss_comparison_results/` | Loss-study metrics, rankings, training histories, and plots |
 
-- `model_training/model.py` — multimodal waveform/spectrogram CNN architecture only.
-- `model_training/loaders.py` — dataset/event loading, global features, samplers,
-  and data loaders.
-- `model_training/train.py` — shared losses, epoch/evaluation, folds, and checkpoint helpers.
-- `model_training/train_full_dataset.py` — final complete-dataset training entry point;
-  writes `final_ripple_model.pt` by default.
-- `model_training/cross_validate.py` — subject-wise CV and parameter testing converted
-  from `archive/model_training/train_dataset_updated_loss.ipynb`.
-- `model_training/predict_events.py` — checkpoint loading, event inference, embedding
-  export, and final event-window cleanup.
+See the detailed workflow guides in
+[`dataset_pipeline/README.md`](dataset_pipeline/README.md) and
+[`model_training/README.md`](model_training/README.md).
 
-### Retained autoencoder path
+## Installation
 
-- `model_training/autoencoder.py` — waveform autoencoder and dataset class.
-- `model_training/train_autoencoder.ipynb` — autoencoder training and evaluation.
+The project targets Python 3.13.
 
-The autoencoder was not the successful model, but it is intentionally retained
-as a fallback experiment.
-
-### Data preparation and labeling
-
-- `dataset_pipeline/event_classification.py` — subject-agnostic ripple/IED
-  detection and labeling-file generation, converted from the notebook.
-- `dataset_pipeline/baseline_spectrograms.py` — subject-agnostic event-free
-  background CWT used to normalize event spectrograms.
-- `dataset_pipeline/lfp_statistics.py` — subject-agnostic stage-2 waveform
-  statistics using the historical 1-300 Hz filter and percentile clipping.
-- `dataset_pipeline/ripple_detection.py` and `dataset_pipeline/ied_detection.py`
-  — compatibility imports for older code.
-- `archive/event_classification.ipynb` — historical exploratory source.
-- `archive/baseline_spectrograms.ipynb` — historical exploratory source.
-- `dataset_pipeline/label_app.py` — PyQt labeling application.
-- `dataset_pipeline/kmeans_selection.py` — current K-means candidate selector;
-  writes labeling CSVs with the same columns as `updated_labels.csv`.
-- `dataset_pipeline/create_dataset.py` — final labeled-JSON to training-pickle
-  conversion. Canonical JSON files are already transformed and background
-  corrected, so this step does not process them twice.
-- `archive/kmeans_selection.ipynb`, `archive/dataset_curation.ipynb`, and
-  `archive/create_dataset.ipynb` — historical exploratory sources.
-
-### Analysis
-
-- `model_training/analyze_embeddings.ipynb` — analysis of exported CNN embeddings.
-
-## Data and checkpoints
-
-- `dataset_arcsinh.pkl` — serialized training samples used by the current CNN
-  and autoencoder notebooks.
-- `dataset/` — currently empty. It can be regenerated later from the external
-  subject/session data; the previous local JSON and JPG copies were redundant.
-- `labels.csv` — paths rewritten to the local `dataset/` folder.
-- `updated_labels.csv` — original source-system image paths. Replacing each
-  `.jpg` suffix with `.json` locates the canonical event record in the external
-  subject/session tree.
-- `final_ripple_model.pt` — default checkpoint used by
-  `model_training/predict_events.py`.
-- `new_loss_model.pt` — checkpoint from the archived updated-loss experiment.
-
-## Project-local dependencies
-
-`subjects.py` maps the subject JSON files configured in `settings.py` to the
-external recording tree used by data preparation and inference.
-
-The following import is not supplied by PyPI and is not present here:
-
-- `core.py` — expected to provide `power_spectral_density`, `detect_ripples`,
-  and `detect_ieds` for three data-preparation notebooks.
-
-The upstream data tree resolved by `subjects.load(...)` is also outside this
-folder. Depending on the step, it is expected to contain per-subject files such
-as `sleep_stages.npy`, `*_cleaned_hpc.npy`, `*_lfp_stats.npy`, and
-`*_baseline_spec.npy`. The current Python pipeline is fixed at 2 kHz and does
-not fall back to MATLAB sleep-stage files. `dataset_pipeline/lfp_statistics.py`,
-`dataset_pipeline/ripple_envelope.py`, and `dataset_pipeline/ied_envelope.py`
-generate the derived statistics and envelope files through the subject-specific
-adapter in `dataset_pipeline/subject_data.py`.
-Those inputs are not needed to train from the included `dataset_arcsinh.pkl`,
-but they are needed to regenerate events from the raw recordings.
-
-Two additional missing modules are referenced only by the archived, incomplete
-two-stage experiment:
-
-- `model_projection.py`
-- `model_multi_band.py` (expected to provide `SupConLoss`)
-
-Several generated/source data files referenced by historical notebook cells are
-also absent: `dataset_updated.pkl`, `label_collapsed.csv`, `labeled.csv`, and
-`label_v2.csv`. The current training script uses the included
-`dataset_arcsinh.pkl`; `dataset_updated.pkl` is only historical. The existing
-`final_ripple_model.pt` can still be used for inference.
-
-Inference and analysis workflows also refer to generated outputs including
-`ripple_pred.csv`, `ied_pred.csv`, `ripple_embeddings.npy`, and
-`ied_embeddings.npy` under the external subject/session tree. Their absence in
-this folder is expected; the inference script creates them.
-
-## Known issues that require a scientific decision
-
-- `labels.csv` has 7,701 rows but only 7,327 unique image paths. There are 374
-  duplicate rows, and 143 image paths have conflicting labels. No rows were
-  discarded during this cleanup.
-- `updated_labels.csv` references 85 external events for which neither the JSON
-  nor JPG currently exists. One example is
-  `F:\AlzheimerData\106-2\12-08-2023\Sleep1\ripples\ripple1136.json`.
-  These may need to be restored or replaced when the dataset is regenerated.
-- Separately, the historical K-means notebook reconstructed selected event
-  filenames from list positions. That could produce incorrect paths whenever
-  event numbering had gaps. The Python replacement uses each selected file's
-  actual name.
-- The archived updated-loss notebook trained each CV fold on `samples` rather
-  than `train_samples` and omitted the subject adversary from the optimizer.
-  Both issues are corrected in `model_training/cross_validate.py`; historical
-  notebook metrics should therefore not be treated as leakage-free CV results.
-- `model_training/predict_events.py` defaults to `final_ripple_model.pt`.
-  Choosing `new_loss_model.pt` should be based on newly verified CV results.
-- `archive/create_dataset.ipynb` and `archive/kmeans_selection.ipynb` each contain one
-  syntactically incomplete exploratory cell. Their main executed pipelines are
-  retained, but those cells should not be run as-is.
-
-## Setup
-
-Create and activate a Python 3.13 virtual environment, then install:
-
-```powershell
-py -3.13 -m venv .venv
-.venv\Scripts\python -m pip install --upgrade pip
-.venv\Scripts\python -m pip install -r requirements.txt
+```bash
+python -m venv .venv
 ```
 
-For a CUDA-enabled PyTorch build, use the platform-specific installation command
-from the PyTorch installer before installing the remaining requirements.
+Activate the environment on Windows:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Or on macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Then install the dependencies:
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+For GPU acceleration, install the PyTorch build appropriate for the target CUDA
+version before installing the remaining dependencies.
+
+## Usage
+
+Run commands from the repository root. Every command-line workflow provides
+additional options through `--help`.
+
+### Build a labeled dataset
+
+The data pipeline extracts and transforms candidate events, supports manual
+labeling, and packages labeled event records into the training dataset.
+
+```bash
+python -m dataset_pipeline.subject_data --help
+python -m dataset_pipeline.label_app
+python -m dataset_pipeline.create_dataset --help
+```
+
+### Run subject-wise cross-validation
+
+```bash
+python -m model_training.cross_validate
+```
+
+Each run writes a timestamped JSON record to `cross_validation_results/`,
+including parameters, subject splits, fold metrics, confusion matrices, and
+aggregate metrics.
+
+### Train the final model
+
+```bash
+python -m model_training.train_full_dataset
+```
+
+The default output is `final_ripple_model.pt`. Existing checkpoints are not
+overwritten unless `--overwrite` is supplied.
+
+### Run inference
+
+```bash
+python -m model_training.predict_events all
+```
+
+Inference exports predicted event tables, embeddings, and final ripple/IED
+windows to the configured subject data locations.
+
+### Reproduce experiment comparisons
+
+```bash
+python -m model_training.ablation_test --variants all
+python -m model_training.compare_ablations
+python -m model_training.compare_losses
+python -m model_training.plot_loss_comparison
+```
+
+The comparison utilities read saved run records and generate ranked tables,
+fold-level CSV files, and publication-ready summary plots.
+
+## Data and model files
+
+Raw recordings, derived datasets, labels, and trained checkpoints are not
+included in this public repository. They may contain study-specific information
+and can be large. The committed experiment-result directories contain only
+aggregate outputs used to compare model configurations.
+
+Expected local artifacts include:
+
+- A labeled training pickle, such as `dataset_arcsinh.pkl`
+- Labeling CSV files used by the dataset pipeline
+- Per-subject LFP and sleep-stage arrays required for event extraction
+- Model checkpoints used for inference
+
+These files are excluded through `.gitignore` and should be supplied through an
+appropriate controlled data-access process.
+
+## Method notes
+
+The classifier has a binary ripple/IED output. Noise is treated as uncertainty:
+noise examples are trained toward an event probability of 0.5 and repelled from
+known-event embeddings, while events with low absolute logits are labeled as
+noise during inference.
+
+Cross-validation uses subject-level folds. Calibration subjects are drawn from
+the training partition, so rejection-threshold selection does not use the outer
+validation fold.
+
+## Reproducibility
+
+Saved result JSON files include run parameters, runtime and dataset metadata,
+subject splits, fold-level metrics, and aggregate statistics. Use the comparison
+scripts to regenerate summary tables and plots from these records.
+
+Exact results can depend on the dataset version, subject composition, hardware,
+random seed, and PyTorch/CUDA configuration. Record these details when running
+new experiments.
+
+## Citation
+
+If you use this code in research, please cite the associated publication or
+project record when one becomes available.
