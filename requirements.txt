@@ -1,0 +1,27 @@
+# Runtime target: CPython 3.13
+#
+# These are direct dependencies imported by the Python modules and notebooks.
+# Install PyTorch separately first if a specific CUDA build is required:
+# https://pytorch.org/get-started/locally/
+
+torch>=2.6
+numpy>=2.1
+scipy>=1.14.1
+pandas>=2.2.3
+scikit-learn>=1.6
+matplotlib>=3.9.2
+seaborn>=0.13.2
+PyWavelets>=1.7
+tqdm>=4.66
+orjson>=3.10
+umap-learn>=0.5.7
+pynndescent>=0.5.13
+fast-hdbscan>=0.2
+
+# Notebook environment
+jupyterlab>=4.3
+ipykernel>=6.29
+
+# label_app.py
+PyQt6>=6.8
+QDarkStyle>=3.2.3

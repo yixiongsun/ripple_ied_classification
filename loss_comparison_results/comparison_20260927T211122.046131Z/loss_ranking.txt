@@ -1,0 +1,10 @@
+Ranking by macro_f1
+
+ rank                            Run         Formulation          macro_f1 Delta macro F1  Parameters
+    1 losses_20260927T094851.473213Z      three_class_ce 0.8590 +/- 0.0203        +0.0140      114243
+    2 losses_20260927T094851.473213Z       moderate_full 0.8514 +/- 0.0119        +0.0064      113985
+    3 losses_20260927T094851.473213Z    corrected_margin 0.8513 +/- 0.0102        +0.0063      113985
+    4 losses_20260927T094851.473213Z           bce_noise 0.8487 +/- 0.0228        +0.0037      113985
+    5 losses_20260927T094851.473213Z             current 0.8450 +/- 0.0193        +0.0000      113985
+    6 losses_20260927T094851.473213Z bce_repulsion_noise 0.8433 +/- 0.0031        -0.0018      113985
+    7 losses_20260927T094851.473213Z  bce_contrast_noise 0.8312 +/- 0.0150        -0.0138      113985

@@ -1,0 +1,22 @@
+# Local Python environment and generated caches
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Dataset files (keep dataset-building source code)
+/dataset/
+/dataset_arcsinh.pkl
+/labels.csv
+/updated_labels.csv
+
+# Model checkpoints and exported model weights
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+
+# Archived project material
+/archive/
+

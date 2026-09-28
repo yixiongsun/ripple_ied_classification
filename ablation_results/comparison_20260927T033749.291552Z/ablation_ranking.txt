@@ -1,0 +1,11 @@
+Ranking by macro_f1
+
+ rank                               Run              Variant        macro_f1 Delta macro F1  Parameters
+    1 ablations_20260927T021332.558896Z     no_temporal_conv 0.8442 ± 0.0060        +0.0038       93569
+    2 ablations_20260927T021332.558896Z            wave_only 0.8407 ± 0.0183        +0.0002       94401
+    3 ablations_20260927T021332.558896Z             baseline 0.8405 ± 0.0157        +0.0000      113985
+    4 ablations_20260927T021332.558896Z no_channel_attention 0.8233 ± 0.0171        -0.0172      101505
+    5 ablations_20260927T021332.558896Z         fixed_fusion 0.8176 ± 0.0371        -0.0229      105729
+    6 ablations_20260927T021332.558896Z no_spike_oscillation 0.8171 ± 0.0171        -0.0234       98305
+    7 ablations_20260927T021332.558896Z            spec_only 0.8159 ± 0.0104        -0.0245       88289
+    8 ablations_20260927T021332.558896Z   no_global_features 0.7880 ± 0.0656        -0.0524      110689
