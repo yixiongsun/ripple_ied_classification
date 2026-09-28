@@ -17,6 +17,10 @@ __pycache__/
 *.safetensors
 *.onnx
 
+# Retained local autoencoder experiment
+/model_training/autoencoder.py
+/model_training/train_autoencoder.ipynb
+
 # Archived project material
 /archive/
 
