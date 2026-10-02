@@ -138,6 +138,8 @@ def train_loss_epoch(
     optimizer: torch.optim.Optimizer,
     device: torch.device,
     config: LossConfig,
+    *,
+    max_grad_norm: float | None = None,
 ) -> dict[str, float]:
     """Train one epoch using exactly one configured loss formulation."""
     model.train()
@@ -218,6 +220,8 @@ def train_loss_epoch(
 
         optimizer.zero_grad()
         loss.backward()
+        if max_grad_norm is not None:
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_grad_norm)
         optimizer.step()
 
         values = {

@@ -5,9 +5,12 @@ from __future__ import annotations
 import argparse
 import json
 import platform
+import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from statistics import mean, pstdev
+from time import perf_counter
 
 import numpy as np
 import sklearn
@@ -74,16 +77,61 @@ def tune_energy_threshold(
     default: float,
     candidate_count: int = 257,
 ) -> tuple[float, float]:
-    """Select a noise-rejection threshold using calibration macro F1."""
+    """Compatibility wrapper for neural-model energy threshold selection."""
+    binary_predictions = (np.asarray(probabilities) > 0.5).astype(np.int64)
+    return tune_rejection_threshold(
+        binary_predictions,
+        labels,
+        energies,
+        default=default,
+        candidate_count=candidate_count,
+    )
+
+
+def apply_confidence_rejection(
+    binary_predictions: np.ndarray,
+    confidence_scores: np.ndarray,
+    threshold: float,
+) -> np.ndarray:
+    """Map low-confidence binary predictions to the shared noise class."""
+    predictions = np.asarray(binary_predictions, dtype=np.int64).copy()
+    confidence_scores = np.asarray(confidence_scores, dtype=float)
+    if predictions.ndim != 1 or confidence_scores.ndim != 1:
+        raise ValueError("predictions and confidence_scores must be one-dimensional")
+    if len(predictions) != len(confidence_scores):
+        raise ValueError("predictions and confidence_scores must have equal length")
+    if not np.isin(predictions, (0, 1)).all():
+        raise ValueError("binary_predictions may contain only labels 0 and 1")
+    predictions[confidence_scores < threshold] = 2
+    return predictions
+
+
+def tune_rejection_threshold(
+    binary_predictions: np.ndarray,
+    labels: np.ndarray,
+    confidence_scores: np.ndarray,
+    *,
+    default: float = 0.0,
+    candidate_count: int = 257,
+) -> tuple[float, float]:
+    """Select a generic confidence-rejection threshold on calibration data."""
     if candidate_count < 3:
         raise ValueError("candidate_count must be at least 3")
+    labels = np.asarray(labels, dtype=np.int64)
+    confidence_scores = np.asarray(confidence_scores, dtype=float)
+    if len(binary_predictions) != len(labels) or len(labels) != len(confidence_scores):
+        raise ValueError("predictions, labels, and confidence_scores must have equal length")
+    if not np.isfinite(confidence_scores).all():
+        raise ValueError("confidence_scores contain non-finite values")
     quantiles = np.linspace(0, 1, candidate_count)
     candidates = np.unique(
-        np.concatenate(([0.0, default], np.quantile(energies, quantiles)))
+        np.concatenate(([0.0, default], np.quantile(confidence_scores, quantiles)))
     )
     scored = []
     for threshold in candidates:
-        predictions = predict_classes(probabilities, energies, float(threshold))
+        predictions = apply_confidence_rejection(
+            binary_predictions, confidence_scores, float(threshold)
+        )
         score = f1_score(
             labels,
             predictions,
@@ -133,6 +181,28 @@ def calculate_metrics(labels: np.ndarray, predictions: np.ndarray) -> dict[str, 
     }
 
 
+def calculate_per_subject_metrics(
+    labels: np.ndarray,
+    predictions: np.ndarray,
+    subject_indices: np.ndarray,
+    subject_names: list[str],
+) -> dict[str, dict[str, object]]:
+    """Calculate the common metrics separately for each validation subject."""
+    if not (len(labels) == len(predictions) == len(subject_indices)):
+        raise ValueError("labels, predictions, and subject_indices must have equal length")
+    results = {}
+    for subject_index in np.unique(subject_indices):
+        index = int(subject_index)
+        if index < 0 or index >= len(subject_names):
+            raise ValueError(f"Unknown validation subject index: {index}")
+        mask = subject_indices == subject_index
+        results[subject_names[index]] = {
+            "sample_count": int(mask.sum()),
+            **calculate_metrics(labels[mask], predictions[mask]),
+        }
+    return results
+
+
 def save_json(payload: dict, path: str | Path, overwrite: bool) -> Path:
     """Atomically save an ablation result payload."""
     path = Path(path)
@@ -163,10 +233,11 @@ def run_ablations(
     default_energy_threshold: float = 3.13,
     tune_threshold: bool = True,
     calibration_fraction: float = 0.2,
-    contrast_weight: float = 1.0,
+    contrast_weight: float = 0.1,
+    contrast_temperature: float = 0.1,
     noise_weight: float = 0.5,
-    repulsion_weight: float = 0.5,
-    noise_margin: float = 5.0,
+    repulsion_weight: float = 0.1,
+    noise_margin: float = 0.5,
     num_workers: int = 0,
     seed: int = 0,
     device_name: str = "auto",
@@ -179,6 +250,16 @@ def run_ablations(
         raise ValueError(f"Unknown ablation variants: {unknown}")
     if len(set(variants)) != len(variants):
         raise ValueError("Each ablation variant may be specified only once")
+    if contrast_temperature <= 0:
+        raise ValueError("contrast_temperature must be greater than zero")
+    for name, value in (
+        ("contrast_weight", contrast_weight),
+        ("noise_weight", noise_weight),
+        ("repulsion_weight", repulsion_weight),
+        ("noise_margin", noise_margin),
+    ):
+        if value < 0:
+            raise ValueError(f"{name} cannot be negative")
 
     started_at = datetime.now(timezone.utc)
     if output_path is None:
@@ -195,12 +276,14 @@ def run_ablations(
     results: dict[str, list[dict[str, object]]] = {}
 
     for variant in variants:
+        variant_started = perf_counter()
         config = get_ablation_config(variant)
         print(f"\n######## Ablation: {variant} ########")
         fold_results = []
         for fold_index, (outer_training, validation_samples) in enumerate(
             outer_splits, start=1
         ):
+            fold_started = perf_counter()
             # Use the same fold seed for every architecture so initialization,
             # batch sampling, and augmentation randomness are paired wherever
             # the corresponding modules exist.
@@ -259,6 +342,7 @@ def run_ablations(
                     optimizer,
                     device,
                     contrast_weight=contrast_weight,
+                    contrast_temperature=contrast_temperature,
                     noise_weight=noise_weight,
                     repulsion_weight=repulsion_weight,
                     noise_margin=noise_margin,
@@ -296,6 +380,9 @@ def run_ablations(
             )
             predictions = predict_classes(probabilities, energies, threshold)
             metrics = calculate_metrics(labels, predictions)
+            validation_subject_names = sorted(
+                {str(sample["animal_id"]) for sample in validation_samples}
+            )
             fold_result = {
                 "fold": fold_index,
                 "seed": fold_seed,
@@ -316,7 +403,14 @@ def run_ablations(
                 "validation_samples": len(validation_samples),
                 "energy_threshold": threshold,
                 "calibration_macro_f1": calibration_macro_f1,
+                "duration_seconds": perf_counter() - fold_started,
                 "training_history": history,
+                "per_subject_metrics": calculate_per_subject_metrics(
+                    labels,
+                    predictions,
+                    subjects,
+                    validation_subject_names,
+                ),
                 **metrics,
             }
             fold_results.append(fold_result)
@@ -329,6 +423,7 @@ def run_ablations(
             if device.type == "cuda":
                 torch.cuda.empty_cache()
         results[variant] = fold_results
+        print(f"{variant} duration: {perf_counter() - variant_started:.1f} seconds")
 
     summary = {}
     for variant, fold_results in results.items():
@@ -367,6 +462,7 @@ def run_ablations(
             "tune_threshold": tune_threshold,
             "calibration_fraction": calibration_fraction,
             "contrast_weight": contrast_weight,
+            "contrast_temperature": contrast_temperature,
             "noise_weight": noise_weight,
             "repulsion_weight": repulsion_weight,
             "noise_margin": noise_margin,
@@ -378,6 +474,8 @@ def run_ablations(
             name: get_ablation_config(name).to_dict() for name in variants
         },
         "runtime": {
+            "command_line": [sys.executable, *sys.argv],
+            "git_revision": _git_revision(),
             "python": platform.python_version(),
             "platform": platform.platform(),
             "numpy": np.__version__,
@@ -406,6 +504,20 @@ def parse_variants(values: list[str]) -> list[str]:
     return values
 
 
+def _git_revision() -> str | None:
+    """Return the current Git commit without making Git a hard dependency."""
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return result.stdout.strip() or None
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dataset", default="dataset_arcsinh.pkl")
@@ -428,10 +540,11 @@ def main() -> None:
         help="Use --energy-threshold instead of a held-out subject calibration split",
     )
     parser.add_argument("--calibration-fraction", type=float, default=0.2)
-    parser.add_argument("--contrast-weight", type=float, default=1.0)
+    parser.add_argument("--contrast-weight", type=float, default=0.1)
+    parser.add_argument("--contrast-temperature", type=float, default=0.1)
     parser.add_argument("--noise-weight", type=float, default=0.5)
-    parser.add_argument("--repulsion-weight", type=float, default=0.5)
-    parser.add_argument("--noise-margin", type=float, default=5.0)
+    parser.add_argument("--repulsion-weight", type=float, default=0.1)
+    parser.add_argument("--noise-margin", type=float, default=0.5)
     parser.add_argument("--workers", type=int, default=0)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--device", choices=("auto", "cpu", "cuda"), default="auto")
@@ -451,6 +564,7 @@ def main() -> None:
         tune_threshold=not args.fixed_threshold,
         calibration_fraction=args.calibration_fraction,
         contrast_weight=args.contrast_weight,
+        contrast_temperature=args.contrast_temperature,
         noise_weight=args.noise_weight,
         repulsion_weight=args.repulsion_weight,
         noise_margin=args.noise_margin,

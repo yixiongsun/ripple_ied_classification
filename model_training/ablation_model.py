@@ -79,6 +79,12 @@ ABLATION_CONFIGS = {
         name="no_spike_oscillation",
         use_spike_oscillation=False,
     ),
+    "compact_wave_no_temporal": replace(
+        BASELINE_CONFIG,
+        name="compact_wave_no_temporal",
+        modality="wave",
+        use_temporal_conv=False,
+    ),
 }
 
 
@@ -108,8 +114,11 @@ class AblationModel(nn.Module):
         n_classes: int = 1,
         global_feat_dim: int = 5,
         global_emb_dim: int = 32,
+        dropout: float = 0.3,
     ):
         super().__init__()
+        if not 0 <= dropout < 1:
+            raise ValueError("dropout must be in [0, 1)")
         self.config = config
         self.use_global_features = config.use_global_features
         self.global_emb_dim = global_emb_dim if config.use_global_features else 0
@@ -175,7 +184,7 @@ class AblationModel(nn.Module):
         self.classifier = nn.Sequential(
             nn.Linear(64, 128),
             nn.ReLU(),
-            nn.Dropout(0.3),
+            nn.Dropout(dropout),
             nn.Linear(128, n_classes),
         )
 

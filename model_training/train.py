@@ -126,6 +126,7 @@ def train_epoch(
     device: torch.device,
     *,
     contrast_weight: float = 1.0,
+    contrast_temperature: float = 0.1,
     noise_weight: float = 0.5,
     repulsion_weight: float = 0.5,
     noise_margin: float = 5.0,
@@ -160,6 +161,7 @@ def train_epoch(
                 embeddings[known_mask],
                 labels[known_mask],
                 subject_ids[known_mask],
+                temperature=contrast_temperature,
                 prefer_cross_subject=prefer_cross_subject,
             )
         else:

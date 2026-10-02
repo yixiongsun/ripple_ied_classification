@@ -25,6 +25,7 @@ COMPARABILITY_FIELDS = (
     "batch_size",
     "learning_rate",
     "contrast_weight",
+    "contrast_temperature",
     "noise_weight",
     "repulsion_weight",
     "noise_margin",

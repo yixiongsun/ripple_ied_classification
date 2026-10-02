@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "source": "dataset_arcsinh.pkl",
+  "source_sha256": "fbdddc00ce81f3054c85c8f96caffa472b356ddb80893aa833ac03e4fe9fde25",
+  "analysis_status": "New representative-selection analysis; not part of Phase 9 cross-validation.",
+  "feature_space": "Per-channel normalized waveform plus channel-mean 10\u00d716 downsampled spectrogram; features standardized across all events.",
+  "events": [
+    {
+      "dataset_index": 1021,
+      "class": "ripple",
+      "display_subject": "Subject 20",
+      "source_subject": "59-2",
+      "session": "Sleep1",
+      "source_file_name": "ripple0768.json",
+      "selection_rule": "central-class shortlist; visually audited for a centered multichannel oscillatory burst",
+      "feature_distance": 22.228120803833008
+    },
+    {
+      "dataset_index": 6087,
+      "class": "ied",
+      "display_subject": "Subject 15",
+      "source_subject": "251-10",
+      "session": "Sleep1",
+      "source_file_name": "ied0061.json",
+      "selection_rule": "nearest class centroid",
+      "feature_distance": 10.429790496826172
+    },
+    {
+      "dataset_index": 5704,
+      "class": "noise",
+      "display_subject": "Subject 13",
+      "source_subject": "249-2",
+      "session": "Sleep1",
+      "source_file_name": "ied0016.json",
+      "selection_rule": "noise nearest ripple\u2013IED midpoint",
+      "feature_distance": 14.977629661560059
+    }
+  ]
+}

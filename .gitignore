@@ -27,3 +27,10 @@ __pycache__/
 # Archived project material
 /archive/
 
+# Incomplete runs, console logs, and local planning documents
+*.log
+*.partial.json
+*smoke*.json
+/VISUAL_SHOWCASE_IMPLEMENTATION_PLAN.md
+/model_training/EXPERIMENT_PLAN.md
+

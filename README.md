@@ -1,163 +1,120 @@
-# Ripple / IED Classification
+# Ripple / IED classification
 
-Python tools for detecting and classifying hippocampal local field potential
-(LFP) events as ripples, interictal epileptiform discharges (IEDs), or uncertain
-noise events.
+This repository contains the signal-processing, labeling, modeling, and
+evaluation code used to classify candidate hippocampal events as sharp-wave
+ripples, interictal epileptiform discharges (IEDs), or noise.
 
-The repository covers the complete modeling workflow: candidate-event
-extraction, spectrogram and waveform preparation, manual labeling, subject-wise
-validation, full-dataset training, inference, ablation studies, and loss-function
-comparison.
+The selected model uses multichannel waveforms, cross-channel attention, five
+global signal features, and a calibrated confidence threshold that rejects
+uncertain events as noise. The spectrogram branch is used during data review
+but is not part of the selected classifier.
 
-## Highlights
+## Results
 
-- Multimodal CNN using event waveforms, spectrograms, and global features
-- Subject-wise cross-validation to keep recordings from the same subject within
-  a single fold
-- Explicit uncertainty handling for low-confidence events
-- Reproducible architecture ablations and loss-function comparisons
-- PyQt-based labeling interface and representative-sample selection
-- Committed aggregate experiment results, tables, and figures
+The dataset contains 7,701 labeled events from 30 subjects: 4,178 ripples,
+1,212 IEDs, and 2,311 noise events. Five subject-grouped folds were repeated
+with three random seeds. Threshold calibration used subjects drawn only from
+the corresponding training partition.
 
-## Repository structure
+| Model | Accuracy | Macro F1 |
+| --- | ---: | ---: |
+| Selected waveform model | 0.861 | 0.849 |
+| Full waveform + spectrogram model | 0.862 | 0.848 |
+| Direct three-class RBF-SVM | 0.771 | 0.753 |
+| Binary RBF-SVM with rejection | 0.694 | 0.630 |
+| Threshold-derived candidate rule | 0.627 | 0.435 |
 
-| Path | Purpose |
+The selected model has 73,985 trainable parameters, 35.1% fewer than the full
+model, and took about half as long to train in the final comparison. Noise was
+the least reliable class (mean F1 0.763). These are internal cross-validation
+results, not estimates from an independent cohort.
+
+The full analysis is in
+[`final_confirmation_results/PHASE9_REPORT.md`](final_confirmation_results/PHASE9_REPORT.md).
+The public presentation is available at
+[Neural event classification](https://yixiongsun.github.io/work/neural-event-classification/).
+
+## Repository layout
+
+| Path | Contents |
 | --- | --- |
-| `dataset_pipeline/` | Event extraction, preprocessing, candidate selection, labeling, and dataset assembly |
-| `model_training/` | Model definitions, training, cross-validation, inference, and analysis |
-| `ablation_results/` | Saved architecture-ablation metrics and comparisons |
-| `cross_validation_results/` | Subject-wise validation results and run metadata |
-| `loss_comparison_results/` | Loss-study metrics, rankings, training histories, and plots |
-
-See the detailed workflow guides in
-[`dataset_pipeline/README.md`](dataset_pipeline/README.md) and
-[`model_training/README.md`](model_training/README.md).
+| `dataset_pipeline/` | Event detection, preprocessing, sample selection, labeling, and dataset assembly |
+| `model_training/` | Model definitions, grouped validation, frozen evaluation, inference, and classical baselines |
+| `*_results/` | Machine-readable experiment records and concise summaries |
+| `figures/showcase/` | De-identified plotting data, figure source code, and web-ready exports |
+| `tests/` | Leakage, determinism, metric, and restartability checks |
 
 ## Installation
 
 The project targets Python 3.13.
 
-```bash
-python -m venv .venv
-```
-
-Activate the environment on Windows:
-
 ```powershell
+python -m venv .venv
 .venv\Scripts\Activate.ps1
-```
-
-Or on macOS/Linux:
-
-```bash
-source .venv/bin/activate
-```
-
-Then install the dependencies:
-
-```bash
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-For GPU acceleration, install the PyTorch build appropriate for the target CUDA
-version before installing the remaining dependencies.
+Install the PyTorch build appropriate for the target CUDA version first when a
+specific GPU build is required.
 
-## Usage
+## Data required for model runs
 
-Run commands from the repository root. Every command-line workflow provides
-additional options through `--help`.
+Model evaluation requires `dataset_arcsinh.pkl` at the repository root. The
+file is intentionally not versioned because it is approximately 2.4 GB and is
+derived from study recordings. It must contain event dictionaries with a
+subject identifier, class label, waveform, spectrogram, and the scalar inputs
+used by `model_training/loaders.py`.
 
-### Build a labeled dataset
+The extraction pipeline also requires per-subject cleaned LFP and sleep-stage
+arrays. See [`dataset_pipeline/README.md`](dataset_pipeline/README.md) for the
+input contract and dataset-building commands.
 
-The data pipeline extracts and transforms candidate events, supports manual
-labeling, and packages labeled event records into the training dataset.
+## Reproduce the reported evaluation
 
-```bash
-python -m dataset_pipeline.subject_data --help
-python -m dataset_pipeline.label_app
-python -m dataset_pipeline.create_dataset --help
+Run commands from the repository root.
+
+```powershell
+python -m unittest discover -s tests
+python -m model_training.final_confirmation --dataset dataset_arcsinh.pkl
+python -m model_training.compare_classical_baselines --dataset dataset_arcsinh.pkl --folds 5 --seeds 0 1 2 --output baseline_results/svm_comparison.json
 ```
 
-### Run subject-wise cross-validation
+The locked comparison uses five subject-grouped folds, seeds 0–2, 40 epochs,
+Adam at a learning rate of 0.001, batch size 32, eight subjects per batch, and a
+20% training-side calibration split. The configuration is defined in
+`model_training/experiment_config.py`.
 
-```bash
-python -m model_training.cross_validate
+`model_training/train_full_dataset.py` preserves the earlier full-model
+checkpoint workflow; it is not the command that produced the selected compact
+model results above.
+
+## Reproduce the public figures and data
+
+The de-identified files in `figures/showcase/data/` are the inputs used by the
+public project page. To verify and rebuild those files from the result records:
+
+```powershell
+python figures/showcase/scripts/extract_showcase_data.py
+python figures/showcase/scripts/build_style_tile.py
+python figures/showcase/scripts/build_pipeline_figure.py
+python figures/showcase/scripts/build_representative_events.py
 ```
 
-Each run writes a timestamped JSON record to `cross_validation_results/`,
-including parameters, subject splits, fold metrics, confusion matrices, and
-aggregate metrics.
+The extraction step also reads the local `labels.csv` to reproduce the
+threshold-derived candidate-rule comparison. Selecting new representative
+events requires the private dataset, but rebuilding the committed figure uses
+the de-identified `representative_events.json`.
 
-### Train the final model
+## Data and reporting boundaries
 
-```bash
-python -m model_training.train_full_dataset
-```
+Raw recordings, labels, dataset pickles, subject metadata, and trained
+checkpoints are excluded from version control. Commit aggregate result JSONs,
+de-identified plotting tables, summaries, and figure-generation code; do not
+commit training logs, resumable partial files, smoke-test outputs, or local
+planning notes.
 
-The default output is `final_ripple_model.pt`. Existing checkpoints are not
-overwritten unless `--overwrite` is supplied.
-
-### Run inference
-
-```bash
-python -m model_training.predict_events all
-```
-
-Inference exports predicted event tables, embeddings, and final ripple/IED
-windows to the configured subject data locations.
-
-### Reproduce experiment comparisons
-
-```bash
-python -m model_training.ablation_test --variants all
-python -m model_training.compare_ablations
-python -m model_training.compare_losses
-python -m model_training.plot_loss_comparison
-```
-
-The comparison utilities read saved run records and generate ranked tables,
-fold-level CSV files, and publication-ready summary plots.
-
-## Data and model files
-
-Raw recordings, derived datasets, labels, and trained checkpoints are not
-included in this public repository. They may contain study-specific information
-and can be large. The committed experiment-result directories contain only
-aggregate outputs used to compare model configurations.
-
-Expected local artifacts include:
-
-- A labeled training pickle, such as `dataset_arcsinh.pkl`
-- Labeling CSV files used by the dataset pipeline
-- Per-subject LFP and sleep-stage arrays required for event extraction
-- Model checkpoints used for inference
-
-These files are excluded through `.gitignore` and should be supplied through an
-appropriate controlled data-access process.
-
-## Method notes
-
-The classifier has a binary ripple/IED output. Noise is treated as uncertainty:
-noise examples are trained toward an event probability of 0.5 and repelled from
-known-event embeddings, while events with low absolute logits are labeled as
-noise during inference.
-
-Cross-validation uses subject-level folds. Calibration subjects are drawn from
-the training partition, so rejection-threshold selection does not use the outer
-validation fold.
-
-## Reproducibility
-
-Saved result JSON files include run parameters, runtime and dataset metadata,
-subject splits, fold-level metrics, and aggregate statistics. Use the comparison
-scripts to regenerate summary tables and plots from these records.
-
-Exact results can depend on the dataset version, subject composition, hardware,
-random seed, and PyTorch/CUDA configuration. Record these details when running
-new experiments.
-
-## Citation
-
-If you use this code in research, please cite the associated publication or
-project record when one becomes available.
+Because the same 30 subjects informed model development and the final grouped
+comparison, the results may be optimistic. External subjects and previously
+unseen artifact types are needed before treating the reported threshold or
+performance as deployment estimates.

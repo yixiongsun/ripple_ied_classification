@@ -1,93 +1,96 @@
-# Model and training
+# Model training and evaluation
 
-This folder contains the model-side workflow only.
+This package contains the neural and classical models used in the reported
+subject-grouped evaluation.
 
-- `model.py` contains only the current CNN architecture.
-- `loaders.py` loads training PKLs and event JSON, computes the five global
-  features, and creates training/evaluation data loaders.
-- `train.py` contains shared loss, epoch, evaluation, subject-fold, and
-  checkpoint helpers.
-- `train_full_dataset.py` is the runnable replacement for the final full-dataset
-  notebook and writes `final_ripple_model.pt` by default.
-- `cross_validate.py` is the cleaned subject-wise CV/parameter-testing workflow.
-- `ablation_model.py` defines the baseline-compatible configurable model and
-  the eight first-pass architecture variants.
-- `ablation_test.py` runs those variants on identical subject-wise folds and
-  writes a single JSON record with fold, class, threshold, and summary metrics.
-- `compare_ablations.py` ranks one or more saved ablation runs and writes CSV,
-  text, and PNG comparison outputs.
-- `compare_losses.py` compares the seven binary-rejection and three-class loss
-  formulations with paired subject folds and threshold calibration.
-- `plot_loss_comparison.py` reads saved loss-comparison JSON files and writes
-  ranked tables, fold/history CSVs, and performance, training, and threshold
-  plots.
-- `predict_events.py` loads extracted JSON events, predicts them, saves CSVs and
-  embeddings, and creates final ripple/IED window arrays.
-- `analyze_embeddings.ipynb` analyzes embeddings produced during inference.
+## Selected method
 
-Run from the repository root:
+The selected neural model is `compact_wave_no_temporal`: a shared per-channel
+waveform encoder, morphology features, cross-channel attention, and five global
+features fused into a 64-dimensional embedding. A binary ripple-versus-IED
+score is trained with uncertainty and representation losses. Events whose
+absolute score falls below a threshold fitted on training-side calibration
+subjects are labeled as noise.
 
-```powershell
-python -m model_training.train_full_dataset
-python -m model_training.cross_validate
-python -m model_training.predict_events all
-```
+The locked settings are defined in `experiment_config.py`:
 
-Run a quick baseline smoke experiment or the complete first-pass ablation set:
+| Setting | Value |
+| --- | --- |
+| Epochs | 40 |
+| Optimizer | Adam |
+| Learning rate | 0.001 |
+| Weight decay | 0 |
+| Batch size | 32 |
+| Subjects per batch | 8 |
+| Embedding size | 64 |
+| Dropout | 0 |
+| Gradient clipping | Disabled |
+| Calibration subjects | 20% of each outer-training partition |
+| Threshold selection | Maximize calibration macro F1 |
+
+## Main commands
+
+Run commands from the repository root.
 
 ```powershell
-python -m model_training.ablation_test --variants baseline --epochs 1
-python -m model_training.ablation_test --variants all
-python -m model_training.compare_ablations
-python -m model_training.compare_losses
-python -m model_training.plot_loss_comparison
+# Locked compact-model versus full-model comparison
+python -m model_training.final_confirmation --dataset dataset_arcsinh.pkl
+
+# Nested subject-grouped classical baselines
+python -m model_training.compare_classical_baselines --dataset dataset_arcsinh.pkl --folds 5 --seeds 0 1 2 --output baseline_results/svm_comparison.json
+
+# Summarize a completed baseline comparison
+python -m model_training.summarize_baseline_comparison --baseline baseline_results/svm_comparison.json
+
+# General cross-validation and inference utilities
+python -m model_training.cross_validate --help
+python -m model_training.predict_events --help
 ```
 
-The ablation runner reserves complete training subjects to calibrate the noise
-energy threshold without using the outer validation fold. Pass
-`--fixed-threshold` to use `--energy-threshold` directly. Results are saved to
-timestamped files under `ablation_results/` unless `--output` is supplied.
-The comparison command discovers those files automatically. It prints a ranked
-table and creates a timestamped directory containing the aggregate CSV, raw
-fold CSV, text ranking, and a fold-aware performance plot. Paths, directories,
-and glob patterns can also be passed explicitly.
+`final_confirmation.py` accepts only data, execution, and output options so the
+reported model settings cannot be changed accidentally. It evaluates the
+selected compact model and the original full baseline on identical folds and
+calibration subjects.
 
-The loss comparison defaults to all seven formulations and the baseline
-architecture. It reserves the same calibration subjects for every formulation,
-tunes the rejection threshold only for binary objectives, and saves a
-timestamped JSON record under `loss_comparison_results/`. Use
-`--architecture wave_only` or another named ablation to repeat the loss study
-on a simplified architecture.
-The loss plotting command automatically discovers `losses_*.json` files under
-`loss_comparison_results/`. Explicit JSON paths, directories, and glob patterns
-are also accepted, and `--metric` selects the ranking metric.
+`compare_classical_baselines.py` fits preprocessing and hyperparameters inside
+the training partition. It writes a resumable `.partial.json` during execution;
+only the completed JSON and its summary belong in version control.
 
-All scripts accept `--help`. Full training defaults to `dataset_arcsinh.pkl`,
-40 epochs, batch size 32, learning rate 3e-4, and an energy threshold of 3.13.
-It will not replace an existing checkpoint unless `--overwrite` is passed. The
-shared dataset PKL and checkpoints remain at the repository root.
+## Code map
 
-The CV script exposes the contrast, noise, repulsion, margin, subject-adversary,
-and energy-threshold settings as command-line options so parameter tests do not
-require editing source code. Its default training parameters match the full-dataset
-training script; CV-specific subject-aware batching and folds remain separate.
-Each run also writes a timestamped JSON file under
-`cross_validation_results/`. The file records all run parameters, dataset and
-runtime metadata, subject splits, per-fold metrics and confusion matrices, and
-aggregate metrics. Use `--output PATH` to choose a specific filename; an existing
-file is only replaced when `--overwrite` is also supplied.
+| File | Purpose |
+| --- | --- |
+| `ablation_model.py` | Configurable full and compact neural architectures |
+| `loaders.py` | Dataset loading, global features, normalization, and data loaders |
+| `train.py` | Losses, subject folds, training loops, evaluation, and checkpoint helpers |
+| `final_confirmation.py` | Locked repeated grouped comparison |
+| `experiment_config.py` | Selected architecture and training constants |
+| `classical_features.py` | Leakage-safe waveform/global-feature preprocessing |
+| `compare_classical_baselines.py` | Nested grouped RBF-SVM evaluation |
+| `summarize_final_subjects.py` | Per-subject summaries from the final comparison |
+| `summarize_baseline_comparison.py` | Neural-versus-SVM summary statistics |
+| `predict_events.py` | Checkpoint inference and event exports |
 
-To cap the CUDA memory available to cross-validation, pass a fraction greater
-than zero and at most one, for example `--gpu-memory-fraction 0.5`. This limits
-the process to approximately half of the GPU's memory. Reduce `--batch-size` if
-the selected limit causes an out-of-memory error.
+The `tune_*`, `ablation_test.py`, and loss-comparison utilities remain available
+for rerunning individual model comparisons. They share the same subject-level
+split and result-recording helpers; use each command’s `--help` for its options.
 
-Cross-validation defaults to `--workers 0`. On Windows, data-loader subprocesses
-use process spawning and can duplicate the large in-memory dataset, causing a
-system `MemoryError`. A positive worker count can still be selected explicitly
-on systems with sufficient RAM.
+## Evaluation safeguards
 
-The classifier has a binary ripple/IED output. Noise remains an uncertainty
-class: noise samples are trained toward probability 0.5 and repelled from known
-event embeddings, then low-absolute-logit events are labeled as noise during
-inference.
+- All samples from a subject remain in one outer fold.
+- Rejection thresholds are fitted without the outer validation subjects.
+- Compared models reuse identical folds, seeds, and calibration subjects.
+- Scaling, PCA, and SVM tuning are fitted inside training data only.
+- Result JSONs retain fold assignments, class metrics, confusion matrices,
+  thresholds, runtime, parameter counts, and dataset metadata.
+
+The repeated folds reuse the same cohort and are not independent replications.
+Confidence intervals and tests in the report are therefore descriptive.
+
+## Full-dataset checkpoints
+
+`train_full_dataset.py` preserves the original full waveform-plus-spectrogram
+checkpoint workflow and its historical defaults. It does not train the selected
+compact architecture and should not be used to reproduce the reported compact
+model comparison. A deployment checkpoint also needs a calibration strategy;
+the mean cross-validation threshold is not a universal deployment threshold.

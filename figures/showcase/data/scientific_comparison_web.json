@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "class_order": [
+    "ripple",
+    "ied",
+    "noise"
+  ],
+  "comparisons": [
+    {
+      "model": "threshold_candidate_rule",
+      "label": "Threshold-derived candidate rule",
+      "accuracy": 0.6269315673289183,
+      "macro_f1": 0.43499918185894015,
+      "note": "Historical ripple_ied labels are merged into IED to match the final three-class task."
+    },
+    {
+      "model": "three_class_svm",
+      "label": "Direct three-class SVM",
+      "accuracy": 0.7712452302525431,
+      "macro_f1": 0.7534647446163968
+    },
+    {
+      "model": "frozen_compact_model",
+      "label": "Waveform model",
+      "accuracy": 0.8611270459054595,
+      "macro_f1": 0.8488723806399198
+    }
+  ]
+}

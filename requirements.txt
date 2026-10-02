@@ -11,6 +11,7 @@ pandas>=2.2.3
 scikit-learn>=1.6
 matplotlib>=3.9.2
 seaborn>=0.13.2
+Pillow>=11.0
 PyWavelets>=1.7
 tqdm>=4.66
 orjson>=3.10
