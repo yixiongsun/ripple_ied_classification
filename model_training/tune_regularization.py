@@ -84,7 +84,7 @@ def build_gradient_clip_candidates() -> list[DropoutCandidate]:
 
 
 def build_batch_composition_candidates() -> list[DropoutCandidate]:
-    """Build the three batch compositions specified for Phase 5."""
+    """Build the three batch compositions used in the comparison."""
     return [
         DropoutCandidate(
             "batch_32_subjects_8",
@@ -111,7 +111,7 @@ def build_batch_composition_candidates() -> list[DropoutCandidate]:
 
 
 def build_embedding_dimension_candidates() -> list[DropoutCandidate]:
-    """Build the first Phase 6 representation-capacity screen."""
+    """Build the representation-capacity screening candidates."""
     return [
         DropoutCandidate(
             f"embedding_dim_{feat_dim}",
@@ -126,7 +126,7 @@ def build_embedding_dimension_candidates() -> list[DropoutCandidate]:
 
 
 def build_threshold_robustness_candidates() -> list[DropoutCandidate]:
-    """Build the Phase 7 calibration-fraction sensitivity candidates."""
+    """Build the calibration-fraction sensitivity candidates."""
     return [
         DropoutCandidate(
             f"calibration_fraction_{fraction:g}",
@@ -281,7 +281,7 @@ def run_dropout_tuning(
             "embedding_dimension, threshold_robustness, or final_confirmation"
         )
     if FROZEN_SCHEDULE != "constant":
-        raise ValueError("Phase 4 expects the frozen constant schedule")
+        raise ValueError("Regularization tuning expects the frozen constant schedule")
     if not candidates:
         raise ValueError("At least one dropout candidate is required")
     seeds = [0] if seeds is None else seeds
@@ -291,7 +291,13 @@ def run_dropout_tuning(
     started_at = datetime.now(timezone.utc)
     if output_path is None:
         stamp = started_at.strftime("%Y%m%dT%H%M%S.%fZ")
-        output_path = Path("regularization_results") / f"{stage}_{stamp}.json"
+        directories = {
+            "batch_composition": "batch_composition",
+            "embedding_dimension": "representation_capacity",
+            "threshold_robustness": "threshold_calibration",
+        }
+        result_directory = directories.get(stage, "regularization")
+        output_path = Path("experiment_results") / result_directory / f"{stage}_{stamp}.json"
     elif Path(output_path).exists() and not overwrite:
         raise FileExistsError(f"Results already exist: {output_path}")
     output_path = Path(output_path)

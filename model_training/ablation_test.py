@@ -264,7 +264,7 @@ def run_ablations(
     started_at = datetime.now(timezone.utc)
     if output_path is None:
         stamp = started_at.strftime("%Y%m%dT%H%M%S.%fZ")
-        output_path = Path("ablation_results") / f"ablations_{stamp}.json"
+        output_path = Path("experiment_results/architecture") / f"ablations_{stamp}.json"
     elif Path(output_path).exists() and not overwrite:
         raise FileExistsError(f"Results already exist: {output_path}")
 

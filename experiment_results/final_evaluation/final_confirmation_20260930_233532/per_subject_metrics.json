@@ -1,0 +1,5591 @@
+{
+  "aggregation": "Unweighted mean and population standard deviation across each subject's three held-out seed evaluations.",
+  "compact_macro_f1_losses": 16,
+  "compact_macro_f1_ties": 0,
+  "compact_macro_f1_wins": 14,
+  "schema_version": 1,
+  "source": "C:\\Users\\sunab\\ripple_ied_classification\\experiment_results\\final_evaluation\\final_confirmation_20260930_233532\\final_confirmation.json",
+  "subject_count": 30,
+  "subjects": {
+    "106-2": {
+      "compact_minus_baseline": {
+        "accuracy": 0.0,
+        "macro_f1": -0.009063061694640662,
+        "per_class_f1": {
+          "ied": 0.0,
+          "noise": -0.027272727272727282,
+          "ripple": 8.354218880535225e-05
+        },
+        "weighted_f1": -0.002378522062732591
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.935,
+          "mean": 0.9233333333333333,
+          "minimum": 0.91,
+          "standard_deviation": 0.010274023338281637
+        },
+        "macro_f1": {
+          "maximum": 0.4945553238672094,
+          "mean": 0.43783639086462717,
+          "minimum": 0.3508771929824561,
+          "standard_deviation": 0.0624323983127609
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 0
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.5185185185185185,
+              "mean": 0.35432098765432096,
+              "minimum": 0.1,
+              "standard_deviation": 0.1823570045882249
+            },
+            "precision": {
+              "maximum": 0.7777777777777778,
+              "mean": 0.6481481481481481,
+              "minimum": 0.5,
+              "standard_deviation": 0.11415581486979587
+            },
+            "recall": {
+              "maximum": 0.3888888888888889,
+              "mean": 0.25925925925925924,
+              "minimum": 0.05555555555555555,
+              "standard_deviation": 0.14581496062984836
+            },
+            "support": 18
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9651474530831099,
+              "mean": 0.9591881849395607,
+              "minimum": 0.9526315789473684,
+              "standard_deviation": 0.00512701249751399
+            },
+            "precision": {
+              "maximum": 0.9424083769633508,
+              "mean": 0.931240855324625,
+              "minimum": 0.9141414141414141,
+              "standard_deviation": 0.0122786005963185
+            },
+            "recall": {
+              "maximum": 0.9945054945054945,
+              "mean": 0.989010989010989,
+              "minimum": 0.9835164835164835,
+              "standard_deviation": 0.00448624495015237
+            },
+            "support": 182
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 200,
+        "weighted_f1": {
+          "maximum": 0.9249508489722967,
+          "mean": 0.9047501371838891,
+          "minimum": 0.8758947368421053,
+          "standard_deviation": 0.020941239374329228
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.935,
+          "mean": 0.9233333333333333,
+          "minimum": 0.91,
+          "standard_deviation": 0.010274023338281637
+        },
+        "macro_f1": {
+          "maximum": 0.4945553238672094,
+          "mean": 0.44689945255926783,
+          "minimum": 0.37806637806637805,
+          "standard_deviation": 0.049858293021319874
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 0
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.5185185185185185,
+              "mean": 0.38159371492704824,
+              "minimum": 0.18181818181818182,
+              "standard_deviation": 0.14446323600183242
+            },
+            "precision": {
+              "maximum": 0.7777777777777778,
+              "mean": 0.6481481481481481,
+              "minimum": 0.5,
+              "standard_deviation": 0.11415581486979587
+            },
+            "recall": {
+              "maximum": 0.3888888888888889,
+              "mean": 0.2777777777777778,
+              "minimum": 0.1111111111111111,
+              "standard_deviation": 0.1200137166371826
+            },
+            "support": 18
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9651474530831099,
+              "mean": 0.9591046427507554,
+              "minimum": 0.9523809523809523,
+              "standard_deviation": 0.00523409229721157
+            },
+            "precision": {
+              "maximum": 0.9424083769633508,
+              "mean": 0.9326494995904121,
+              "minimum": 0.9183673469387755,
+              "standard_deviation": 0.010322719137765713
+            },
+            "recall": {
+              "maximum": 0.989010989010989,
+              "mean": 0.9871794871794872,
+              "minimum": 0.9835164835164835,
+              "standard_deviation": 0.002590134729621096
+            },
+            "support": 182
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 200,
+        "weighted_f1": {
+          "maximum": 0.9249508489722967,
+          "mean": 0.9071286592466217,
+          "minimum": 0.8830303030303029,
+          "standard_deviation": 0.01768004039177912
+        }
+      }
+    },
+    "18-1": {
+      "compact_minus_baseline": {
+        "accuracy": -0.011164274322169154,
+        "macro_f1": -0.09929385137989905,
+        "per_class_f1": {
+          "ied": -0.2222222222222222,
+          "noise": -0.07070027328670259,
+          "ripple": -0.004959058630772395
+        },
+        "weighted_f1": -0.018239192024972373
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.84688995215311,
+          "mean": 0.8421052631578947,
+          "minimum": 0.8373205741626795,
+          "standard_deviation": 0.003906682205395793
+        },
+        "macro_f1": {
+          "maximum": 0.4618851480420248,
+          "mean": 0.46085086686360294,
+          "minimum": 0.45916288849464487,
+          "standard_deviation": 0.0012036511879863557
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 4
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.46875,
+              "mean": 0.46385233918128654,
+              "minimum": 0.45614035087719296,
+              "standard_deviation": 0.005519126872148145
+            },
+            "precision": {
+              "maximum": 0.4642857142857143,
+              "mean": 0.44815668202764974,
+              "minimum": 0.42857142857142855,
+              "standard_deviation": 0.014783699350937157
+            },
+            "recall": {
+              "maximum": 0.5172413793103449,
+              "mean": 0.4827586206896552,
+              "minimum": 0.4482758620689655,
+              "standard_deviation": 0.028155054514749183
+            },
+            "support": 29
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9213483146067416,
+              "mean": 0.9187002614095223,
+              "minimum": 0.9169054441260746,
+              "standard_deviation": 0.0019115060677221487
+            },
+            "precision": {
+              "maximum": 0.9248554913294798,
+              "mean": 0.9170736132429088,
+              "minimum": 0.9111111111111111,
+              "standard_deviation": 0.005756711650782133
+            },
+            "recall": {
+              "maximum": 0.9318181818181818,
+              "mean": 0.9204545454545454,
+              "minimum": 0.9090909090909091,
+              "standard_deviation": 0.00927837023781506
+            },
+            "support": 176
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 209,
+        "weighted_f1": {
+          "maximum": 0.8391644667283498,
+          "mean": 0.8380046116953743,
+          "minimum": 0.8371727663454025,
+          "standard_deviation": 0.0008455413918376839
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8755980861244019,
+          "mean": 0.8532695374800638,
+          "minimum": 0.8277511961722488,
+          "standard_deviation": 0.019663202561304563
+        },
+        "macro_f1": {
+          "maximum": 0.6055251557987537,
+          "mean": 0.560144718243502,
+          "minimum": 0.4781092196366286,
+          "standard_deviation": 0.05811712497214152
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.3333333333333333,
+              "mean": 0.2222222222222222,
+              "minimum": 0.0,
+              "standard_deviation": 0.15713484026367722
+            },
+            "precision": {
+              "maximum": 0.5,
+              "mean": 0.3333333333333333,
+              "minimum": 0.0,
+              "standard_deviation": 0.23570226039551584
+            },
+            "recall": {
+              "maximum": 0.25,
+              "mean": 0.16666666666666666,
+              "minimum": 0.0,
+              "standard_deviation": 0.11785113019775792
+            },
+            "support": 4
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.5588235294117647,
+              "mean": 0.5345526124679891,
+              "minimum": 0.5185185185185185,
+              "standard_deviation": 0.01745484489677689
+            },
+            "precision": {
+              "maximum": 0.56,
+              "mean": 0.49090380069103473,
+              "minimum": 0.425531914893617,
+              "standard_deviation": 0.0549594963671344
+            },
+            "recall": {
+              "maximum": 0.6896551724137931,
+              "mean": 0.6091954022988506,
+              "minimum": 0.4827586206896552,
+              "standard_deviation": 0.09050583763231966
+            },
+            "support": 29
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9385474860335196,
+              "mean": 0.9236593200402947,
+              "minimum": 0.9080118694362018,
+              "standard_deviation": 0.012477669522920334
+            },
+            "precision": {
+              "maximum": 0.9503105590062112,
+              "mean": 0.9399386845039019,
+              "minimum": 0.9230769230769231,
+              "standard_deviation": 0.012027931540197023
+            },
+            "recall": {
+              "maximum": 0.9545454545454546,
+              "mean": 0.9090909090909091,
+              "minimum": 0.8693181818181818,
+              "standard_deviation": 0.035025079562323765
+            },
+            "support": 176
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 209,
+        "weighted_f1": {
+          "maximum": 0.8686829086711474,
+          "mean": 0.8562438037203467,
+          "minimum": 0.8376710378732458,
+          "standard_deviation": 0.01338283426855801
+        }
+      }
+    },
+    "229-3": {
+      "compact_minus_baseline": {
+        "accuracy": -0.003284072249589487,
+        "macro_f1": -0.0018115745180741216,
+        "per_class_f1": {
+          "ied": 0.0,
+          "noise": -0.004619069084345839,
+          "ripple": -0.0008156544698764145
+        },
+        "weighted_f1": -0.0025728235304195435
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8768472906403941,
+          "mean": 0.8719211822660099,
+          "minimum": 0.8669950738916257,
+          "standard_deviation": 0.004022150644964162
+        },
+        "macro_f1": {
+          "maximum": 0.5877694235588972,
+          "mean": 0.5842937399371572,
+          "minimum": 0.580554189211346,
+          "standard_deviation": 0.0029515104674249413
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 1
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8685714285714285,
+              "mean": 0.8634749918273946,
+              "minimum": 0.8586956521739131,
+              "standard_deviation": 0.004037998909283204
+            },
+            "precision": {
+              "maximum": 0.9382716049382716,
+              "mean": 0.8900720164609053,
+              "minimum": 0.8541666666666666,
+              "standard_deviation": 0.035419122791846974
+            },
+            "recall": {
+              "maximum": 0.8723404255319149,
+              "mean": 0.8404255319148937,
+              "minimum": 0.8085106382978723,
+              "standard_deviation": 0.026058401518970018
+            },
+            "support": 94
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8949771689497716,
+              "mean": 0.889406227984077,
+              "minimum": 0.8785046728971962,
+              "standard_deviation": 0.007709187883396877
+            },
+            "precision": {
+              "maximum": 0.8867924528301887,
+              "mean": 0.8732251119043571,
+              "minimum": 0.85,
+              "standard_deviation": 0.016500011141827656
+            },
+            "recall": {
+              "maximum": 0.9444444444444444,
+              "mean": 0.9074074074074074,
+              "minimum": 0.8703703703703703,
+              "standard_deviation": 0.030240614108434295
+            },
+            "support": 108
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 203,
+        "weighted_f1": {
+          "maximum": 0.8782132671580428,
+          "mean": 0.8730173490347556,
+          "minimum": 0.867070673784041,
+          "standard_deviation": 0.00457981615154106
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8866995073891626,
+          "mean": 0.8752052545155994,
+          "minimum": 0.8522167487684729,
+          "standard_deviation": 0.016255328303139055
+        },
+        "macro_f1": {
+          "maximum": 0.5932617549055905,
+          "mean": 0.5861053144552313,
+          "minimum": 0.5732023366082515,
+          "standard_deviation": 0.009141921192870203
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 1
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8777777777777778,
+              "mean": 0.8680940609117405,
+              "minimum": 0.850828729281768,
+              "standard_deviation": 0.012238558344609385
+            },
+            "precision": {
+              "maximum": 0.9186046511627907,
+              "mean": 0.8979240041790162,
+              "minimum": 0.8850574712643678,
+              "standard_deviation": 0.014768177585567156
+            },
+            "recall": {
+              "maximum": 0.8617021276595744,
+              "mean": 0.8404255319148937,
+              "minimum": 0.8191489361702128,
+              "standard_deviation": 0.0173722676793133
+            },
+            "support": 94
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9041095890410958,
+              "mean": 0.8902218824539534,
+              "minimum": 0.8687782805429864,
+              "standard_deviation": 0.015381677534339097
+            },
+            "precision": {
+              "maximum": 0.8918918918918919,
+              "mean": 0.8682324257545496,
+              "minimum": 0.8495575221238938,
+              "standard_deviation": 0.017638671783908887
+            },
+            "recall": {
+              "maximum": 0.9351851851851852,
+              "mean": 0.9135802469135802,
+              "minimum": 0.8888888888888888,
+              "standard_deviation": 0.01902596914496601
+            },
+            "support": 108
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 203,
+        "weighted_f1": {
+          "maximum": 0.8864894045810436,
+          "mean": 0.8755901725651751,
+          "minimum": 0.8561869697099936,
+          "standard_deviation": 0.013754939229369495
+        }
+      }
+    },
+    "233-10": {
+      "compact_minus_baseline": {
+        "accuracy": -0.015000000000000013,
+        "macro_f1": -0.02093981577147397,
+        "per_class_f1": {
+          "ied": 0.006411633807470674,
+          "noise": -0.061849573069472474,
+          "ripple": -0.007381508052420438
+        },
+        "weighted_f1": -0.009576358680713604
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.92,
+          "mean": 0.895,
+          "minimum": 0.85,
+          "standard_deviation": 0.031885210782848346
+        },
+        "macro_f1": {
+          "maximum": 0.8754071057259085,
+          "mean": 0.8393913761392239,
+          "minimum": 0.7901785714285715,
+          "standard_deviation": 0.03602404621442759
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9827586206896551,
+              "mean": 0.9649014778325123,
+              "minimum": 0.9464285714285714,
+              "standard_deviation": 0.014838070256098372
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.9941520467836257,
+              "minimum": 0.9824561403508771,
+              "standard_deviation": 0.00827025475071988
+            },
+            "recall": {
+              "maximum": 0.9661016949152542,
+              "mean": 0.9378531073446328,
+              "minimum": 0.8983050847457628,
+              "standard_deviation": 0.02880801985080667
+            },
+            "support": 59
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7169811320754716,
+              "mean": 0.6288430014719657,
+              "minimum": 0.53125,
+              "standard_deviation": 0.07611858858764838
+            },
+            "precision": {
+              "maximum": 0.6333333333333333,
+              "mean": 0.5576558265582656,
+              "minimum": 0.4146341463414634,
+              "standard_deviation": 0.10118880659486347
+            },
+            "recall": {
+              "maximum": 0.8260869565217391,
+              "mean": 0.7391304347826086,
+              "minimum": 0.6521739130434783,
+              "standard_deviation": 0.07099970268936748
+            },
+            "support": 23
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9437229437229437,
+              "mean": 0.9244296491131935,
+              "minimum": 0.8928571428571429,
+              "standard_deviation": 0.02250802380516487
+            },
+            "precision": {
+              "maximum": 0.9646017699115044,
+              "mean": 0.9469237018567654,
+              "minimum": 0.9327731092436975,
+              "standard_deviation": 0.01323123129116091
+            },
+            "recall": {
+              "maximum": 0.940677966101695,
+              "mean": 0.903954802259887,
+              "minimum": 0.847457627118644,
+              "standard_deviation": 0.04054435054917326
+            },
+            "support": 118
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 200,
+        "weighted_f1": {
+          "maximum": 0.9240769531921126,
+          "mean": 0.9023763741066513,
+          "minimum": 0.8670758928571429,
+          "standard_deviation": 0.0251793331124483
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.93,
+          "mean": 0.91,
+          "minimum": 0.895,
+          "standard_deviation": 0.014719601443879758
+        },
+        "macro_f1": {
+          "maximum": 0.8992681481728738,
+          "mean": 0.8603311919106978,
+          "minimum": 0.8370494049148043,
+          "standard_deviation": 0.02770807640045716
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9666666666666667,
+              "mean": 0.9584898440250417,
+              "minimum": 0.9508196721311475,
+              "standard_deviation": 0.006479420251191503
+            },
+            "precision": {
+              "maximum": 0.9508196721311475,
+              "mean": 0.940484864255356,
+              "minimum": 0.9206349206349206,
+              "standard_deviation": 0.014040018088817734
+            },
+            "recall": {
+              "maximum": 0.9830508474576272,
+              "mean": 0.9774011299435028,
+              "minimum": 0.9661016949152542,
+              "standard_deviation": 0.007989907132051416
+            },
+            "support": 59
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7924528301886793,
+              "mean": 0.6906925745414382,
+              "minimum": 0.6274509803921569,
+              "standard_deviation": 0.07265979205293828
+            },
+            "precision": {
+              "maximum": 0.7,
+              "mean": 0.6412008281573499,
+              "minimum": 0.5714285714285714,
+              "standard_deviation": 0.05305946038903351
+            },
+            "recall": {
+              "maximum": 0.9130434782608695,
+              "mean": 0.7536231884057971,
+              "minimum": 0.6521739130434783,
+              "standard_deviation": 0.11411605614509869
+            },
+            "support": 23
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9473684210526315,
+              "mean": 0.9318111571656139,
+              "minimum": 0.9170305676855895,
+              "standard_deviation": 0.012397546910065012
+            },
+            "precision": {
+              "maximum": 0.9818181818181818,
+              "mean": 0.9583775162722531,
+              "minimum": 0.9459459459459459,
+              "standard_deviation": 0.016585223539531655
+            },
+            "recall": {
+              "maximum": 0.9152542372881356,
+              "mean": 0.9067796610169492,
+              "minimum": 0.8898305084745762,
+              "standard_deviation": 0.011984860698077098
+            },
+            "support": 118
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 200,
+        "weighted_f1": {
+          "maximum": 0.9326844859095574,
+          "mean": 0.9119527327873649,
+          "minimum": 0.8983715643462625,
+          "standard_deviation": 0.014892778843302739
+        }
+      }
+    },
+    "236-1": {
+      "compact_minus_baseline": {
+        "accuracy": -0.013333333333333308,
+        "macro_f1": 0.001557186933967114,
+        "per_class_f1": {
+          "ied": 0.049025165621804256,
+          "noise": -0.03245905654160497,
+          "ripple": -0.011894548278297612
+        },
+        "weighted_f1": -0.008392485693446528
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.87,
+          "mean": 0.8566666666666667,
+          "minimum": 0.835,
+          "standard_deviation": 0.015456030825826186
+        },
+        "macro_f1": {
+          "maximum": 0.8550540739737977,
+          "mean": 0.8442089417468884,
+          "minimum": 0.8263564568983287,
+          "standard_deviation": 0.012720470366714089
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9795918367346939,
+              "mean": 0.9659750566893424,
+              "minimum": 0.9583333333333334,
+              "standard_deviation": 0.009652528806727477
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.9866666666666667,
+              "minimum": 0.96,
+              "standard_deviation": 0.018856180831641284
+            },
+            "recall": {
+              "maximum": 0.96,
+              "mean": 0.9466666666666667,
+              "minimum": 0.92,
+              "standard_deviation": 0.018856180831641232
+            },
+            "support": 25
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.6987951807228916,
+              "mean": 0.6697133361030329,
+              "minimum": 0.6206896551724138,
+              "standard_deviation": 0.03486522533951705
+            },
+            "precision": {
+              "maximum": 0.6744186046511628,
+              "mean": 0.6290615206993238,
+              "minimum": 0.574468085106383,
+              "standard_deviation": 0.04132399813705035
+            },
+            "recall": {
+              "maximum": 0.75,
+              "mean": 0.7166666666666667,
+              "minimum": 0.675,
+              "standard_deviation": 0.031180478223116155
+            },
+            "support": 40
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9063670411985019,
+              "mean": 0.8969384324482904,
+              "minimum": 0.8787878787878788,
+              "standard_deviation": 0.012837621588656426
+            },
+            "precision": {
+              "maximum": 0.9230769230769231,
+              "mean": 0.9129894653150468,
+              "minimum": 0.8992248062015504,
+              "standard_deviation": 0.010078764051025839
+            },
+            "recall": {
+              "maximum": 0.8962962962962963,
+              "mean": 0.8814814814814814,
+              "minimum": 0.8592592592592593,
+              "standard_deviation": 0.01600182888495765
+            },
+            "support": 135
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 200,
+        "weighted_f1": {
+          "maximum": 0.871556788953567,
+          "mean": 0.8601229912093703,
+          "minimum": 0.8397687288081376,
+          "standard_deviation": 0.014429165123120887
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.885,
+          "mean": 0.87,
+          "minimum": 0.85,
+          "standard_deviation": 0.014719601443879758
+        },
+        "macro_f1": {
+          "maximum": 0.8605960253756709,
+          "mean": 0.8426517548129213,
+          "minimum": 0.8161234190645956,
+          "standard_deviation": 0.019143629216315267
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.96,
+              "mean": 0.9169498910675381,
+              "minimum": 0.8888888888888888,
+              "standard_deviation": 0.03090525868760947
+            },
+            "precision": {
+              "maximum": 0.96,
+              "mean": 0.8907338638373121,
+              "minimum": 0.8275862068965517,
+              "standard_deviation": 0.054230557142645255
+            },
+            "recall": {
+              "maximum": 0.96,
+              "mean": 0.9466666666666667,
+              "minimum": 0.92,
+              "standard_deviation": 0.018856180831641232
+            },
+            "support": 25
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7529411764705882,
+              "mean": 0.7021723926446378,
+              "minimum": 0.6493506493506493,
+              "standard_deviation": 0.04231556300921095
+            },
+            "precision": {
+              "maximum": 0.8064516129032258,
+              "mean": 0.7310794665633376,
+              "minimum": 0.6756756756756757,
+              "standard_deviation": 0.055224619232342835
+            },
+            "recall": {
+              "maximum": 0.8,
+              "mean": 0.6833333333333333,
+              "minimum": 0.625,
+              "standard_deviation": 0.08249579113843057
+            },
+            "support": 40
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9175627240143369,
+              "mean": 0.908832980726588,
+              "minimum": 0.8970588235294118,
+              "standard_deviation": 0.008643063724276792
+            },
+            "precision": {
+              "maximum": 0.9444444444444444,
+              "mean": 0.907948094079481,
+              "minimum": 0.8888888888888888,
+              "standard_deviation": 0.025815311504940677
+            },
+            "recall": {
+              "maximum": 0.9481481481481482,
+              "mean": 0.9111111111111111,
+              "minimum": 0.8814814814814815,
+              "standard_deviation": 0.027715980642769936
+            },
+            "support": 135
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 200,
+        "weighted_f1": {
+          "maximum": 0.8801999091322127,
+          "mean": 0.8685154769028168,
+          "minimum": 0.8481299337916985,
+          "standard_deviation": 0.01446611736708268
+        }
+      }
+    },
+    "236-20": {
+      "compact_minus_baseline": {
+        "accuracy": 0.011382113821138184,
+        "macro_f1": 0.017152265662743416,
+        "per_class_f1": {
+          "ied": 0.0014918400766825712,
+          "noise": 0.04562296957547374,
+          "ripple": 0.004341987336073938
+        },
+        "weighted_f1": 0.012444798779578825
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8682926829268293,
+          "mean": 0.8520325203252033,
+          "minimum": 0.8439024390243902,
+          "standard_deviation": 0.01149767123880566
+        },
+        "macro_f1": {
+          "maximum": 0.8555913593507579,
+          "mean": 0.8420335894250861,
+          "minimum": 0.8347499465999267,
+          "standard_deviation": 0.009595645697143598
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9285714285714286,
+              "mean": 0.9107997265892003,
+              "minimum": 0.8947368421052632,
+              "standard_deviation": 0.01386566150041067
+            },
+            "precision": {
+              "maximum": 0.9444444444444444,
+              "mean": 0.8880471380471381,
+              "minimum": 0.8333333333333334,
+              "standard_deviation": 0.04537653862607255
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 0.9416666666666667,
+              "minimum": 0.85,
+              "standard_deviation": 0.06561673228343176
+            },
+            "support": 40
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7346938775510204,
+              "mean": 0.7262680654356425,
+              "minimum": 0.7184466019417476,
+              "standard_deviation": 0.006646674312422949
+            },
+            "precision": {
+              "maximum": 0.6545454545454545,
+              "mean": 0.618975468975469,
+              "minimum": 0.5857142857142857,
+              "standard_deviation": 0.028147591687887663
+            },
+            "recall": {
+              "maximum": 0.9534883720930233,
+              "mean": 0.8837209302325582,
+              "minimum": 0.8372093023255814,
+              "standard_deviation": 0.05023829998765784
+            },
+            "support": 43
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9035087719298246,
+              "mean": 0.8890329762504154,
+              "minimum": 0.8767123287671232,
+              "standard_deviation": 0.011045235454058625
+            },
+            "precision": {
+              "maximum": 0.98989898989899,
+              "mean": 0.9837626082520072,
+              "minimum": 0.9716981132075472,
+              "standard_deviation": 0.008531309958980075
+            },
+            "recall": {
+              "maximum": 0.8442622950819673,
+              "mean": 0.8114754098360656,
+              "minimum": 0.7868852459016393,
+              "standard_deviation": 0.02413049417029469
+            },
+            "support": 122
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 205,
+        "weighted_f1": {
+          "maximum": 0.8729890929414128,
+          "mean": 0.8591392145358601,
+          "minimum": 0.8498328993010758,
+          "standard_deviation": 0.009984498007487023
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8682926829268293,
+          "mean": 0.8406504065040651,
+          "minimum": 0.8,
+          "standard_deviation": 0.029358487943524834
+        },
+        "macro_f1": {
+          "maximum": 0.8525232206398915,
+          "mean": 0.8248813237623427,
+          "minimum": 0.7917385224696935,
+          "standard_deviation": 0.02511825159717627
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.926829268292683,
+              "mean": 0.9093078865125177,
+              "minimum": 0.8941176470588236,
+              "standard_deviation": 0.013455809385950973
+            },
+            "precision": {
+              "maximum": 0.9047619047619048,
+              "mean": 0.865677478720957,
+              "minimum": 0.8444444444444444,
+              "standard_deviation": 0.02767132264918093
+            },
+            "recall": {
+              "maximum": 0.975,
+              "mean": 0.9583333333333333,
+              "minimum": 0.95,
+              "standard_deviation": 0.011785113019775802
+            },
+            "support": 40
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7216494845360825,
+              "mean": 0.6806450958601687,
+              "minimum": 0.6306306306306306,
+              "standard_deviation": 0.03770052211125752
+            },
+            "precision": {
+              "maximum": 0.6818181818181818,
+              "mean": 0.614890737439757,
+              "minimum": 0.5147058823529411,
+              "standard_deviation": 0.07216264815636976
+            },
+            "recall": {
+              "maximum": 0.813953488372093,
+              "mean": 0.7751937984496124,
+              "minimum": 0.6976744186046512,
+              "standard_deviation": 0.054814479161747864
+            },
+            "support": 43
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9090909090909091,
+              "mean": 0.8846909889143415,
+              "minimum": 0.8504672897196262,
+              "standard_deviation": 0.024920703075894092
+            },
+            "precision": {
+              "maximum": 0.9891304347826086,
+              "mean": 0.958057439170323,
+              "minimum": 0.9217391304347826,
+              "standard_deviation": 0.027761267475220116
+            },
+            "recall": {
+              "maximum": 0.8688524590163934,
+              "mean": 0.825136612021858,
+              "minimum": 0.7459016393442623,
+              "standard_deviation": 0.05612742782561236
+            },
+            "support": 122
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 205,
+        "weighted_f1": {
+          "maximum": 0.8732350706139015,
+          "mean": 0.8466944157562812,
+          "minimum": 0.8128723529037291,
+          "standard_deviation": 0.025175101444760647
+        }
+      }
+    },
+    "243-1": {
+      "compact_minus_baseline": {
+        "accuracy": 0.002178649237472796,
+        "macro_f1": 0.0003964238756078986,
+        "per_class_f1": {
+          "ied": 0.0,
+          "noise": -0.0026692646868927694,
+          "ripple": 0.003858536313716132
+        },
+        "weighted_f1": 0.001367448980346353
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8660130718954249,
+          "mean": 0.8583877995642701,
+          "minimum": 0.8496732026143791,
+          "standard_deviation": 0.0067150479335174275
+        },
+        "macro_f1": {
+          "maximum": 0.7937405139477679,
+          "mean": 0.7795756363879327,
+          "minimum": 0.7548865142451664,
+          "standard_deviation": 0.017520999139194002
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.6666666666666666,
+              "mean": 0.6349206349206349,
+              "minimum": 0.5714285714285714,
+              "standard_deviation": 0.04489566864676492
+            },
+            "precision": {
+              "maximum": 0.6666666666666666,
+              "mean": 0.611111111111111,
+              "minimum": 0.5,
+              "standard_deviation": 0.0785674201318386
+            },
+            "recall": {
+              "maximum": 0.6666666666666666,
+              "mean": 0.6666666666666666,
+              "minimum": 0.6666666666666666,
+              "standard_deviation": 0.0
+            },
+            "support": 3
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8181818181818182,
+              "mean": 0.8151164134328391,
+              "minimum": 0.8130081300813008,
+              "standard_deviation": 0.0022179304418666577
+            },
+            "precision": {
+              "maximum": 0.8571428571428571,
+              "mean": 0.8164434881992134,
+              "minimum": 0.7633587786259542,
+              "standard_deviation": 0.039276038859164086
+            },
+            "recall": {
+              "maximum": 0.8695652173913043,
+              "mean": 0.8173913043478261,
+              "minimum": 0.782608695652174,
+              "standard_deviation": 0.037569511295118
+            },
+            "support": 115
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8963730569948186,
+              "mean": 0.8886898608103239,
+              "minimum": 0.8802228412256268,
+              "standard_deviation": 0.006616552561059366
+            },
+            "precision": {
+              "maximum": 0.9239766081871345,
+              "mean": 0.8926407717526138,
+              "minimum": 0.8737373737373737,
+              "standard_deviation": 0.02231470835288402
+            },
+            "recall": {
+              "maximum": 0.9202127659574468,
+              "mean": 0.8865248226950355,
+              "minimum": 0.8404255319148937,
+              "standard_deviation": 0.03373457019581638
+            },
+            "support": 188
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 306,
+        "weighted_f1": {
+          "maximum": 0.8647354372742975,
+          "mean": 0.8585517754309782,
+          "minimum": 0.8519350157648797,
+          "standard_deviation": 0.0052347160380013654
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8758169934640523,
+          "mean": 0.8562091503267973,
+          "minimum": 0.8398692810457516,
+          "standard_deviation": 0.014856407077326637
+        },
+        "macro_f1": {
+          "maximum": 0.8020152473792356,
+          "mean": 0.7791792125123248,
+          "minimum": 0.7573290430563034,
+          "standard_deviation": 0.018256380841667398
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.6666666666666666,
+              "mean": 0.6349206349206349,
+              "minimum": 0.5714285714285714,
+              "standard_deviation": 0.04489566864676492
+            },
+            "precision": {
+              "maximum": 0.6666666666666666,
+              "mean": 0.611111111111111,
+              "minimum": 0.5,
+              "standard_deviation": 0.0785674201318386
+            },
+            "recall": {
+              "maximum": 0.6666666666666666,
+              "mean": 0.6666666666666666,
+              "minimum": 0.6666666666666666,
+              "standard_deviation": 0.0
+            },
+            "support": 3
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8370044052863436,
+              "mean": 0.8177856781197319,
+              "minimum": 0.7966804979253111,
+              "standard_deviation": 0.016516121517775265
+            },
+            "precision": {
+              "maximum": 0.8482142857142857,
+              "mean": 0.7951042820228866,
+              "minimum": 0.7619047619047619,
+              "standard_deviation": 0.03794429243112335
+            },
+            "recall": {
+              "maximum": 0.8695652173913043,
+              "mean": 0.8434782608695652,
+              "minimum": 0.8260869565217391,
+              "standard_deviation": 0.01878475564755901
+            },
+            "support": 115
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9023746701846965,
+              "mean": 0.8848313244966077,
+              "minimum": 0.8712328767123287,
+              "standard_deviation": 0.0130160027087816
+            },
+            "precision": {
+              "maximum": 0.9190751445086706,
+              "mean": 0.9042227291232056,
+              "minimum": 0.8952879581151832,
+              "standard_deviation": 0.010574227958044564
+            },
+            "recall": {
+              "maximum": 0.9095744680851063,
+              "mean": 0.8670212765957447,
+              "minimum": 0.8457446808510638,
+              "standard_deviation": 0.03008965026325733
+            },
+            "support": 188
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 306,
+        "weighted_f1": {
+          "maximum": 0.8754965509890603,
+          "mean": 0.8571843264506318,
+          "minimum": 0.8412092747821195,
+          "standard_deviation": 0.01409494259632788
+        }
+      }
+    },
+    "243-10": {
+      "compact_minus_baseline": {
+        "accuracy": -0.016472868217054293,
+        "macro_f1": -0.02045363787427401,
+        "per_class_f1": {
+          "ied": -0.012593658339747793,
+          "noise": -0.04365407969447721,
+          "ripple": -0.005113175588596808
+        },
+        "weighted_f1": -0.014196233687807758
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.9156976744186046,
+          "mean": 0.9040697674418604,
+          "minimum": 0.8808139534883721,
+          "standard_deviation": 0.016444343748524336
+        },
+        "macro_f1": {
+          "maximum": 0.861747331672419,
+          "mean": 0.8484004337834266,
+          "minimum": 0.8235389509900767,
+          "standard_deviation": 0.017595630854115286
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9768637532133676,
+              "mean": 0.962758795241154,
+              "minimum": 0.9453551912568307,
+              "standard_deviation": 0.013073080949726111
+            },
+            "precision": {
+              "maximum": 0.9885714285714285,
+              "mean": 0.9705696849446849,
+              "minimum": 0.9595959595959596,
+              "standard_deviation": 0.012830672397922377
+            },
+            "recall": {
+              "maximum": 0.9947643979057592,
+              "mean": 0.956369982547993,
+              "minimum": 0.9057591623036649,
+              "standard_deviation": 0.037348925931994244
+            },
+            "support": 191
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7096774193548387,
+              "mean": 0.6789424445535721,
+              "minimum": 0.6238532110091743,
+              "standard_deviation": 0.039040970989765264
+            },
+            "precision": {
+              "maximum": 0.6808510638297872,
+              "mean": 0.6257991248872707,
+              "minimum": 0.5230769230769231,
+              "standard_deviation": 0.07269805290373894
+            },
+            "recall": {
+              "maximum": 0.7727272727272727,
+              "mean": 0.75,
+              "minimum": 0.7272727272727273,
+              "standard_deviation": 0.01855674047563012
+            },
+            "support": 44
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9158878504672897,
+              "mean": 0.9035000615555536,
+              "minimum": 0.8932038834951457,
+              "standard_deviation": 0.009378049419197853
+            },
+            "precision": {
+              "maximum": 0.9484536082474226,
+              "mean": 0.9349546215525597,
+              "minimum": 0.9230769230769231,
+              "standard_deviation": 0.01042322628165944
+            },
+            "recall": {
+              "maximum": 0.8990825688073395,
+              "mean": 0.8746177370030581,
+              "minimum": 0.8440366972477065,
+              "standard_deviation": 0.02288475465916784
+            },
+            "support": 109
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 344,
+        "weighted_f1": {
+          "maximum": 0.9165517497830318,
+          "mean": 0.9076799539563167,
+          "minimum": 0.8903078602942409,
+          "standard_deviation": 0.012284861452002492
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.9273255813953488,
+          "mean": 0.9205426356589147,
+          "minimum": 0.9127906976744186,
+          "standard_deviation": 0.005973269382721887
+        },
+        "macro_f1": {
+          "maximum": 0.8762603033822547,
+          "mean": 0.8688540716577006,
+          "minimum": 0.8620727902889859,
+          "standard_deviation": 0.005808861285620244
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9814323607427056,
+              "mean": 0.9753524535809018,
+              "minimum": 0.9706666666666667,
+              "standard_deviation": 0.004504273576891547
+            },
+            "precision": {
+              "maximum": 0.9946236559139785,
+              "mean": 0.9842220025983442,
+              "minimum": 0.9689119170984456,
+              "standard_deviation": 0.011055704654466467
+            },
+            "recall": {
+              "maximum": 0.9790575916230366,
+              "mean": 0.9668411867364747,
+              "minimum": 0.9528795811518325,
+              "standard_deviation": 0.010758139621237294
+            },
+            "support": 191
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7317073170731707,
+              "mean": 0.7225965242480493,
+              "minimum": 0.7169811320754716,
+              "standard_deviation": 0.006500179507160633
+            },
+            "precision": {
+              "maximum": 0.7894736842105263,
+              "mean": 0.7044960070426963,
+              "minimum": 0.6129032258064516,
+              "standard_deviation": 0.07223619312889829
+            },
+            "recall": {
+              "maximum": 0.8636363636363636,
+              "mean": 0.7575757575757576,
+              "minimum": 0.6818181818181818,
+              "standard_deviation": 0.07725787141807251
+            },
+            "support": 44
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9264069264069265,
+              "mean": 0.9086132371441504,
+              "minimum": 0.8878048780487805,
+              "standard_deviation": 0.01590274001570847
+            },
+            "precision": {
+              "maximum": 0.9479166666666666,
+              "mean": 0.9164980496271093,
+              "minimum": 0.8770491803278688,
+              "standard_deviation": 0.02948348541710012
+            },
+            "recall": {
+              "maximum": 0.981651376146789,
+              "mean": 0.9051987767584098,
+              "minimum": 0.8348623853211009,
+              "standard_deviation": 0.06008221010516361
+            },
+            "support": 109
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 344,
+        "weighted_f1": {
+          "maximum": 0.9260779368107787,
+          "mean": 0.9218761876441245,
+          "minimum": 0.9179403558735307,
+          "standard_deviation": 0.003327470503121035
+        }
+      }
+    },
+    "244-2": {
+      "compact_minus_baseline": {
+        "accuracy": 0.007500000000000062,
+        "macro_f1": 0.007428207003314036,
+        "per_class_f1": {
+          "ied": 0.02916990157886512,
+          "noise": 0.0071885181384852,
+          "ripple": -0.014073798707408214
+        },
+        "weighted_f1": 0.0038846448974123593
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.855,
+          "mean": 0.8275,
+          "minimum": 0.81,
+          "standard_deviation": 0.019685019685029503
+        },
+        "macro_f1": {
+          "maximum": 0.7870477087939304,
+          "mean": 0.7817091226971978,
+          "minimum": 0.7712434594705063,
+          "standard_deviation": 0.007400845181087905
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.8163265306122449,
+              "mean": 0.7554421768707483,
+              "minimum": 0.65,
+              "standard_deviation": 0.07485621059912027
+            },
+            "precision": {
+              "maximum": 0.8666666666666667,
+              "mean": 0.8111111111111111,
+              "minimum": 0.7333333333333333,
+              "standard_deviation": 0.056655772373253206
+            },
+            "recall": {
+              "maximum": 0.88,
+              "mean": 0.7333333333333334,
+              "minimum": 0.52,
+              "standard_deviation": 0.15434449203720302
+            },
+            "support": 25
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.9023090586145648,
+              "mean": 0.8753699377011203,
+              "minimum": 0.8587360594795539,
+              "standard_deviation": 0.019223251261754105
+            },
+            "precision": {
+              "maximum": 0.9212598425196851,
+              "mean": 0.9206228075639168,
+              "minimum": 0.9202898550724637,
+              "standard_deviation": 0.0004506059037708775
+            },
+            "recall": {
+              "maximum": 0.8850174216027874,
+              "mean": 0.835075493612079,
+              "minimum": 0.8048780487804879,
+              "standard_deviation": 0.035571179630925764
+            },
+            "support": 287
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.7614213197969543,
+              "mean": 0.7143152535197249,
+              "minimum": 0.6854460093896714,
+              "standard_deviation": 0.033590655539812865
+            },
+            "precision": {
+              "maximum": 0.6880733944954128,
+              "mean": 0.6280474533375514,
+              "minimum": 0.584,
+              "standard_deviation": 0.04396439404197678
+            },
+            "recall": {
+              "maximum": 0.8522727272727273,
+              "mean": 0.8295454545454546,
+              "minimum": 0.8068181818181818,
+              "standard_deviation": 0.018556740475630166
+            },
+            "support": 88
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 400,
+        "weighted_f1": {
+          "maximum": 0.8555444399112802,
+          "mean": 0.8324424221293151,
+          "minimum": 0.817961652905573,
+          "standard_deviation": 0.016509813542377058
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8575,
+          "mean": 0.82,
+          "minimum": 0.7575,
+          "standard_deviation": 0.04448782605013049
+        },
+        "macro_f1": {
+          "maximum": 0.7930390547023407,
+          "mean": 0.7742809156938838,
+          "minimum": 0.7431911084084998,
+          "standard_deviation": 0.022139812846205947
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.7692307692307693,
+              "mean": 0.7262722752918832,
+              "minimum": 0.7037037037037037,
+              "standard_deviation": 0.030389261033551208
+            },
+            "precision": {
+              "maximum": 0.7407407407407407,
+              "mean": 0.6960736156138455,
+              "minimum": 0.6551724137931034,
+              "standard_deviation": 0.03503447138572054
+            },
+            "recall": {
+              "maximum": 0.8,
+              "mean": 0.76,
+              "minimum": 0.72,
+              "standard_deviation": 0.03265986323710907
+            },
+            "support": 25
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.9047619047619048,
+              "mean": 0.8681814195626351,
+              "minimum": 0.8121212121212121,
+              "standard_deviation": 0.04025062456832521
+            },
+            "precision": {
+              "maximum": 0.9663461538461539,
+              "mean": 0.9538067858380358,
+              "minimum": 0.94140625,
+              "standard_deviation": 0.01018214635992619
+            },
+            "recall": {
+              "maximum": 0.8606271777003485,
+              "mean": 0.8002322880371661,
+              "minimum": 0.7003484320557491,
+              "standard_deviation": 0.07114235926185158
+            },
+            "support": 287
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.7684729064039408,
+              "mean": 0.7283890522271331,
+              "minimum": 0.6482213438735178,
+              "standard_deviation": 0.05668713020902685
+            },
+            "precision": {
+              "maximum": 0.6782608695652174,
+              "mean": 0.6178304787000439,
+              "minimum": 0.49696969696969695,
+              "standard_deviation": 0.08546147834103551
+            },
+            "recall": {
+              "maximum": 0.9318181818181818,
+              "mean": 0.9015151515151515,
+              "minimum": 0.8863636363636364,
+              "standard_deviation": 0.02142747821777415
+            },
+            "support": 88
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 400,
+        "weighted_f1": {
+          "maximum": 0.8623483531343572,
+          "mean": 0.8285577772319027,
+          "minimum": 0.7733825884260668,
+          "standard_deviation": 0.03934211546848426
+        }
+      }
+    },
+    "245-10": {
+      "compact_minus_baseline": {
+        "accuracy": -0.013502109704641385,
+        "macro_f1": -0.011573391905813968,
+        "per_class_f1": {
+          "ied": -0.013625139018371368,
+          "noise": -0.011742741391788103,
+          "ripple": -0.009352295307282543
+        },
+        "weighted_f1": -0.01183114428880061
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.830379746835443,
+          "mean": 0.8008438818565401,
+          "minimum": 0.7620253164556962,
+          "standard_deviation": 0.028667152323144367
+        },
+        "macro_f1": {
+          "maximum": 0.8350825820676762,
+          "mean": 0.8042129247340098,
+          "minimum": 0.762979242979243,
+          "standard_deviation": 0.030334607613266496
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.8554216867469879,
+              "mean": 0.8380093195079972,
+              "minimum": 0.8171428571428572,
+              "standard_deviation": 0.01581697988072491
+            },
+            "precision": {
+              "maximum": 0.7513227513227513,
+              "mean": 0.7293633177691149,
+              "minimum": 0.6908212560386473,
+              "standard_deviation": 0.027341609326462957
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 0.986013986013986,
+              "minimum": 0.965034965034965,
+              "standard_deviation": 0.015106621674610417
+            },
+            "support": 143
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7573529411764706,
+              "mean": 0.7085804956457596,
+              "minimum": 0.6384615384615384,
+              "standard_deviation": 0.050830086757819165
+            },
+            "precision": {
+              "maximum": 0.8728813559322034,
+              "mean": 0.829744519063355,
+              "minimum": 0.7830188679245284,
+              "standard_deviation": 0.03677387096504514
+            },
+            "recall": {
+              "maximum": 0.6688311688311688,
+              "mean": 0.6190476190476191,
+              "minimum": 0.538961038961039,
+              "standard_deviation": 0.057185475383648925
+            },
+            "support": 154
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8924731182795699,
+              "mean": 0.8660489590482727,
+              "minimum": 0.8333333333333334,
+              "standard_deviation": 0.02455015890997952
+            },
+            "precision": {
+              "maximum": 0.9431818181818182,
+              "mean": 0.9229756918781309,
+              "minimum": 0.9111111111111111,
+              "standard_deviation": 0.014360097480147294
+            },
+            "recall": {
+              "maximum": 0.8469387755102041,
+              "mean": 0.8163265306122449,
+              "minimum": 0.7653061224489796,
+              "standard_deviation": 0.036316592693984094
+            },
+            "support": 98
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 395,
+        "weighted_f1": {
+          "maximum": 0.8263797968035279,
+          "mean": 0.794505131660307,
+          "minimum": 0.7514966383827143,
+          "standard_deviation": 0.03156837500266645
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.830379746835443,
+          "mean": 0.8143459915611815,
+          "minimum": 0.7974683544303798,
+          "standard_deviation": 0.013449263671315785
+        },
+        "macro_f1": {
+          "maximum": 0.8316153018474165,
+          "mean": 0.8157863166398238,
+          "minimum": 0.7988796809490206,
+          "standard_deviation": 0.013385968196183299
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.8730650154798761,
+              "mean": 0.8516344585263685,
+              "minimum": 0.8289855072463768,
+              "standard_deviation": 0.01801599520940381
+            },
+            "precision": {
+              "maximum": 0.7833333333333333,
+              "mean": 0.7462075154883909,
+              "minimum": 0.7079207920792079,
+              "standard_deviation": 0.030797982844098806
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 0.993006993006993,
+              "minimum": 0.986013986013986,
+              "standard_deviation": 0.0057097663001938765
+            },
+            "support": 143
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7615658362989324,
+              "mean": 0.7203232370375477,
+              "minimum": 0.6721311475409836,
+              "standard_deviation": 0.036840760480790255
+            },
+            "precision": {
+              "maximum": 0.9111111111111111,
+              "mean": 0.8754526896259179,
+              "minimum": 0.84251968503937,
+              "standard_deviation": 0.028068569083494394
+            },
+            "recall": {
+              "maximum": 0.6948051948051948,
+              "mean": 0.6168831168831168,
+              "minimum": 0.5324675324675324,
+              "standard_deviation": 0.06643294049014202
+            },
+            "support": 154
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8955223880597015,
+              "mean": 0.8754012543555553,
+              "minimum": 0.8602150537634409,
+              "standard_deviation": 0.014830534658650437
+            },
+            "precision": {
+              "maximum": 0.9090909090909091,
+              "mean": 0.8890292810578962,
+              "minimum": 0.8737864077669902,
+              "standard_deviation": 0.014810294873973737
+            },
+            "recall": {
+              "maximum": 0.9183673469387755,
+              "mean": 0.8639455782312925,
+              "minimum": 0.8163265306122449,
+              "standard_deviation": 0.04193478913584338
+            },
+            "support": 98
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 395,
+        "weighted_f1": {
+          "maximum": 0.8264063576518357,
+          "mean": 0.8063362759491076,
+          "minimum": 0.7843400462972003,
+          "standard_deviation": 0.0172274233358305
+        }
+      }
+    },
+    "246-2": {
+      "compact_minus_baseline": {
+        "accuracy": -0.0050352467270896595,
+        "macro_f1": -0.001272660185747454,
+        "per_class_f1": {
+          "ied": -0.0016711293771159985,
+          "noise": 0.0037959571612349308,
+          "ripple": -0.005942808341361294
+        },
+        "weighted_f1": -0.002492021285271817
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8761329305135952,
+          "mean": 0.8741188318227593,
+          "minimum": 0.8731117824773413,
+          "standard_deviation": 0.0014241828422690184
+        },
+        "macro_f1": {
+          "maximum": 0.8216426692296791,
+          "mean": 0.8163709731575611,
+          "minimum": 0.8118763058080165,
+          "standard_deviation": 0.004024781058043219
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9355932203389831,
+              "mean": 0.9280875644769495,
+              "minimum": 0.9235880398671097,
+              "standard_deviation": 0.0053422035634261575
+            },
+            "precision": {
+              "maximum": 0.9019607843137255,
+              "mean": 0.8789268937992578,
+              "minimum": 0.8606060606060606,
+              "standard_deviation": 0.01720877635044613
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 0.9835680751173709,
+              "minimum": 0.971830985915493,
+              "standard_deviation": 0.011969529374630933
+            },
+            "support": 142
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.6285714285714286,
+              "mean": 0.6131392061265835,
+              "minimum": 0.6021505376344086,
+              "standard_deviation": 0.011234611646579651
+            },
+            "precision": {
+              "maximum": 0.7567567567567568,
+              "mean": 0.7178662873399716,
+              "minimum": 0.66,
+              "standard_deviation": 0.04171753223695435
+            },
+            "recall": {
+              "maximum": 0.6,
+              "mean": 0.5393939393939393,
+              "minimum": 0.509090909090909,
+              "standard_deviation": 0.04285495643554835
+            },
+            "support": 55
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9144981412639405,
+              "mean": 0.9078861488691506,
+              "minimum": 0.9007633587786259,
+              "standard_deviation": 0.005618822426701284
+            },
+            "precision": {
+              "maximum": 0.9296875,
+              "mean": 0.9208912037037037,
+              "minimum": 0.9111111111111111,
+              "standard_deviation": 0.007615617611297788
+            },
+            "recall": {
+              "maximum": 0.917910447761194,
+              "mean": 0.8955223880597015,
+              "minimum": 0.8805970149253731,
+              "standard_deviation": 0.01612124551842751
+            },
+            "support": 134
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 331,
+        "weighted_f1": {
+          "maximum": 0.8704772082655591,
+          "mean": 0.8675765390971453,
+          "minimum": 0.8646677762160194,
+          "standard_deviation": 0.0023716976080006102
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.9063444108761329,
+          "mean": 0.879154078549849,
+          "minimum": 0.8459214501510574,
+          "standard_deviation": 0.025034849737474447
+        },
+        "macro_f1": {
+          "maximum": 0.8593930540923266,
+          "mean": 0.8176436333433086,
+          "minimum": 0.7625633991666015,
+          "standard_deviation": 0.04063888497684321
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9431438127090301,
+              "mean": 0.9297586938540655,
+              "minimum": 0.9096774193548387,
+              "standard_deviation": 0.014459800513688658
+            },
+            "precision": {
+              "maximum": 0.8980891719745223,
+              "mean": 0.8763648771610555,
+              "minimum": 0.8392857142857143,
+              "standard_deviation": 0.026347556989064942
+            },
+            "recall": {
+              "maximum": 0.9929577464788732,
+              "mean": 0.9906103286384976,
+              "minimum": 0.9859154929577465,
+              "standard_deviation": 0.003319750146415712
+            },
+            "support": 142
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.6947368421052632,
+              "mean": 0.6093432489653485,
+              "minimum": 0.49411764705882355,
+              "standard_deviation": 0.08457531915619623
+            },
+            "precision": {
+              "maximum": 0.825,
+              "mean": 0.7543650793650793,
+              "minimum": 0.7,
+              "standard_deviation": 0.05231176286591364
+            },
+            "recall": {
+              "maximum": 0.6,
+              "mean": 0.5151515151515151,
+              "minimum": 0.38181818181818183,
+              "standard_deviation": 0.09544251968499162
+            },
+            "support": 55
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9402985074626866,
+              "mean": 0.9138289572105119,
+              "minimum": 0.8838951310861424,
+              "standard_deviation": 0.023156512721874894
+            },
+            "precision": {
+              "maximum": 0.9402985074626866,
+              "mean": 0.9172529922726309,
+              "minimum": 0.8872180451127819,
+              "standard_deviation": 0.02222645556186275
+            },
+            "recall": {
+              "maximum": 0.9402985074626866,
+              "mean": 0.9104477611940298,
+              "minimum": 0.8805970149253731,
+              "standard_deviation": 0.024373032266499308
+            },
+            "support": 134
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 331,
+        "weighted_f1": {
+          "maximum": 0.9007158541403981,
+          "mean": 0.8700685603824171,
+          "minimum": 0.8301891592210436,
+          "standard_deviation": 0.02952318331292383
+        }
+      }
+    },
+    "248-1": {
+      "compact_minus_baseline": {
+        "accuracy": 0.004166666666666652,
+        "macro_f1": -0.022071018246999308,
+        "per_class_f1": {
+          "ied": -0.0859649122807018,
+          "noise": 0.003709239522696861,
+          "ripple": 0.016042618017006904
+        },
+        "weighted_f1": 0.00374906074905923
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.905,
+          "mean": 0.89,
+          "minimum": 0.87,
+          "standard_deviation": 0.014719601443879758
+        },
+        "macro_f1": {
+          "maximum": 0.8560693198374358,
+          "mean": 0.8195765555086656,
+          "minimum": 0.7476352828044409,
+          "standard_deviation": 0.05087194810732617
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.8888888888888888,
+              "mean": 0.7769980506822611,
+              "minimum": 0.6,
+              "standard_deviation": 0.12660544845601934
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.7796296296296297,
+              "minimum": 0.45,
+              "standard_deviation": 0.23745622656314505
+            },
+            "recall": {
+              "maximum": 0.9,
+              "mean": 0.8333333333333334,
+              "minimum": 0.8,
+              "standard_deviation": 0.04714045207910316
+            },
+            "support": 10
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.9398373983739837,
+              "mean": 0.9313800191142008,
+              "minimum": 0.9203252032520325,
+              "standard_deviation": 0.008174816911174339
+            },
+            "precision": {
+              "maximum": 0.9665551839464883,
+              "mean": 0.9546210501306723,
+              "minimum": 0.9464882943143813,
+              "standard_deviation": 0.008621982405388558
+            },
+            "recall": {
+              "maximum": 0.9177215189873418,
+              "mean": 0.9092827004219409,
+              "minimum": 0.8955696202531646,
+              "standard_deviation": 0.009782297991029223
+            },
+            "support": 316
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.7831325301204819,
+              "mean": 0.7503515967295348,
+              "minimum": 0.7225806451612903,
+              "standard_deviation": 0.024972753571651532
+            },
+            "precision": {
+              "maximum": 0.7065217391304348,
+              "mean": 0.6958449787451954,
+              "minimum": 0.6896551724137931,
+              "standard_deviation": 0.007581549345292887
+            },
+            "recall": {
+              "maximum": 0.8783783783783784,
+              "mean": 0.8153153153153153,
+              "minimum": 0.7567567567567568,
+              "standard_deviation": 0.04975387845579846
+            },
+            "support": 74
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 400,
+        "weighted_f1": {
+          "maximum": 0.9084036943666837,
+          "mean": 0.8940302117622391,
+          "minimum": 0.8757343299239443,
+          "standard_deviation": 0.013622548833592348
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.9025,
+          "mean": 0.8858333333333334,
+          "minimum": 0.8725,
+          "standard_deviation": 0.012472191289246443
+        },
+        "macro_f1": {
+          "maximum": 0.8621164021164022,
+          "mean": 0.8416475737556649,
+          "minimum": 0.8219222115075538,
+          "standard_deviation": 0.016417628656834608
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9,
+              "mean": 0.8629629629629629,
+              "minimum": 0.8,
+              "standard_deviation": 0.044752022124424314
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.9,
+              "minimum": 0.8,
+              "standard_deviation": 0.08164965809277258
+            },
+            "recall": {
+              "maximum": 0.9,
+              "mean": 0.8333333333333334,
+              "minimum": 0.8,
+              "standard_deviation": 0.04714045207910316
+            },
+            "support": 10
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.9396825396825397,
+              "mean": 0.9276707795915039,
+              "minimum": 0.9187396351575456,
+              "standard_deviation": 0.008823036404992239
+            },
+            "precision": {
+              "maximum": 0.9651567944250871,
+              "mean": 0.9556718757100479,
+              "minimum": 0.9426751592356688,
+              "standard_deviation": 0.00950808507970631
+            },
+            "recall": {
+              "maximum": 0.9367088607594937,
+              "mean": 0.9018987341772152,
+              "minimum": 0.8765822784810127,
+              "standard_deviation": 0.025447970636740123
+            },
+            "support": 316
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.7466666666666667,
+              "mean": 0.7343089787125279,
+              "minimum": 0.7150837988826816,
+              "standard_deviation": 0.013777789321037733
+            },
+            "precision": {
+              "maximum": 0.7368421052631579,
+              "mean": 0.6675386382623225,
+              "minimum": 0.6095238095238096,
+              "standard_deviation": 0.05258683056213609
+            },
+            "recall": {
+              "maximum": 0.8648648648648649,
+              "mean": 0.8243243243243243,
+              "minimum": 0.7567567567567568,
+              "standard_deviation": 0.04809494708122211
+            },
+            "support": 74
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 400,
+        "weighted_f1": {
+          "maximum": 0.9029825396825397,
+          "mean": 0.8902811510131798,
+          "minimum": 0.8803170367899793,
+          "standard_deviation": 0.009453421210981916
+        }
+      }
+    },
+    "249-2": {
+      "compact_minus_baseline": {
+        "accuracy": -0.0147928994082841,
+        "macro_f1": -0.013006411369635429,
+        "per_class_f1": {
+          "ied": -0.004257786779818806,
+          "noise": -0.017062400916155518,
+          "ripple": -0.017699046412931962
+        },
+        "weighted_f1": -0.015147906563521496
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8846153846153846,
+          "mean": 0.8648915187376726,
+          "minimum": 0.8431952662721893,
+          "standard_deviation": 0.016967110980360207
+        },
+        "macro_f1": {
+          "maximum": 0.8823685292350504,
+          "mean": 0.8605594373668377,
+          "minimum": 0.835193625892163,
+          "standard_deviation": 0.01942259109253856
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.8661417322834646,
+              "mean": 0.8340842811315252,
+              "minimum": 0.7916666666666666,
+              "standard_deviation": 0.03127441539618136
+            },
+            "precision": {
+              "maximum": 0.7857142857142857,
+              "mean": 0.7238853100922066,
+              "minimum": 0.6551724137931034,
+              "standard_deviation": 0.053515333342181844
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 0.9883040935672515,
+              "minimum": 0.9649122807017544,
+              "standard_deviation": 0.016540509501439708
+            },
+            "support": 57
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8733333333333333,
+              "mean": 0.8463295370842541,
+              "minimum": 0.8075471698113208,
+              "standard_deviation": 0.028118865307348643
+            },
+            "precision": {
+              "maximum": 0.9385964912280702,
+              "mean": 0.8978843970220235,
+              "minimum": 0.8758620689655172,
+              "standard_deviation": 0.028819928905735287
+            },
+            "recall": {
+              "maximum": 0.8675496688741722,
+              "mean": 0.8057395143487859,
+              "minimum": 0.7086092715231788,
+              "standard_deviation": 0.06952766334668267
+            },
+            "support": 151
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9076305220883534,
+              "mean": 0.9012644938847341,
+              "minimum": 0.889795918367347,
+              "standard_deviation": 0.008125895408641164
+            },
+            "precision": {
+              "maximum": 0.9495798319327731,
+              "mean": 0.9268725325738039,
+              "minimum": 0.8832116788321168,
+              "standard_deviation": 0.0308811864781798
+            },
+            "recall": {
+              "maximum": 0.9307692307692308,
+              "mean": 0.8794871794871795,
+              "minimum": 0.8384615384615385,
+              "standard_deviation": 0.038375973197681455
+            },
+            "support": 130
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 338,
+        "weighted_f1": {
+          "maximum": 0.8853117749851385,
+          "mean": 0.8653933382521739,
+          "minimum": 0.8428767396370258,
+          "standard_deviation": 0.0174211727527821
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8994082840236687,
+          "mean": 0.8796844181459567,
+          "minimum": 0.8668639053254438,
+          "standard_deviation": 0.014154536582255763
+        },
+        "macro_f1": {
+          "maximum": 0.8955647043136209,
+          "mean": 0.8735658487364731,
+          "minimum": 0.857536384317509,
+          "standard_deviation": 0.0160885778018904
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.875,
+              "mean": 0.838342067911344,
+              "minimum": 0.8028169014084507,
+              "standard_deviation": 0.02947951038686075
+            },
+            "precision": {
+              "maximum": 0.7887323943661971,
+              "mean": 0.7364402098867716,
+              "minimum": 0.6705882352941176,
+              "standard_deviation": 0.0491759528743356
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 0.9766081871345029,
+              "minimum": 0.9473684210526315,
+              "standard_deviation": 0.02188103734955523
+            },
+            "support": 57
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8833922261484098,
+              "mean": 0.8633919380004096,
+              "minimum": 0.8467153284671532,
+              "standard_deviation": 0.015156601103829782
+            },
+            "precision": {
+              "maximum": 0.946969696969697,
+              "mean": 0.925794357175326,
+              "minimum": 0.8873239436619719,
+              "standard_deviation": 0.02724877554582706
+            },
+            "recall": {
+              "maximum": 0.8344370860927153,
+              "mean": 0.8101545253863135,
+              "minimum": 0.7682119205298014,
+              "standard_deviation": 0.029780877623028786
+            },
+            "support": 151
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9283018867924528,
+              "mean": 0.918963540297666,
+              "minimum": 0.905511811023622,
+              "standard_deviation": 0.009748053713563532
+            },
+            "precision": {
+              "maximum": 0.9274193548387096,
+              "mean": 0.9205357963422479,
+              "minimum": 0.9111111111111111,
+              "standard_deviation": 0.00689602287220443
+            },
+            "recall": {
+              "maximum": 0.9461538461538461,
+              "mean": 0.9179487179487179,
+              "minimum": 0.8846153846153846,
+              "standard_deviation": 0.02538332035028633
+            },
+            "support": 130
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 338,
+        "weighted_f1": {
+          "maximum": 0.8992499154776,
+          "mean": 0.8805412448156954,
+          "minimum": 0.8686821833692954,
+          "standard_deviation": 0.013386172501630527
+        }
+      }
+    },
+    "25-10": {
+      "compact_minus_baseline": {
+        "accuracy": 0.011272141706924255,
+        "macro_f1": 0.02421242367742138,
+        "per_class_f1": {
+          "ied": 0.08261143882172373,
+          "noise": -8.491050255698962e-05,
+          "ripple": -0.009889257286902597
+        },
+        "weighted_f1": 0.010448201056725503
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8840579710144928,
+          "mean": 0.8421900161030595,
+          "minimum": 0.8164251207729468,
+          "standard_deviation": 0.029866726233480557
+        },
+        "macro_f1": {
+          "maximum": 0.8756831981562735,
+          "mean": 0.8340058166404524,
+          "minimum": 0.8090989699716623,
+          "standard_deviation": 0.029656960847067083
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9066666666666666,
+              "mean": 0.8863412249458761,
+              "minimum": 0.8604651162790697,
+              "standard_deviation": 0.01926574234599864
+            },
+            "precision": {
+              "maximum": 0.9714285714285714,
+              "mean": 0.9154548776032152,
+              "minimum": 0.8043478260869565,
+              "standard_deviation": 0.07856529858948387
+            },
+            "recall": {
+              "maximum": 0.925,
+              "mean": 0.8666666666666667,
+              "minimum": 0.825,
+              "standard_deviation": 0.04249182927993991
+            },
+            "support": 40
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8073394495412844,
+              "mean": 0.7374567924587786,
+              "minimum": 0.7010309278350515,
+              "standard_deviation": 0.04942936487597558
+            },
+            "precision": {
+              "maximum": 0.7719298245614035,
+              "mean": 0.7100750353814521,
+              "minimum": 0.6027397260273972,
+              "standard_deviation": 0.07619134092081137
+            },
+            "recall": {
+              "maximum": 0.8461538461538461,
+              "mean": 0.782051282051282,
+              "minimum": 0.6538461538461539,
+              "standard_deviation": 0.09065471553673686
+            },
+            "support": 52
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9130434782608695,
+              "mean": 0.8782194325167024,
+              "minimum": 0.8558139534883721,
+              "standard_deviation": 0.024959570320530214
+            },
+            "precision": {
+              "maximum": 0.92,
+              "mean": 0.8983708145927036,
+              "minimum": 0.8620689655172413,
+              "standard_deviation": 0.025825910547355103
+            },
+            "recall": {
+              "maximum": 0.9130434782608695,
+              "mean": 0.8608695652173913,
+              "minimum": 0.8,
+              "standard_deviation": 0.046557618562924626
+            },
+            "support": 115
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 207,
+        "weighted_f1": {
+          "maximum": 0.8852575750860553,
+          "mean": 0.8444281978024749,
+          "minimum": 0.8233783210902658,
+          "standard_deviation": 0.02887538745377584
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8647342995169082,
+          "mean": 0.8309178743961353,
+          "minimum": 0.7922705314009661,
+          "standard_deviation": 0.02977977779212066
+        },
+        "macro_f1": {
+          "maximum": 0.8521970834458146,
+          "mean": 0.809793392963031,
+          "minimum": 0.76677138856531,
+          "standard_deviation": 0.03487763438582878
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.8732394366197183,
+              "mean": 0.8037297861241524,
+              "minimum": 0.7323943661971831,
+              "standard_deviation": 0.0575142506462222
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.914986559139785,
+              "minimum": 0.8387096774193549,
+              "standard_deviation": 0.06613565674049242
+            },
+            "recall": {
+              "maximum": 0.775,
+              "mean": 0.7166666666666667,
+              "minimum": 0.65,
+              "standard_deviation": 0.05137011669140813
+            },
+            "support": 40
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7850467289719626,
+              "mean": 0.7375417029613356,
+              "minimum": 0.6917293233082706,
+              "standard_deviation": 0.038115467890077886
+            },
+            "precision": {
+              "maximum": 0.7636363636363637,
+              "mean": 0.684586606808829,
+              "minimum": 0.5679012345679012,
+              "standard_deviation": 0.0842234719798883
+            },
+            "recall": {
+              "maximum": 0.8846153846153846,
+              "mean": 0.8141025641025641,
+              "minimum": 0.75,
+              "standard_deviation": 0.05514311068617067
+            },
+            "support": 52
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8983050847457628,
+              "mean": 0.888108689803605,
+              "minimum": 0.8761904761904762,
+              "standard_deviation": 0.0091099752118275
+            },
+            "precision": {
+              "maximum": 0.968421052631579,
+              "mean": 0.9040742351747136,
+              "minimum": 0.8677685950413223,
+              "standard_deviation": 0.045624993326059696
+            },
+            "recall": {
+              "maximum": 0.9217391304347826,
+              "mean": 0.8782608695652174,
+              "minimum": 0.8,
+              "standard_deviation": 0.05545254049191009
+            },
+            "support": 115
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 207,
+        "weighted_f1": {
+          "maximum": 0.8650101068458623,
+          "mean": 0.8339799967457494,
+          "minimum": 0.802065720878368,
+          "standard_deviation": 0.025704542309797185
+        }
+      }
+    },
+    "251-10": {
+      "compact_minus_baseline": {
+        "accuracy": -0.024390243902439046,
+        "macro_f1": -0.028185582231254558,
+        "per_class_f1": {
+          "ied": -0.010357589990239946,
+          "noise": -0.04303192762319008,
+          "ripple": -0.031167229080333536
+        },
+        "weighted_f1": -0.025608258250137017
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8617886178861789,
+          "mean": 0.8509485094850948,
+          "minimum": 0.8373983739837398,
+          "standard_deviation": 0.010139992918086567
+        },
+        "macro_f1": {
+          "maximum": 0.8455605684883601,
+          "mean": 0.8330158171935381,
+          "minimum": 0.8197371210515157,
+          "standard_deviation": 0.010555144580090329
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9411764705882353,
+              "mean": 0.92711445574353,
+              "minimum": 0.9044943820224719,
+              "standard_deviation": 0.0161518664387942
+            },
+            "precision": {
+              "maximum": 0.903954802259887,
+              "mean": 0.8773354806849829,
+              "minimum": 0.8341968911917098,
+              "standard_deviation": 0.03078101361302744
+            },
+            "recall": {
+              "maximum": 0.9877300613496932,
+              "mean": 0.983640081799591,
+              "minimum": 0.9815950920245399,
+              "standard_deviation": 0.0028920522747915888
+            },
+            "support": 163
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7741935483870968,
+              "mean": 0.7588277816843843,
+              "minimum": 0.7475728155339806,
+              "standard_deviation": 0.011249884897037574
+            },
+            "precision": {
+              "maximum": 0.8279569892473119,
+              "mean": 0.8145767016734758,
+              "minimum": 0.8076923076923077,
+              "standard_deviation": 0.009462621370666042
+            },
+            "recall": {
+              "maximum": 0.7433628318584071,
+              "mean": 0.7109144542772862,
+              "minimum": 0.6814159292035398,
+              "standard_deviation": 0.025375590758237875
+            },
+            "support": 113
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8268156424581006,
+              "mean": 0.8131052141527002,
+              "minimum": 0.8,
+              "standard_deviation": 0.010955801605789888
+            },
+            "precision": {
+              "maximum": 0.8831168831168831,
+              "mean": 0.8438202624249136,
+              "minimum": 0.7878787878787878,
+              "standard_deviation": 0.04062316306423211
+            },
+            "recall": {
+              "maximum": 0.8387096774193549,
+              "mean": 0.7885304659498208,
+              "minimum": 0.7311827956989247,
+              "standard_deviation": 0.04418934769153388
+            },
+            "support": 93
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 369,
+        "weighted_f1": {
+          "maximum": 0.8587868444427811,
+          "mean": 0.8468454756984606,
+          "minimum": 0.8322916074189363,
+          "standard_deviation": 0.01097324812452264
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8807588075880759,
+          "mean": 0.8753387533875339,
+          "minimum": 0.8726287262872628,
+          "standard_deviation": 0.0038325570796019044
+        },
+        "macro_f1": {
+          "maximum": 0.8667930470716859,
+          "mean": 0.8612013994247927,
+          "minimum": 0.8576934086195345,
+          "standard_deviation": 0.003996421262849856
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9461077844311377,
+              "mean": 0.93747204573377,
+              "minimum": 0.930635838150289,
+              "standard_deviation": 0.006443291839929457
+            },
+            "precision": {
+              "maximum": 0.9239766081871345,
+              "mean": 0.8992042591851712,
+              "minimum": 0.8797814207650273,
+              "standard_deviation": 0.018434869051474928
+            },
+            "recall": {
+              "maximum": 0.9877300613496932,
+              "mean": 0.9795501022494887,
+              "minimum": 0.9693251533742331,
+              "standard_deviation": 0.007651651097697227
+            },
+            "support": 163
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8113207547169812,
+              "mean": 0.8018597093075743,
+              "minimum": 0.7942583732057417,
+              "standard_deviation": 0.007088728364583721
+            },
+            "precision": {
+              "maximum": 0.8913043478260869,
+              "mean": 0.8748581832820963,
+              "minimum": 0.8645833333333334,
+              "standard_deviation": 0.01174924101819456
+            },
+            "recall": {
+              "maximum": 0.7610619469026548,
+              "mean": 0.7404129793510325,
+              "minimum": 0.7256637168141593,
+              "standard_deviation": 0.015041355497323822
+            },
+            "support": 113
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8542713567839196,
+              "mean": 0.8442724432330337,
+              "minimum": 0.8260869565217391,
+              "standard_deviation": 0.01288034910545891
+            },
+            "precision": {
+              "maximum": 0.8666666666666667,
+              "mean": 0.834572764761444,
+              "minimum": 0.8018867924528302,
+              "standard_deviation": 0.026449586465728186
+            },
+            "recall": {
+              "maximum": 0.9139784946236559,
+              "mean": 0.8566308243727598,
+              "minimum": 0.8172043010752689,
+              "standard_deviation": 0.04149045484871045
+            },
+            "support": 93
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 369,
+        "weighted_f1": {
+          "maximum": 0.8782189838568564,
+          "mean": 0.8724537339485976,
+          "minimum": 0.8691694480090408,
+          "standard_deviation": 0.004089817553039301
+        }
+      }
+    },
+    "253-10": {
+      "compact_minus_baseline": {
+        "accuracy": -0.0009689922480620172,
+        "macro_f1": -0.0021885565251203998,
+        "per_class_f1": {
+          "ied": -0.006350576309290923,
+          "noise": -0.007865870493098392,
+          "ripple": 0.007650777227028449
+        },
+        "weighted_f1": -0.002962827191695161
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8895348837209303,
+          "mean": 0.8817829457364341,
+          "minimum": 0.8662790697674418,
+          "standard_deviation": 0.010962895832349594
+        },
+        "macro_f1": {
+          "maximum": 0.8772589417750707,
+          "mean": 0.862903112991896,
+          "minimum": 0.8419827284023215,
+          "standard_deviation": 0.015131046497878407
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9344729344729344,
+              "mean": 0.9240664976561701,
+              "minimum": 0.9169054441260746,
+              "standard_deviation": 0.007530097997582562
+            },
+            "precision": {
+              "maximum": 0.9235294117647059,
+              "mean": 0.9111723091233996,
+              "minimum": 0.898876404494382,
+              "standard_deviation": 0.010064641101903643
+            },
+            "recall": {
+              "maximum": 0.9590643274853801,
+              "mean": 0.9376218323586745,
+              "minimum": 0.9181286549707602,
+              "standard_deviation": 0.016768665237899834
+            },
+            "support": 171
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7878787878787878,
+              "mean": 0.7647226520954242,
+              "minimum": 0.7248322147651006,
+              "standard_deviation": 0.028328374839176305
+            },
+            "precision": {
+              "maximum": 0.8428571428571429,
+              "mean": 0.8035947712418301,
+              "minimum": 0.7738095238095238,
+              "standard_deviation": 0.028974187778335582
+            },
+            "recall": {
+              "maximum": 0.8024691358024691,
+              "mean": 0.7325102880658436,
+              "minimum": 0.6666666666666666,
+              "standard_deviation": 0.05551743853181912
+            },
+            "support": 81
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9230769230769231,
+              "mean": 0.8999201892240941,
+              "minimum": 0.8842105263157894,
+              "standard_deviation": 0.016718120878018338
+            },
+            "precision": {
+              "maximum": 0.9333333333333333,
+              "mean": 0.8911516379601486,
+              "minimum": 0.8571428571428571,
+              "standard_deviation": 0.031636946384318146
+            },
+            "recall": {
+              "maximum": 0.9130434782608695,
+              "mean": 0.9094202898550724,
+              "minimum": 0.9021739130434783,
+              "standard_deviation": 0.005123962182511184
+            },
+            "support": 92
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 344,
+        "weighted_f1": {
+          "maximum": 0.8901211316815216,
+          "mean": 0.880088846882416,
+          "minimum": 0.8629349091935596,
+          "standard_deviation": 0.012187729572615607
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.9011627906976745,
+          "mean": 0.8827519379844961,
+          "minimum": 0.8662790697674418,
+          "standard_deviation": 0.014306999089373476
+        },
+        "macro_f1": {
+          "maximum": 0.8862777558037965,
+          "mean": 0.8650916695170164,
+          "minimum": 0.8532523032523033,
+          "standard_deviation": 0.015015347935493941
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9442815249266863,
+              "mean": 0.930417073965461,
+              "minimum": 0.9151515151515152,
+              "standard_deviation": 0.011933473782784507
+            },
+            "precision": {
+              "maximum": 0.949685534591195,
+              "mean": 0.9342739020623017,
+              "minimum": 0.9060773480662984,
+              "standard_deviation": 0.019966791524723783
+            },
+            "recall": {
+              "maximum": 0.9590643274853801,
+              "mean": 0.9278752436647173,
+              "minimum": 0.8830409356725146,
+              "standard_deviation": 0.03250162183339777
+            },
+            "support": 171
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8095238095238095,
+              "mean": 0.7725885225885226,
+              "minimum": 0.75,
+              "standard_deviation": 0.02633303641781405
+            },
+            "precision": {
+              "maximum": 0.8571428571428571,
+              "mean": 0.7739734564589464,
+              "minimum": 0.6831683168316832,
+              "standard_deviation": 0.07122973887840826
+            },
+            "recall": {
+              "maximum": 0.8518518518518519,
+              "mean": 0.7860082304526749,
+              "minimum": 0.6666666666666666,
+              "standard_deviation": 0.08453760734228041
+            },
+            "support": 81
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9050279329608939,
+              "mean": 0.8922694119970657,
+              "minimum": 0.8854166666666666,
+              "standard_deviation": 0.009029916234018226
+            },
+            "precision": {
+              "maximum": 0.9310344827586207,
+              "mean": 0.9032019704433497,
+              "minimum": 0.85,
+              "standard_deviation": 0.03763291027167186
+            },
+            "recall": {
+              "maximum": 0.9239130434782609,
+              "mean": 0.8840579710144928,
+              "minimum": 0.8478260869565217,
+              "standard_deviation": 0.0311678451704443
+            },
+            "support": 92
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 344,
+        "weighted_f1": {
+          "maximum": 0.902052730134576,
+          "mean": 0.8830516740741111,
+          "minimum": 0.8705056571335642,
+          "standard_deviation": 0.013663945288301498
+        }
+      }
+    },
+    "253-3": {
+      "compact_minus_baseline": {
+        "accuracy": -0.02114803625377648,
+        "macro_f1": -0.03316398280268429,
+        "per_class_f1": {
+          "ied": -0.05,
+          "noise": -0.034158370624573164,
+          "ripple": -0.01533357778347988
+        },
+        "weighted_f1": -0.02363074516529584
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8398791540785498,
+          "mean": 0.8197381671701913,
+          "minimum": 0.7915407854984894,
+          "standard_deviation": 0.02053985705374739
+        },
+        "macro_f1": {
+          "maximum": 0.6098048319567306,
+          "mean": 0.5755170710906967,
+          "minimum": 0.5582622572685334,
+          "standard_deviation": 0.024245277411234466
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.25,
+              "mean": 0.08333333333333333,
+              "minimum": 0.0,
+              "standard_deviation": 0.11785113019775792
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.3333333333333333,
+              "minimum": 0.0,
+              "standard_deviation": 0.4714045207910317
+            },
+            "recall": {
+              "maximum": 0.14285714285714285,
+              "mean": 0.047619047619047616,
+              "minimum": 0.0,
+              "standard_deviation": 0.06734350297014738
+            },
+            "support": 7
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7949790794979079,
+              "mean": 0.7766686821438299,
+              "minimum": 0.749034749034749,
+              "standard_deviation": 0.01988159307262374
+            },
+            "precision": {
+              "maximum": 0.8962264150943396,
+              "mean": 0.8268612713226225,
+              "minimum": 0.7698412698412699,
+              "standard_deviation": 0.0523297438606821
+            },
+            "recall": {
+              "maximum": 0.7593984962406015,
+              "mean": 0.7343358395989975,
+              "minimum": 0.7142857142857143,
+              "standard_deviation": 0.018755174871047324
+            },
+            "support": 133
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8894601542416453,
+              "mean": 0.8665491977949269,
+              "minimum": 0.830379746835443,
+              "standard_deviation": 0.025877459849316515
+            },
+            "precision": {
+              "maximum": 0.8737373737373737,
+              "mean": 0.8303307585660527,
+              "minimum": 0.803921568627451,
+              "standard_deviation": 0.03093267968985864
+            },
+            "recall": {
+              "maximum": 0.9581151832460733,
+              "mean": 0.9075043630017452,
+              "minimum": 0.8586387434554974,
+              "standard_deviation": 0.04062983150723493
+            },
+            "support": 191
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 331,
+        "weighted_f1": {
+          "maximum": 0.8290750889447098,
+          "mean": 0.8138705886323073,
+          "minimum": 0.7854204026199131,
+          "standard_deviation": 0.02013320725859516
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8821752265861027,
+          "mean": 0.8408862034239678,
+          "minimum": 0.8036253776435045,
+          "standard_deviation": 0.03219409337995122
+        },
+        "macro_f1": {
+          "maximum": 0.7233126940015927,
+          "mean": 0.608681053893381,
+          "minimum": 0.5424795136135342,
+          "standard_deviation": 0.08138085650959961
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.4,
+              "mean": 0.13333333333333333,
+              "minimum": 0.0,
+              "standard_deviation": 0.18856180831641267
+            },
+            "precision": {
+              "maximum": 0.6666666666666666,
+              "mean": 0.2222222222222222,
+              "minimum": 0.0,
+              "standard_deviation": 0.31426968052735443
+            },
+            "recall": {
+              "maximum": 0.2857142857142857,
+              "mean": 0.09523809523809523,
+              "minimum": 0.0,
+              "standard_deviation": 0.13468700594029476
+            },
+            "support": 7
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8603773584905661,
+              "mean": 0.8108270527684031,
+              "minimum": 0.7769230769230769,
+              "standard_deviation": 0.03582140893327654
+            },
+            "precision": {
+              "maximum": 0.8636363636363636,
+              "mean": 0.837453410016538,
+              "minimum": 0.7952755905511811,
+              "standard_deviation": 0.03011285023887482
+            },
+            "recall": {
+              "maximum": 0.8571428571428571,
+              "mean": 0.7869674185463659,
+              "minimum": 0.7443609022556391,
+              "standard_deviation": 0.04999984296556389
+            },
+            "support": 133
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9095607235142119,
+              "mean": 0.8818827755784068,
+              "minimum": 0.8505154639175257,
+              "standard_deviation": 0.024245882450867732
+            },
+            "precision": {
+              "maximum": 0.8979591836734694,
+              "mean": 0.8597081770615721,
+              "minimum": 0.8375634517766497,
+              "standard_deviation": 0.02715965551421048
+            },
+            "recall": {
+              "maximum": 0.9319371727748691,
+              "mean": 0.9057591623036649,
+              "minimum": 0.8638743455497382,
+              "standard_deviation": 0.029923958463319807
+            },
+            "support": 191
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 331,
+        "weighted_f1": {
+          "maximum": 0.87902201471438,
+          "mean": 0.8375013337976032,
+          "minimum": 0.80295837715715,
+          "standard_deviation": 0.031442388762801414
+        }
+      }
+    },
+    "36-1": {
+      "compact_minus_baseline": {
+        "accuracy": 0.01806239737274229,
+        "macro_f1": 0.022700617470061135,
+        "per_class_f1": {
+          "ied": 0.0,
+          "noise": 0.05641507907616394,
+          "ripple": 0.011686773334019018
+        },
+        "weighted_f1": 0.020001989318587987
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.896551724137931,
+          "mean": 0.8735632183908046,
+          "minimum": 0.8571428571428571,
+          "standard_deviation": 0.016745548484705386
+        },
+        "macro_f1": {
+          "maximum": 0.5539937527889335,
+          "mean": 0.5305277324651821,
+          "minimum": 0.5044776119402985,
+          "standard_deviation": 0.020297294261757866
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 1
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7222222222222222,
+              "mean": 0.668383017163505,
+              "minimum": 0.6,
+              "standard_deviation": 0.05094578657186544
+            },
+            "precision": {
+              "maximum": 0.7647058823529411,
+              "mean": 0.6857731729055259,
+              "minimum": 0.6363636363636364,
+              "standard_deviation": 0.05640121943245545
+            },
+            "recall": {
+              "maximum": 0.7368421052631579,
+              "mean": 0.6578947368421053,
+              "minimum": 0.5526315789473685,
+              "standard_deviation": 0.07747158654673546
+            },
+            "support": 38
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9397590361445783,
+              "mean": 0.9232001802320413,
+              "minimum": 0.9134328358208955,
+              "standard_deviation": 0.01177173669503402
+            },
+            "precision": {
+              "maximum": 0.9308176100628931,
+              "mean": 0.9180419602465283,
+              "minimum": 0.8947368421052632,
+              "standard_deviation": 0.016504700976931654
+            },
+            "recall": {
+              "maximum": 0.9512195121951219,
+              "mean": 0.9288617886178862,
+              "minimum": 0.9024390243902439,
+              "standard_deviation": 0.020120924667909865
+            },
+            "support": 164
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 203,
+        "weighted_f1": {
+          "maximum": 0.8944085042963316,
+          "mean": 0.8709526315776748,
+          "minimum": 0.8502610102198368,
+          "standard_deviation": 0.01812881909185624
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8669950738916257,
+          "mean": 0.8555008210180624,
+          "minimum": 0.8374384236453202,
+          "standard_deviation": 0.012929405376045684
+        },
+        "macro_f1": {
+          "maximum": 0.5192692692692692,
+          "mean": 0.507827114995121,
+          "minimum": 0.4994871794871794,
+          "standard_deviation": 0.008368615576135956
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 1
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.6388888888888888,
+              "mean": 0.6119679380873411,
+              "minimum": 0.5970149253731343,
+              "standard_deviation": 0.019074954987740818
+            },
+            "precision": {
+              "maximum": 0.6896551724137931,
+              "mean": 0.6458514440258862,
+              "minimum": 0.5714285714285714,
+              "standard_deviation": 0.05289947251921704
+            },
+            "recall": {
+              "maximum": 0.631578947368421,
+              "mean": 0.587719298245614,
+              "minimum": 0.5263157894736842,
+              "standard_deviation": 0.04472824134730513
+            },
+            "support": 38
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.918918918918919,
+              "mean": 0.9115134068980223,
+              "minimum": 0.8984615384615384,
+              "standard_deviation": 0.009256965282905837
+            },
+            "precision": {
+              "maximum": 0.906832298136646,
+              "mean": 0.9009874465415926,
+              "minimum": 0.8908045977011494,
+              "standard_deviation": 0.007226592575954494
+            },
+            "recall": {
+              "maximum": 0.9451219512195121,
+              "mean": 0.9227642276422764,
+              "minimum": 0.8902439024390244,
+              "standard_deviation": 0.02352812378615898
+            },
+            "support": 164
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 203,
+        "weighted_f1": {
+          "maximum": 0.8619728102486723,
+          "mean": 0.8509506422590868,
+          "minimum": 0.8381659719590755,
+          "standard_deviation": 0.00979868011970475
+        }
+      }
+    },
+    "36-3": {
+      "compact_minus_baseline": {
+        "accuracy": 0.0033333333333332993,
+        "macro_f1": 0.0026013872590818776,
+        "per_class_f1": {
+          "ied": -0.01255411255411254,
+          "noise": 0.01595769469915098,
+          "ripple": 0.004400579632207413
+        },
+        "weighted_f1": 0.004889213607261689
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.86,
+          "mean": 0.83,
+          "minimum": 0.795,
+          "standard_deviation": 0.02677063067368166
+        },
+        "macro_f1": {
+          "maximum": 0.8625262106369244,
+          "mean": 0.8420465795932204,
+          "minimum": 0.8227366744999257,
+          "standard_deviation": 0.016265054372256203
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9642857142857143,
+              "mean": 0.9517316017316018,
+              "minimum": 0.9454545454545454,
+              "standard_deviation": 0.00887709811879217
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 1.0,
+              "minimum": 1.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.9310344827586207,
+              "mean": 0.9080459770114943,
+              "minimum": 0.896551724137931,
+              "standard_deviation": 0.016255328303139003
+            },
+            "support": 29
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7522935779816514,
+              "mean": 0.7161357959453064,
+              "minimum": 0.6870229007633588,
+              "standard_deviation": 0.027108278553817967
+            },
+            "precision": {
+              "maximum": 0.7068965517241379,
+              "mean": 0.6434711669588934,
+              "minimum": 0.5625,
+              "standard_deviation": 0.06024108173024803
+            },
+            "recall": {
+              "maximum": 0.8823529411764706,
+              "mean": 0.8169934640522876,
+              "minimum": 0.7647058823529411,
+              "standard_deviation": 0.04891055407547636
+            },
+            "support": 51
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8898305084745762,
+              "mean": 0.8582723411027531,
+              "minimum": 0.8169014084507042,
+              "standard_deviation": 0.030571023092754387
+            },
+            "precision": {
+              "maximum": 0.9354838709677419,
+              "mean": 0.9092042688333253,
+              "minimum": 0.8869565217391304,
+              "standard_deviation": 0.020015290772938673
+            },
+            "recall": {
+              "maximum": 0.875,
+              "mean": 0.8166666666666667,
+              "minimum": 0.725,
+              "standard_deviation": 0.06561673228343176
+            },
+            "support": 120
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 200,
+        "weighted_f1": {
+          "maximum": 0.8628240765609759,
+          "mean": 0.8355791148787872,
+          "minimum": 0.8051531133365077,
+          "standard_deviation": 0.02365127566331402
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.84,
+          "mean": 0.8266666666666667,
+          "minimum": 0.81,
+          "standard_deviation": 0.012472191289246433
+        },
+        "macro_f1": {
+          "maximum": 0.8415412629698343,
+          "mean": 0.8394451923341385,
+          "minimum": 0.8364250177683014,
+          "standard_deviation": 0.0021885257284039645
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9642857142857143,
+              "mean": 0.9642857142857143,
+              "minimum": 0.9642857142857143,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 1.0,
+              "minimum": 1.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.9310344827586207,
+              "mean": 0.9310344827586207,
+              "minimum": 0.9310344827586207,
+              "standard_deviation": 0.0
+            },
+            "support": 29
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7164179104477612,
+              "mean": 0.7001781012461554,
+              "minimum": 0.6868686868686869,
+              "standard_deviation": 0.01224008616256512
+            },
+            "precision": {
+              "maximum": 0.7083333333333334,
+              "mean": 0.6472730000461616,
+              "minimum": 0.5783132530120482,
+              "standard_deviation": 0.0533735632115588
+            },
+            "recall": {
+              "maximum": 0.9411764705882353,
+              "mean": 0.7843137254901961,
+              "minimum": 0.6666666666666666,
+              "standard_deviation": 0.11544785446180192
+            },
+            "support": 51
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8734693877551021,
+              "mean": 0.8538717614705457,
+              "minimum": 0.8285714285714286,
+              "standard_deviation": 0.01876783297317545
+            },
+            "precision": {
+              "maximum": 0.9666666666666667,
+              "mean": 0.9003091787439613,
+              "minimum": 0.856,
+              "standard_deviation": 0.047793819202967325
+            },
+            "recall": {
+              "maximum": 0.8916666666666667,
+              "mean": 0.8194444444444444,
+              "minimum": 0.725,
+              "standard_deviation": 0.06983225049986967
+            },
+            "support": 120
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 200,
+        "weighted_f1": {
+          "maximum": 0.8390545763760049,
+          "mean": 0.8306899012715255,
+          "minimum": 0.8196508528784647,
+          "standard_deviation": 0.008144131865224873
+        }
+      }
+    },
+    "59-2": {
+      "compact_minus_baseline": {
+        "accuracy": 0.03508771929824561,
+        "macro_f1": 0.003136057846693796,
+        "per_class_f1": {
+          "ied": -0.051851851851851816,
+          "noise": 0.03559284263649343,
+          "ripple": 0.02566718275544
+        },
+        "weighted_f1": 0.024581544619083684
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.9090909090909091,
+          "mean": 0.8644338118022329,
+          "minimum": 0.8133971291866029,
+          "standard_deviation": 0.03932640512260908
+        },
+        "macro_f1": {
+          "maximum": 0.6726001511715797,
+          "mean": 0.6359108763713356,
+          "minimum": 0.6043939549883354,
+          "standard_deviation": 0.02808423317274253
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.5,
+              "mean": 0.41005291005291006,
+              "minimum": 0.2857142857142857,
+              "standard_deviation": 0.09079895397741013
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.8888888888888888,
+              "minimum": 0.6666666666666666,
+              "standard_deviation": 0.15713484026367724
+            },
+            "recall": {
+              "maximum": 0.3333333333333333,
+              "mean": 0.2777777777777778,
+              "minimum": 0.16666666666666666,
+              "standard_deviation": 0.07856742013183861
+            },
+            "support": 6
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.6122448979591837,
+              "mean": 0.5686649659863946,
+              "minimum": 0.5,
+              "standard_deviation": 0.049137042904274
+            },
+            "precision": {
+              "maximum": 0.6,
+              "mean": 0.4801282051282051,
+              "minimum": 0.36538461538461536,
+              "standard_deviation": 0.09584994710634578
+            },
+            "recall": {
+              "maximum": 0.7916666666666666,
+              "mean": 0.736111111111111,
+              "minimum": 0.625,
+              "standard_deviation": 0.0785674201318386
+            },
+            "support": 24
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9611111111111111,
+              "mean": 0.9290147530747024,
+              "minimum": 0.8922155688622755,
+              "standard_deviation": 0.028322386504573315
+            },
+            "precision": {
+              "maximum": 0.9642857142857143,
+              "mean": 0.9604590472795784,
+              "minimum": 0.9558011049723757,
+              "standard_deviation": 0.003513347195066344
+            },
+            "recall": {
+              "maximum": 0.9664804469273743,
+              "mean": 0.9013035381750466,
+              "minimum": 0.8324022346368715,
+              "standard_deviation": 0.05480051757751274
+            },
+            "support": 179
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 209,
+        "weighted_f1": {
+          "maximum": 0.9062173832850525,
+          "mean": 0.8727364471022137,
+          "minimum": 0.8359166833796522,
+          "standard_deviation": 0.02879708236149739
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.861244019138756,
+          "mean": 0.8293460925039873,
+          "minimum": 0.8086124401913876,
+          "standard_deviation": 0.022891068731112175
+        },
+        "macro_f1": {
+          "maximum": 0.6624518304431599,
+          "mean": 0.6327748185246418,
+          "minimum": 0.5752979530757308,
+          "standard_deviation": 0.04064950575572998
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.6,
+              "mean": 0.4619047619047619,
+              "minimum": 0.2857142857142857,
+              "standard_deviation": 0.13110380855177337
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.9166666666666666,
+              "minimum": 0.75,
+              "standard_deviation": 0.11785113019775792
+            },
+            "recall": {
+              "maximum": 0.5,
+              "mean": 0.3333333333333333,
+              "minimum": 0.16666666666666666,
+              "standard_deviation": 0.13608276348795434
+            },
+            "support": 6
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.5625,
+              "mean": 0.5330721233499012,
+              "minimum": 0.4935064935064935,
+              "standard_deviation": 0.029064371252144342
+            },
+            "precision": {
+              "maximum": 0.45,
+              "mean": 0.39815182610614586,
+              "minimum": 0.3584905660377358,
+              "standard_deviation": 0.038339577266536626
+            },
+            "recall": {
+              "maximum": 0.9166666666666666,
+              "mean": 0.8194444444444444,
+              "minimum": 0.75,
+              "standard_deviation": 0.07081971546656644
+            },
+            "support": 24
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9248554913294798,
+              "mean": 0.9033475703192624,
+              "minimum": 0.8882175226586103,
+              "standard_deviation": 0.015622486751031343
+            },
+            "precision": {
+              "maximum": 0.9801324503311258,
+              "mean": 0.9684405152747833,
+              "minimum": 0.9580838323353293,
+              "standard_deviation": 0.009050692884815758
+            },
+            "recall": {
+              "maximum": 0.8938547486033519,
+              "mean": 0.8472998137802606,
+              "minimum": 0.8212290502793296,
+              "standard_deviation": 0.03299822187461702
+            },
+            "support": 179
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 209,
+        "weighted_f1": {
+          "maximum": 0.8710484830046741,
+          "mean": 0.84815490248313,
+          "minimum": 0.8346176669858711,
+          "standard_deviation": 0.016277939736733048
+        }
+      }
+    },
+    "62-1": {
+      "compact_minus_baseline": {
+        "accuracy": 0.010000000000000009,
+        "macro_f1": 0.08912630808223243,
+        "per_class_f1": {
+          "ied": 0.23155363155363157,
+          "noise": 0.03608683059802009,
+          "ripple": -0.00026153790495431206
+        },
+        "weighted_f1": 0.0197338375817665
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.84,
+          "mean": 0.84,
+          "minimum": 0.84,
+          "standard_deviation": 0.0
+        },
+        "macro_f1": {
+          "maximum": 0.7275151575307905,
+          "mean": 0.7027682721929747,
+          "minimum": 0.6613936225586712,
+          "standard_deviation": 0.029443462838599225
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.5714285714285714,
+              "mean": 0.4935064935064935,
+              "minimum": 0.36363636363636365,
+              "standard_deviation": 0.09244223594832301
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.7777777777777778,
+              "minimum": 0.6666666666666666,
+              "standard_deviation": 0.15713484026367724
+            },
+            "recall": {
+              "maximum": 0.5,
+              "mean": 0.375,
+              "minimum": 0.25,
+              "standard_deviation": 0.10206207261596575
+            },
+            "support": 8
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.72,
+              "mean": 0.7171059630234868,
+              "minimum": 0.7128712871287128,
+              "standard_deviation": 0.0030607865364075193
+            },
+            "precision": {
+              "maximum": 0.8780487804878049,
+              "mean": 0.8587002428465843,
+              "minimum": 0.8409090909090909,
+              "standard_deviation": 0.015202153864358359
+            },
+            "recall": {
+              "maximum": 0.6271186440677966,
+              "mean": 0.615819209039548,
+              "minimum": 0.6101694915254238,
+              "standard_deviation": 0.007989907132051364
+            },
+            "support": 59
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9020979020979021,
+              "mean": 0.8976923600489436,
+              "minimum": 0.8927335640138409,
+              "standard_deviation": 0.0038429393626960603
+            },
+            "precision": {
+              "maximum": 0.8431372549019608,
+              "mean": 0.8373885316609775,
+              "minimum": 0.8269230769230769,
+              "standard_deviation": 0.007412177318136212
+            },
+            "recall": {
+              "maximum": 0.9699248120300752,
+              "mean": 0.9674185463659147,
+              "minimum": 0.9624060150375939,
+              "standard_deviation": 0.003544394893165678
+            },
+            "support": 133
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 200,
+        "weighted_f1": {
+          "maximum": 0.8304875058934464,
+          "mean": 0.8282519382647358,
+          "minimum": 0.8263823070133749,
+          "standard_deviation": 0.0016957980491862958
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.855,
+          "mean": 0.83,
+          "minimum": 0.805,
+          "standard_deviation": 0.020412414523193124
+        },
+        "macro_f1": {
+          "maximum": 0.6725281191300608,
+          "mean": 0.6136419641107422,
+          "minimum": 0.573799460324283,
+          "standard_deviation": 0.042495744936844486
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.36363636363636365,
+              "mean": 0.26195286195286194,
+              "minimum": 0.2,
+              "standard_deviation": 0.07247117898901823
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.7222222222222222,
+              "minimum": 0.5,
+              "standard_deviation": 0.20786985482077452
+            },
+            "recall": {
+              "maximum": 0.25,
+              "mean": 0.16666666666666666,
+              "minimum": 0.125,
+              "standard_deviation": 0.05892556509887896
+            },
+            "support": 8
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7378640776699029,
+              "mean": 0.6810191324254667,
+              "minimum": 0.6170212765957447,
+              "standard_deviation": 0.04959246407968968
+            },
+            "precision": {
+              "maximum": 0.9411764705882353,
+              "mean": 0.8777947542653425,
+              "minimum": 0.8285714285714286,
+              "standard_deviation": 0.04704833607262334
+            },
+            "recall": {
+              "maximum": 0.6440677966101694,
+              "mean": 0.559322033898305,
+              "minimum": 0.4915254237288136,
+              "standard_deviation": 0.06341792180972779
+            },
+            "support": 59
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.916083916083916,
+              "mean": 0.8979538979538979,
+              "minimum": 0.8821548821548821,
+              "standard_deviation": 0.013949193877299553
+            },
+            "precision": {
+              "maximum": 0.8562091503267973,
+              "mean": 0.821988415962591,
+              "minimum": 0.7987804878048781,
+              "standard_deviation": 0.024704577783216046
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 0.9899749373433584,
+              "minimum": 0.9849624060150376,
+              "standard_deviation": 0.007088789786331303
+            },
+            "support": 133
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 200,
+        "weighted_f1": {
+          "maximum": 0.8414111616538801,
+          "mean": 0.8085181006829693,
+          "minimum": 0.7775431621176301,
+          "standard_deviation": 0.02610925425160811
+        }
+      }
+    },
+    "64-30": {
+      "compact_minus_baseline": {
+        "accuracy": -0.017973856209150374,
+        "macro_f1": 0.036464510798885685,
+        "per_class_f1": {
+          "ied": 0.1873015873015873,
+          "noise": -0.06582938065475763,
+          "ripple": -0.012078674250172505
+        },
+        "weighted_f1": -0.01855544916116869
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8774509803921569,
+          "mean": 0.8545751633986928,
+          "minimum": 0.8382352941176471,
+          "standard_deviation": 0.01666346246272151
+        },
+        "macro_f1": {
+          "maximum": 0.8332019667454866,
+          "mean": 0.8074776419815313,
+          "minimum": 0.7594451594451593,
+          "standard_deviation": 0.03399271572149611
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 1.0,
+              "mean": 0.9333333333333333,
+              "minimum": 0.8,
+              "standard_deviation": 0.09428090415820632
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.8888888888888888,
+              "minimum": 0.6666666666666666,
+              "standard_deviation": 0.15713484026367724
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 1.0,
+              "minimum": 1.0,
+              "standard_deviation": 0.0
+            },
+            "support": 2
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.6024096385542169,
+              "mean": 0.5784139062515727,
+              "minimum": 0.5614035087719298,
+              "standard_deviation": 0.01745416563216395
+            },
+            "precision": {
+              "maximum": 0.64,
+              "mean": 0.5521706226350189,
+              "minimum": 0.49019607843137253,
+              "standard_deviation": 0.06383132996517836
+            },
+            "recall": {
+              "maximum": 0.78125,
+              "mean": 0.6354166666666666,
+              "minimum": 0.5,
+              "standard_deviation": 0.11505584392903397
+            },
+            "support": 32
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9279538904899135,
+              "mean": 0.9106856863596878,
+              "minimum": 0.897196261682243,
+              "standard_deviation": 0.012837894767242284
+            },
+            "precision": {
+              "maximum": 0.9536423841059603,
+              "mean": 0.9298757573260437,
+              "minimum": 0.9096045197740112,
+              "standard_deviation": 0.01814748252734785
+            },
+            "recall": {
+              "maximum": 0.9470588235294117,
+              "mean": 0.8941176470588235,
+              "minimum": 0.8470588235294118,
+              "standard_deviation": 0.04103617556167911
+            },
+            "support": 170
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 204,
+        "weighted_f1": {
+          "maximum": 0.871162125803858,
+          "mean": 0.8587866585679603,
+          "minimum": 0.8519631025476287,
+          "standard_deviation": 0.008766162676544152
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8774509803921569,
+          "mean": 0.8725490196078431,
+          "minimum": 0.8676470588235294,
+          "standard_deviation": 0.004002434220233937
+        },
+        "macro_f1": {
+          "maximum": 0.8390931372549021,
+          "mean": 0.7710131311826456,
+          "minimum": 0.710265492612271,
+          "standard_deviation": 0.05284860903832757
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 1.0,
+              "mean": 0.746031746031746,
+              "minimum": 0.5714285714285714,
+              "standard_deviation": 0.18374344290143216
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.6333333333333333,
+              "minimum": 0.4,
+              "standard_deviation": 0.26246692913372704
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 1.0,
+              "minimum": 1.0,
+              "standard_deviation": 0.0
+            },
+            "support": 2
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7012987012987013,
+              "mean": 0.6442432869063304,
+              "minimum": 0.59375,
+              "standard_deviation": 0.044151080965374685
+            },
+            "precision": {
+              "maximum": 0.6,
+              "mean": 0.5961148648648649,
+              "minimum": 0.59375,
+              "standard_deviation": 0.0027687592011585976
+            },
+            "recall": {
+              "maximum": 0.84375,
+              "mean": 0.7083333333333334,
+              "minimum": 0.59375,
+              "standard_deviation": 0.10311973892303818
+            },
+            "support": 32
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9235294117647059,
+              "mean": 0.9227643606098603,
+              "minimum": 0.9216867469879518,
+              "standard_deviation": 0.0007840598794032936
+            },
+            "precision": {
+              "maximum": 0.967741935483871,
+              "mean": 0.9452385972310071,
+              "minimum": 0.9235294117647059,
+              "standard_deviation": 0.01805842042539966
+            },
+            "recall": {
+              "maximum": 0.9235294117647059,
+              "mean": 0.9019607843137255,
+              "minimum": 0.8823529411764706,
+              "standard_deviation": 0.01686730444518165
+            },
+            "support": 170
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 204,
+        "weighted_f1": {
+          "maximum": 0.8857743563625917,
+          "mean": 0.877342107729129,
+          "minimum": 0.8725490196078431,
+          "standard_deviation": 0.005981081284303401
+        }
+      }
+    },
+    "65-1": {
+      "compact_minus_baseline": {
+        "accuracy": 0.042483660130718914,
+        "macro_f1": 0.03759623785464972,
+        "per_class_f1": {
+          "ied": 0.02857142857142858,
+          "noise": 0.03229273461912163,
+          "ripple": 0.051924550373398826
+        },
+        "weighted_f1": 0.043923880137433646
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8480392156862745,
+          "mean": 0.7810457516339869,
+          "minimum": 0.7303921568627451,
+          "standard_deviation": 0.049399400188990125
+        },
+        "macro_f1": {
+          "maximum": 0.8643664930180858,
+          "mean": 0.8180537893381257,
+          "minimum": 0.7749847839318319,
+          "standard_deviation": 0.03656194436535406
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 1.0,
+              "mean": 0.9076923076923077,
+              "minimum": 0.8,
+              "standard_deviation": 0.08237117130363593
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.9523809523809523,
+              "minimum": 0.8571428571428571,
+              "standard_deviation": 0.0673435029701474
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 0.8888888888888888,
+              "minimum": 0.6666666666666666,
+              "standard_deviation": 0.15713484026367724
+            },
+            "support": 6
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7945205479452054,
+              "mean": 0.7533580407561449,
+              "minimum": 0.7236180904522613,
+              "standard_deviation": 0.03005157482263912
+            },
+            "precision": {
+              "maximum": 0.8285714285714286,
+              "mean": 0.6804033365008975,
+              "minimum": 0.5853658536585366,
+              "standard_deviation": 0.1061583224713446
+            },
+            "recall": {
+              "maximum": 0.9473684210526315,
+              "mean": 0.8728070175438597,
+              "minimum": 0.7631578947368421,
+              "standard_deviation": 0.07919065826871834
+            },
+            "support": 76
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8755020080321285,
+              "mean": 0.7931110195659246,
+              "minimum": 0.7208121827411168,
+              "standard_deviation": 0.06355377856957384
+            },
+            "precision": {
+              "maximum": 0.9466666666666667,
+              "mean": 0.9090522018081073,
+              "minimum": 0.8582677165354331,
+              "standard_deviation": 0.03727090620807989
+            },
+            "recall": {
+              "maximum": 0.8934426229508197,
+              "mean": 0.7185792349726776,
+              "minimum": 0.5819672131147541,
+              "standard_deviation": 0.13000412298765376
+            },
+            "support": 122
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 204,
+        "weighted_f1": {
+          "maximum": 0.8467317066775335,
+          "mean": 0.7816711241699198,
+          "minimum": 0.7300689272979809,
+          "standard_deviation": 0.048568831782529305
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8088235294117647,
+          "mean": 0.738562091503268,
+          "minimum": 0.6421568627450981,
+          "standard_deviation": 0.07050800330193271
+        },
+        "macro_f1": {
+          "maximum": 0.8409591074261732,
+          "mean": 0.780457551483476,
+          "minimum": 0.6630919900765295,
+          "standard_deviation": 0.08300326980164335
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 1.0,
+              "mean": 0.8791208791208791,
+              "minimum": 0.7142857142857143,
+              "standard_deviation": 0.12071250588486507
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.8273809523809523,
+              "minimum": 0.625,
+              "standard_deviation": 0.15453279744937107
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 0.9444444444444444,
+              "minimum": 0.8333333333333334,
+              "standard_deviation": 0.0785674201318386
+            },
+            "support": 6
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7664670658682635,
+              "mean": 0.7210653061370232,
+              "minimum": 0.6604651162790698,
+              "standard_deviation": 0.04458959174452358
+            },
+            "precision": {
+              "maximum": 0.7032967032967034,
+              "mean": 0.6153878473004305,
+              "minimum": 0.5107913669064749,
+              "standard_deviation": 0.07947089085825643
+            },
+            "recall": {
+              "maximum": 0.9342105263157895,
+              "mean": 0.8859649122807017,
+              "minimum": 0.8421052631578947,
+              "standard_deviation": 0.03772949678527471
+            },
+            "support": 76
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8333333333333334,
+              "mean": 0.7411864691925257,
+              "minimum": 0.6145251396648045,
+              "standard_deviation": 0.09260198934086837
+            },
+            "precision": {
+              "maximum": 0.9649122807017544,
+              "mean": 0.9211042029465241,
+              "minimum": 0.8962264150943396,
+              "standard_deviation": 0.031072001763860005
+            },
+            "recall": {
+              "maximum": 0.7786885245901639,
+              "mean": 0.6366120218579234,
+              "minimum": 0.45081967213114754,
+              "standard_deviation": 0.137374919016137
+            },
+            "support": 122
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 204,
+        "weighted_f1": {
+          "maximum": 0.8110618882897854,
+          "mean": 0.7377472440324861,
+          "minimum": 0.6345741674609301,
+          "standard_deviation": 0.07508050517517749
+        }
+      }
+    },
+    "65-2": {
+      "compact_minus_baseline": {
+        "accuracy": -0.006441223832528209,
+        "macro_f1": -0.023415843739103714,
+        "per_class_f1": {
+          "ied": 0.0,
+          "noise": -0.0669159626960138,
+          "ripple": -0.0033315685212972346
+        },
+        "weighted_f1": -0.005174594439405156
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.9468599033816425,
+          "mean": 0.9388083735909822,
+          "minimum": 0.927536231884058,
+          "standard_deviation": 0.00821098150337001
+        },
+        "macro_f1": {
+          "maximum": 0.44174445596878553,
+          "mean": 0.428282836637615,
+          "minimum": 0.4066164154103853,
+          "standard_deviation": 0.015470054707581272
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 0
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.35294117647058826,
+              "mean": 0.31692242114237,
+              "minimum": 0.25,
+              "standard_deviation": 0.047367350737625005
+            },
+            "precision": {
+              "maximum": 0.2727272727272727,
+              "mean": 0.23600713012477717,
+              "minimum": 0.2,
+              "standard_deviation": 0.029695065130779023
+            },
+            "recall": {
+              "maximum": 0.6666666666666666,
+              "mean": 0.5,
+              "minimum": 0.3333333333333333,
+              "standard_deviation": 0.13608276348795434
+            },
+            "support": 6
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9722921914357683,
+              "mean": 0.9679260887704751,
+              "minimum": 0.9616368286445013,
+              "standard_deviation": 0.004557637547188093
+            },
+            "precision": {
+              "maximum": 0.9894736842105263,
+              "mean": 0.9846209977445427,
+              "minimum": 0.9796954314720813,
+              "standard_deviation": 0.003992287585989686
+            },
+            "recall": {
+              "maximum": 0.9601990049751243,
+              "mean": 0.9519071310116086,
+              "minimum": 0.9353233830845771,
+              "standard_deviation": 0.01172648061669233
+            },
+            "support": 201
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 207,
+        "weighted_f1": {
+          "maximum": 0.9543399881034442,
+          "mean": 0.9490564172450228,
+          "minimum": 0.9438452129434004,
+          "standard_deviation": 0.004284779582341464
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.961352657004831,
+          "mean": 0.9452495974235104,
+          "minimum": 0.9323671497584541,
+          "standard_deviation": 0.012050426366421726
+        },
+        "macro_f1": {
+          "maximum": 0.47464440321583173,
+          "mean": 0.45169868037671873,
+          "minimum": 0.43781094527363185,
+          "standard_deviation": 0.016344443752428554
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 0
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.45454545454545453,
+              "mean": 0.3838383838383838,
+              "minimum": 0.3333333333333333,
+              "standard_deviation": 0.05150524761204833
+            },
+            "precision": {
+              "maximum": 0.3333333333333333,
+              "mean": 0.2986111111111111,
+              "minimum": 0.25,
+              "standard_deviation": 0.03540985773328322
+            },
+            "recall": {
+              "maximum": 0.8333333333333334,
+              "mean": 0.6111111111111112,
+              "minimum": 0.3333333333333333,
+              "standard_deviation": 0.20786985482077455
+            },
+            "support": 6
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9800995024875622,
+              "mean": 0.9712576572917724,
+              "minimum": 0.9642857142857143,
+              "standard_deviation": 0.006589960797688054
+            },
+            "precision": {
+              "maximum": 0.9947643979057592,
+              "mean": 0.9881308987349465,
+              "minimum": 0.9800995024875622,
+              "standard_deviation": 0.00606796926954315
+            },
+            "recall": {
+              "maximum": 0.9800995024875622,
+              "mean": 0.9552238805970149,
+              "minimum": 0.9402985074626866,
+              "standard_deviation": 0.01770659743288772
+            },
+            "support": 201
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 207,
+        "weighted_f1": {
+          "maximum": 0.961352657004831,
+          "mean": 0.9542310116844279,
+          "minimum": 0.9468755881799361,
+          "standard_deviation": 0.005912549907876888
+        }
+      }
+    },
+    "70-1": {
+      "compact_minus_baseline": {
+        "accuracy": -0.011235955056179803,
+        "macro_f1": -0.016854547910774786,
+        "per_class_f1": {
+          "ied": -0.026449320663499143,
+          "noise": -0.01816713998215691,
+          "ripple": -0.005947183086668084
+        },
+        "weighted_f1": -0.011464707436646182
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8314606741573034,
+          "mean": 0.8227215980024969,
+          "minimum": 0.8089887640449438,
+          "standard_deviation": 0.00983022206493362
+        },
+        "macro_f1": {
+          "maximum": 0.7749441188376718,
+          "mean": 0.7572222755275203,
+          "minimum": 0.726808176100629,
+          "standard_deviation": 0.021603815554906924
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.6666666666666666,
+              "mean": 0.6267764857881137,
+              "minimum": 0.5625,
+              "standard_deviation": 0.045888942106406275
+            },
+            "precision": {
+              "maximum": 0.75,
+              "mean": 0.7028985507246377,
+              "minimum": 0.6086956521739131,
+              "standard_deviation": 0.06661150837264576
+            },
+            "recall": {
+              "maximum": 0.7,
+              "mean": 0.5833333333333333,
+              "minimum": 0.45,
+              "standard_deviation": 0.10274023338281625
+            },
+            "support": 20
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7816091954022989,
+              "mean": 0.7704234041171505,
+              "minimum": 0.75,
+              "standard_deviation": 0.014463411921596177
+            },
+            "precision": {
+              "maximum": 0.7816091954022989,
+              "mean": 0.7532053560848442,
+              "minimum": 0.711340206185567,
+              "standard_deviation": 0.030225131632693893
+            },
+            "recall": {
+              "maximum": 0.7931034482758621,
+              "mean": 0.789272030651341,
+              "minimum": 0.7816091954022989,
+              "standard_deviation": 0.0054184427677130016
+            },
+            "support": 87
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.8785046728971962,
+              "mean": 0.8744669366772969,
+              "minimum": 0.8679245283018868,
+              "standard_deviation": 0.004668326028985602
+            },
+            "precision": {
+              "maximum": 0.8853503184713376,
+              "mean": 0.8781814791686177,
+              "minimum": 0.8734177215189873,
+              "standard_deviation": 0.005159782348467244
+            },
+            "recall": {
+              "maximum": 0.88125,
+              "mean": 0.8708333333333333,
+              "minimum": 0.8625,
+              "standard_deviation": 0.007795119555779017
+            },
+            "support": 160
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 267,
+        "weighted_f1": {
+          "maximum": 0.8304291740504158,
+          "mean": 0.8220115196341643,
+          "minimum": 0.806621440180906,
+          "standard_deviation": 0.01089841215262914
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8651685393258427,
+          "mean": 0.8339575530586767,
+          "minimum": 0.7865168539325843,
+          "standard_deviation": 0.03409862742508778
+        },
+        "macro_f1": {
+          "maximum": 0.8023285942978563,
+          "mean": 0.7740768234382951,
+          "minimum": 0.7325577557755775,
+          "standard_deviation": 0.02998897964667199
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.7096774193548387,
+              "mean": 0.6532258064516129,
+              "minimum": 0.625,
+              "standard_deviation": 0.03991731829278899
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.888888888888889,
+              "minimum": 0.8333333333333334,
+              "standard_deviation": 0.0785674201318386
+            },
+            "recall": {
+              "maximum": 0.55,
+              "mean": 0.5166666666666667,
+              "minimum": 0.5,
+              "standard_deviation": 0.023570226039551605
+            },
+            "support": 20
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8268156424581006,
+              "mean": 0.7885905440993074,
+              "minimum": 0.7326732673267327,
+              "standard_deviation": 0.04041828448951133
+            },
+            "precision": {
+              "maximum": 0.8043478260869565,
+              "mean": 0.7294035674470457,
+              "minimum": 0.6434782608695652,
+              "standard_deviation": 0.06613214958784437
+            },
+            "recall": {
+              "maximum": 0.8850574712643678,
+              "mean": 0.8620689655172413,
+              "minimum": 0.8505747126436781,
+              "standard_deviation": 0.016255328303139055
+            },
+            "support": 87
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9102167182662538,
+              "mean": 0.880414119763965,
+              "minimum": 0.84,
+              "standard_deviation": 0.0296316291445011
+            },
+            "precision": {
+              "maximum": 0.9144736842105263,
+              "mean": 0.9054380583360241,
+              "minimum": 0.9,
+              "standard_deviation": 0.006433182354114908
+            },
+            "recall": {
+              "maximum": 0.91875,
+              "mean": 0.8583333333333333,
+              "minimum": 0.7875,
+              "standard_deviation": 0.054086479107279865
+            },
+            "support": 160
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 267,
+        "weighted_f1": {
+          "maximum": 0.8616765386384097,
+          "mean": 0.8334762270708105,
+          "minimum": 0.7889234990914822,
+          "standard_deviation": 0.03187268770913575
+        }
+      }
+    },
+    "70-10": {
+      "compact_minus_baseline": {
+        "accuracy": 0.02310231023102316,
+        "macro_f1": 0.0219780207068056,
+        "per_class_f1": {
+          "ied": 0.0,
+          "noise": 0.05447457026404395,
+          "ripple": 0.01145949185637285
+        },
+        "weighted_f1": 0.014014843048907877
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.9306930693069307,
+          "mean": 0.9141914191419143,
+          "minimum": 0.900990099009901,
+          "standard_deviation": 0.012348704246778695
+        },
+        "macro_f1": {
+          "maximum": 0.4211805555555555,
+          "mean": 0.38388603530946463,
+          "minimum": 0.34618435665556085,
+          "standard_deviation": 0.030618423602341984
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 0
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.3,
+              "mean": 0.19696969696969696,
+              "minimum": 0.09090909090909091,
+              "standard_deviation": 0.08538789577942649
+            },
+            "precision": {
+              "maximum": 0.375,
+              "mean": 0.24166666666666667,
+              "minimum": 0.1,
+              "standard_deviation": 0.11242281302693367
+            },
+            "recall": {
+              "maximum": 0.25,
+              "mean": 0.16666666666666666,
+              "minimum": 0.08333333333333333,
+              "standard_deviation": 0.06804138174397717
+            },
+            "support": 12
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9635416666666666,
+              "mean": 0.9546884089586969,
+              "minimum": 0.9476439790575916,
+              "standard_deviation": 0.0066150339558261355
+            },
+            "precision": {
+              "maximum": 0.9536082474226805,
+              "mean": 0.9480777491408935,
+              "minimum": 0.9427083333333334,
+              "standard_deviation": 0.004451328824925138
+            },
+            "recall": {
+              "maximum": 0.9736842105263158,
+              "mean": 0.9614035087719298,
+              "minimum": 0.9526315789473684,
+              "standard_deviation": 0.008945648269461055
+            },
+            "support": 190
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 202,
+        "weighted_f1": {
+          "maximum": 0.9241233498349835,
+          "mean": 0.9096754161672712,
+          "minimum": 0.8967488371873836,
+          "standard_deviation": 0.011227254806586378
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.9108910891089109,
+          "mean": 0.8910891089108911,
+          "minimum": 0.8613861386138614,
+          "standard_deviation": 0.021388583163062264
+        },
+        "macro_f1": {
+          "maximum": 0.38288424664446463,
+          "mean": 0.36190801460265903,
+          "minimum": 0.35004374453193354,
+          "standard_deviation": 0.0148749349124088
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 0
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.2222222222222222,
+              "mean": 0.142495126705653,
+              "minimum": 0.1,
+              "standard_deviation": 0.05641650188486429
+            },
+            "precision": {
+              "maximum": 0.16666666666666666,
+              "mean": 0.14484126984126983,
+              "minimum": 0.125,
+              "standard_deviation": 0.017068105688576637
+            },
+            "recall": {
+              "maximum": 0.3333333333333333,
+              "mean": 0.16666666666666666,
+              "minimum": 0.08333333333333333,
+              "standard_deviation": 0.11785113019775792
+            },
+            "support": 12
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.953125,
+              "mean": 0.943228917102324,
+              "minimum": 0.9264305177111717,
+              "standard_deviation": 0.011940974999254459
+            },
+            "precision": {
+              "maximum": 0.96045197740113,
+              "mean": 0.9504649751769622,
+              "minimum": 0.9432989690721649,
+              "standard_deviation": 0.007281251632904607
+            },
+            "recall": {
+              "maximum": 0.9631578947368421,
+              "mean": 0.9368421052631579,
+              "minimum": 0.8947368421052632,
+              "standard_deviation": 0.030081452981547793
+            },
+            "support": 190
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 202,
+        "weighted_f1": {
+          "maximum": 0.902756969775925,
+          "mean": 0.8956605731183633,
+          "minimum": 0.8845963615435112,
+          "standard_deviation": 0.007927151201459844
+        }
+      }
+    },
+    "84-10": {
+      "compact_minus_baseline": {
+        "accuracy": 0.01602564102564108,
+        "macro_f1": 0.015403572255644926,
+        "per_class_f1": {
+          "ied": -0.0010683760683760646,
+          "noise": 0.03818246176684881,
+          "ripple": 0.009096631068462036
+        },
+        "weighted_f1": 0.014649410316840417
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8846153846153846,
+          "mean": 0.8605769230769231,
+          "minimum": 0.8317307692307693,
+          "standard_deviation": 0.02185606041183628
+        },
+        "macro_f1": {
+          "maximum": 0.8664342960117608,
+          "mean": 0.8419022409770822,
+          "minimum": 0.8144078144078145,
+          "standard_deviation": 0.021342765063804774
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9090909090909091,
+              "mean": 0.8877462406874171,
+              "minimum": 0.8717948717948718,
+              "standard_deviation": 0.015696376635133194
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.9156746031746031,
+              "minimum": 0.8095238095238095,
+              "standard_deviation": 0.07927822628574224
+            },
+            "recall": {
+              "maximum": 0.9444444444444444,
+              "mean": 0.8703703703703703,
+              "minimum": 0.8333333333333334,
+              "standard_deviation": 0.05237828008789238
+            },
+            "support": 18
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7676767676767676,
+              "mean": 0.7350274997333821,
+              "minimum": 0.6923076923076923,
+              "standard_deviation": 0.03158255008276802
+            },
+            "precision": {
+              "maximum": 0.7169811320754716,
+              "mean": 0.672080738606438,
+              "minimum": 0.6206896551724138,
+              "standard_deviation": 0.03957784669238801
+            },
+            "recall": {
+              "maximum": 0.8260869565217391,
+              "mean": 0.8115942028985508,
+              "minimum": 0.782608695652174,
+              "standard_deviation": 0.02049584873004484
+            },
+            "support": 46
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9225352112676056,
+              "mean": 0.9029329825104473,
+              "minimum": 0.8791208791208791,
+              "standard_deviation": 0.0179720772728517
+            },
+            "precision": {
+              "maximum": 0.9357142857142857,
+              "mean": 0.9332567910885284,
+              "minimum": 0.9302325581395349,
+              "standard_deviation": 0.002273503690520348
+            },
+            "recall": {
+              "maximum": 0.9097222222222222,
+              "mean": 0.875,
+              "minimum": 0.8333333333333334,
+              "standard_deviation": 0.031569865039319085
+            },
+            "support": 144
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 208,
+        "weighted_f1": {
+          "maximum": 0.8871242216312639,
+          "mean": 0.8644858019308341,
+          "minimum": 0.8371724429416736,
+          "standard_deviation": 0.020658918035212477
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8605769230769231,
+          "mean": 0.844551282051282,
+          "minimum": 0.8269230769230769,
+          "standard_deviation": 0.013785777671542713
+        },
+        "macro_f1": {
+          "maximum": 0.8376373626373627,
+          "mean": 0.8264986687214373,
+          "minimum": 0.8117500458127176,
+          "standard_deviation": 0.01087234974893193
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.9090909090909091,
+              "mean": 0.8888146167557932,
+              "minimum": 0.875,
+              "standard_deviation": 0.01464837781986951
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.9791666666666666,
+              "minimum": 0.9375,
+              "standard_deviation": 0.02946278254943948
+            },
+            "recall": {
+              "maximum": 0.8333333333333334,
+              "mean": 0.8148148148148149,
+              "minimum": 0.7777777777777778,
+              "standard_deviation": 0.026189140043946218
+            },
+            "support": 18
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.7307692307692307,
+              "mean": 0.6968450379665333,
+              "minimum": 0.6728971962616822,
+              "standard_deviation": 0.024656828404201376
+            },
+            "precision": {
+              "maximum": 0.6551724137931034,
+              "mean": 0.6289485940605324,
+              "minimum": 0.5901639344262295,
+              "standard_deviation": 0.027986385043160075
+            },
+            "recall": {
+              "maximum": 0.8260869565217391,
+              "mean": 0.782608695652174,
+              "minimum": 0.7391304347826086,
+              "standard_deviation": 0.03549985134468376
+            },
+            "support": 46
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9071428571428571,
+              "mean": 0.8938363514419853,
+              "minimum": 0.88,
+              "standard_deviation": 0.01108735693936776
+            },
+            "precision": {
+              "maximum": 0.9338235294117647,
+              "mean": 0.9215435028973421,
+              "minimum": 0.9071428571428571,
+              "standard_deviation": 0.010995069733027486
+            },
+            "recall": {
+              "maximum": 0.8819444444444444,
+              "mean": 0.8680555555555556,
+              "minimum": 0.8402777777777778,
+              "standard_deviation": 0.019641855032959635
+            },
+            "support": 144
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 208,
+        "weighted_f1": {
+          "maximum": 0.8653555579036348,
+          "mean": 0.8498363916139937,
+          "minimum": 0.8344020383135281,
+          "standard_deviation": 0.012636863764033909
+        }
+      }
+    },
+    "86-2": {
+      "compact_minus_baseline": {
+        "accuracy": 0.009756097560975618,
+        "macro_f1": 0.0982070620050981,
+        "per_class_f1": {
+          "ied": 0.2777777777777778,
+          "noise": 0.010059344364343414,
+          "ripple": 0.006784063873172985
+        },
+        "weighted_f1": 0.010274684818740054
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.9121951219512195,
+          "mean": 0.8926829268292683,
+          "minimum": 0.8682926829268293,
+          "standard_deviation": 0.018251987252555828
+        },
+        "macro_f1": {
+          "maximum": 0.818333232998214,
+          "mean": 0.728272725080244,
+          "minimum": 0.5822792489459157,
+          "standard_deviation": 0.10416891265907119
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.6666666666666666,
+              "mean": 0.4444444444444444,
+              "minimum": 0.0,
+              "standard_deviation": 0.31426968052735443
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 0.6666666666666666,
+              "minimum": 0.0,
+              "standard_deviation": 0.4714045207910317
+            },
+            "recall": {
+              "maximum": 0.5,
+              "mean": 0.3333333333333333,
+              "minimum": 0.0,
+              "standard_deviation": 0.23570226039551584
+            },
+            "support": 2
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8495575221238938,
+              "mean": 0.812409279022312,
+              "minimum": 0.7768595041322314,
+              "standard_deviation": 0.029700356680758377
+            },
+            "precision": {
+              "maximum": 0.8,
+              "mean": 0.7556795131845842,
+              "minimum": 0.6911764705882353,
+              "standard_deviation": 0.046662917516990324
+            },
+            "recall": {
+              "maximum": 0.9056603773584906,
+              "mean": 0.8805031446540881,
+              "minimum": 0.8490566037735849,
+              "standard_deviation": 0.023532436394804658
+            },
+            "support": 53
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9387755102040817,
+              "mean": 0.9279644517739756,
+              "minimum": 0.9090909090909091,
+              "standard_deviation": 0.01339270012753137
+            },
+            "precision": {
+              "maximum": 0.9583333333333334,
+              "mean": 0.9532646391890089,
+              "minimum": 0.9455782312925171,
+              "standard_deviation": 0.005526450095321854
+            },
+            "recall": {
+              "maximum": 0.9266666666666666,
+              "mean": 0.9044444444444445,
+              "minimum": 0.8666666666666667,
+              "standard_deviation": 0.02685121327465459
+            },
+            "support": 150
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 205,
+        "weighted_f1": {
+          "maximum": 0.9130546757878633,
+          "mean": 0.8933719436252086,
+          "minimum": 0.8725391386145266,
+          "standard_deviation": 0.016560378191692638
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.9121951219512195,
+          "mean": 0.8829268292682927,
+          "minimum": 0.8292682926829268,
+          "standard_deviation": 0.03799454128633474
+        },
+        "macro_f1": {
+          "maximum": 0.7042748091603053,
+          "mean": 0.6300656630751459,
+          "minimum": 0.5901953434128869,
+          "standard_deviation": 0.052522359533064
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.5,
+              "mean": 0.16666666666666666,
+              "minimum": 0.0,
+              "standard_deviation": 0.23570226039551584
+            },
+            "precision": {
+              "maximum": 0.5,
+              "mean": 0.16666666666666666,
+              "minimum": 0.0,
+              "standard_deviation": 0.23570226039551584
+            },
+            "recall": {
+              "maximum": 0.5,
+              "mean": 0.16666666666666666,
+              "minimum": 0.0,
+              "standard_deviation": 0.23570226039551584
+            },
+            "support": 2
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8440366972477065,
+              "mean": 0.8023499346579686,
+              "minimum": 0.732824427480916,
+              "standard_deviation": 0.04948595094784407
+            },
+            "precision": {
+              "maximum": 0.8301886792452831,
+              "mean": 0.7556672886861566,
+              "minimum": 0.6153846153846154,
+              "standard_deviation": 0.09925927729507306
+            },
+            "recall": {
+              "maximum": 0.9056603773584906,
+              "mean": 0.8679245283018868,
+              "minimum": 0.8301886792452831,
+              "standard_deviation": 0.03081119173312173
+            },
+            "support": 53
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9431438127090301,
+              "mean": 0.9211803879008026,
+              "minimum": 0.88,
+              "standard_deviation": 0.02914051044776338
+            },
+            "precision": {
+              "maximum": 0.968,
+              "mean": 0.9495064170493347,
+              "minimum": 0.9342105263157895,
+              "standard_deviation": 0.013978580271271244
+            },
+            "recall": {
+              "maximum": 0.9466666666666667,
+              "mean": 0.8977777777777778,
+              "minimum": 0.8066666666666666,
+              "standard_deviation": 0.06448274723798626
+            },
+            "support": 150
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 205,
+        "weighted_f1": {
+          "maximum": 0.9083195944413803,
+          "mean": 0.8830972588064685,
+          "minimum": 0.8382424129584807,
+          "standard_deviation": 0.031799155482462246
+        }
+      }
+    },
+    "86-3": {
+      "compact_minus_baseline": {
+        "accuracy": 0.009615384615384581,
+        "macro_f1": -0.01493458505968498,
+        "per_class_f1": {
+          "ied": 0.0,
+          "noise": -0.04968715495031284,
+          "ripple": 0.004883399771257957
+        },
+        "weighted_f1": -0.0014601584636468878
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.8846153846153846,
+          "mean": 0.8669871794871795,
+          "minimum": 0.8509615384615384,
+          "standard_deviation": 0.013785777671542664
+        },
+        "macro_f1": {
+          "maximum": 0.4366368047779022,
+          "mean": 0.40815528820232067,
+          "minimum": 0.37593162393162394,
+          "standard_deviation": 0.024923650046008897
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 2
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.3684210526315789,
+              "mean": 0.2937471884840306,
+              "minimum": 0.20512820512820512,
+              "standard_deviation": 0.06738935758579796
+            },
+            "precision": {
+              "maximum": 0.5,
+              "mean": 0.3888888888888889,
+              "minimum": 0.26666666666666666,
+              "standard_deviation": 0.0955813918560292
+            },
+            "recall": {
+              "maximum": 0.2916666666666667,
+              "mean": 0.2361111111111111,
+              "minimum": 0.16666666666666666,
+              "standard_deviation": 0.05196746370519364
+            },
+            "support": 24
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9414893617021277,
+              "mean": 0.9307186761229315,
+              "minimum": 0.9226666666666666,
+              "standard_deviation": 0.007921147307284084
+            },
+            "precision": {
+              "maximum": 0.9123711340206185,
+              "mean": 0.903432865053505,
+              "minimum": 0.8963730569948186,
+              "standard_deviation": 0.006664887029261325
+            },
+            "recall": {
+              "maximum": 0.9725274725274725,
+              "mean": 0.9597069597069597,
+              "minimum": 0.9505494505494505,
+              "standard_deviation": 0.009338863578008767
+            },
+            "support": 182
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 208,
+        "weighted_f1": {
+          "maximum": 0.8663133129468517,
+          "mean": 0.8482727479711071,
+          "minimum": 0.8310019723865878,
+          "standard_deviation": 0.01442606725851658
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.8653846153846154,
+          "mean": 0.8573717948717949,
+          "minimum": 0.8461538461538461,
+          "standard_deviation": 0.00817150563075769
+        },
+        "macro_f1": {
+          "maximum": 0.43196189537652946,
+          "mean": 0.42308987326200564,
+          "minimum": 0.41712204007285975,
+          "standard_deviation": 0.006396929541802561
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 0.0,
+              "mean": 0.0,
+              "minimum": 0.0,
+              "standard_deviation": 0.0
+            },
+            "support": 2
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.36363636363636365,
+              "mean": 0.3434343434343434,
+              "minimum": 0.3333333333333333,
+              "standard_deviation": 0.014284985478516124
+            },
+            "precision": {
+              "maximum": 0.4,
+              "mean": 0.37407407407407406,
+              "minimum": 0.3333333333333333,
+              "standard_deviation": 0.029162992125969688
+            },
+            "recall": {
+              "maximum": 0.3333333333333333,
+              "mean": 0.3194444444444444,
+              "minimum": 0.2916666666666667,
+              "standard_deviation": 0.019641855032959635
+            },
+            "support": 24
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9322493224932249,
+              "mean": 0.9258352763516735,
+              "minimum": 0.9180327868852459,
+              "standard_deviation": 0.005886328925175047
+            },
+            "precision": {
+              "maximum": 0.9197860962566845,
+              "mean": 0.914294161523488,
+              "minimum": 0.91005291005291,
+              "standard_deviation": 0.004070780833114789
+            },
+            "recall": {
+              "maximum": 0.945054945054945,
+              "mean": 0.9377289377289377,
+              "minimum": 0.9230769230769231,
+              "standard_deviation": 0.010360538918484177
+            },
+            "support": 182
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 208,
+        "weighted_f1": {
+          "maximum": 0.8576761991396137,
+          "mean": 0.849732906434754,
+          "minimum": 0.8417402269861286,
+          "standard_deviation": 0.006505927113384522
+        }
+      }
+    },
+    "87-21": {
+      "compact_minus_baseline": {
+        "accuracy": -0.0066006600660065695,
+        "macro_f1": -0.0069946744901565605,
+        "per_class_f1": {
+          "ied": 0.0,
+          "noise": -0.01638399776282362,
+          "ripple": -0.004600025707645949
+        },
+        "weighted_f1": -0.0069659539841402385
+      },
+      "frozen_compact_model": {
+        "accuracy": {
+          "maximum": 0.905940594059406,
+          "mean": 0.8894389438943895,
+          "minimum": 0.8613861386138614,
+          "standard_deviation": 0.019939019758406902
+        },
+        "macro_f1": {
+          "maximum": 0.9147669344643367,
+          "mean": 0.9007673341130951,
+          "minimum": 0.8768787975695554,
+          "standard_deviation": 0.016974903506862253
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 1.0,
+              "mean": 1.0,
+              "minimum": 1.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 1.0,
+              "minimum": 1.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 1.0,
+              "minimum": 1.0,
+              "standard_deviation": 0.0
+            },
+            "support": 37
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.831858407079646,
+              "mean": 0.8063772249983991,
+              "minimum": 0.7627118644067796,
+              "standard_deviation": 0.031019449296373812
+            },
+            "precision": {
+              "maximum": 0.8103448275862069,
+              "mean": 0.7737469037878155,
+              "minimum": 0.7142857142857143,
+              "standard_deviation": 0.04241764570708786
+            },
+            "recall": {
+              "maximum": 0.8545454545454545,
+              "mean": 0.8424242424242424,
+              "minimum": 0.8181818181818182,
+              "standard_deviation": 0.017141982574219287
+            },
+            "support": 55
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9124423963133641,
+              "mean": 0.8959247773408862,
+              "minimum": 0.8679245283018868,
+              "standard_deviation": 0.01990558109350679
+            },
+            "precision": {
+              "maximum": 0.9252336448598131,
+              "mean": 0.9172409103534437,
+              "minimum": 0.9019607843137255,
+              "standard_deviation": 0.010808517197705784
+            },
+            "recall": {
+              "maximum": 0.9,
+              "mean": 0.8757575757575757,
+              "minimum": 0.8363636363636363,
+              "standard_deviation": 0.028101874228774887
+            },
+            "support": 110
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 202,
+        "weighted_f1": {
+          "maximum": 0.9065389900190622,
+          "mean": 0.8906063013980665,
+          "minimum": 0.8634695577008931,
+          "standard_deviation": 0.01928543729803839
+        }
+      },
+      "original_full_baseline": {
+        "accuracy": {
+          "maximum": 0.9257425742574258,
+          "mean": 0.8960396039603961,
+          "minimum": 0.8762376237623762,
+          "standard_deviation": 0.021388583163062264
+        },
+        "macro_f1": {
+          "maximum": 0.9321239047266445,
+          "mean": 0.9077620086032516,
+          "minimum": 0.8926829268292682,
+          "standard_deviation": 0.01738822716781932
+        },
+        "per_class": {
+          "ied": {
+            "f1": {
+              "maximum": 1.0,
+              "mean": 1.0,
+              "minimum": 1.0,
+              "standard_deviation": 0.0
+            },
+            "precision": {
+              "maximum": 1.0,
+              "mean": 1.0,
+              "minimum": 1.0,
+              "standard_deviation": 0.0
+            },
+            "recall": {
+              "maximum": 1.0,
+              "mean": 1.0,
+              "minimum": 1.0,
+              "standard_deviation": 0.0
+            },
+            "support": 37
+          },
+          "noise": {
+            "f1": {
+              "maximum": 0.8648648648648649,
+              "mean": 0.8227612227612228,
+              "minimum": 0.8,
+              "standard_deviation": 0.029804469049655332
+            },
+            "precision": {
+              "maximum": 0.8571428571428571,
+              "mean": 0.7764976958525346,
+              "minimum": 0.7142857142857143,
+              "standard_deviation": 0.059759949812371434
+            },
+            "recall": {
+              "maximum": 0.9090909090909091,
+              "mean": 0.8787878787878788,
+              "minimum": 0.8545454545454545,
+              "standard_deviation": 0.022676711434993592
+            },
+            "support": 55
+          },
+          "ripple": {
+            "f1": {
+              "maximum": 0.9315068493150684,
+              "mean": 0.9005248030485321,
+              "minimum": 0.8780487804878049,
+              "standard_deviation": 0.02263780923069415
+            },
+            "precision": {
+              "maximum": 0.9473684210526315,
+              "mean": 0.9351594448845906,
+              "minimum": 0.9223300970873787,
+              "standard_deviation": 0.010231261325498077
+            },
+            "recall": {
+              "maximum": 0.9272727272727272,
+              "mean": 0.8696969696969697,
+              "minimum": 0.8181818181818182,
+              "standard_deviation": 0.0447418880613133
+            },
+            "support": 110
+          }
+        },
+        "repeat_count": 3,
+        "sample_count": 202,
+        "weighted_f1": {
+          "maximum": 0.9259075296644806,
+          "mean": 0.8975722553822068,
+          "minimum": 0.879135474523062,
+          "standard_deviation": 0.020337017391508422
+        }
+      }
+    }
+  }
+}

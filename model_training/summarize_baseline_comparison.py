@@ -1,4 +1,4 @@
-"""Validate and summarize Phase 10 SVM results against locked Phase 8 results."""
+"""Validate and summarize SVM results against the locked neural-model results."""
 
 from __future__ import annotations
 
@@ -12,8 +12,8 @@ import numpy as np
 from .ablation_test import CLASS_NAMES, SUMMARY_METRICS, save_json
 
 
-REPORT_START = "<!-- PHASE10_CLASSICAL_BASELINE_START -->"
-REPORT_END = "<!-- PHASE10_CLASSICAL_BASELINE_END -->"
+REPORT_START = "<!-- CLASSICAL_BASELINE_START -->"
+REPORT_END = "<!-- CLASSICAL_BASELINE_END -->"
 
 
 def _bootstrap_interval(values: np.ndarray, *, seed: int = 0) -> list[float]:
@@ -201,7 +201,7 @@ def build_summary(classical: dict, locked: dict) -> dict[str, object]:
             "model_size_basis": (
                 "serialized sklearn pipeline"
                 if "serialized_model_size_bytes" in results[0]
-                else "not recorded in locked Phase 8 result"
+                else "not recorded in locked final result"
             ),
             "mean_parameter_or_support_vector_count": mean(parameter_counts),
             "count_basis": (
@@ -246,9 +246,9 @@ def render_markdown(summary: dict) -> str:
     lines = [
         "## Post-hoc classical baseline comparison",
         "",
-        "This analysis preserves the locked Phase 8 outer folds and calibration "
-        "subjects. It is an internal post-hoc benchmark, not a new model-selection "
-        "phase, and there is still no untouched test cohort.",
+        "This analysis preserves the locked outer folds and calibration subjects. "
+        "It is an internal post-hoc benchmark, and there is still no untouched "
+        "test cohort.",
         "",
         "| Model | Accuracy | Weighted F1 | Macro F1 |",
         "| --- | ---: | ---: | ---: |",
@@ -301,7 +301,7 @@ def render_markdown(summary: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
-def update_phase9_report(path: str | Path, section: str) -> None:
+def update_final_report(path: str | Path, section: str) -> None:
     path = Path(path)
     text = path.read_text(encoding="utf-8")
     replacement = f"{REPORT_START}\n{section.rstrip()}\n{REPORT_END}"
@@ -320,13 +320,15 @@ def main() -> None:
     parser.add_argument(
         "--locked",
         default=(
-            "final_confirmation_results/phase8_final_confirmation_20260930_233532/"
-            "phase8_final_confirmation.json"
+            "experiment_results/final_evaluation/"
+            "final_confirmation_20260930_233532/final_confirmation.json"
         ),
     )
     parser.add_argument("--output")
     parser.add_argument("--markdown")
-    parser.add_argument("--phase9-report", default="final_confirmation_results/PHASE9_REPORT.md")
+    parser.add_argument(
+        "--report", default="experiment_results/final_evaluation/FINAL_REPORT.md"
+    )
     parser.add_argument("--no-report-update", action="store_true")
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
@@ -345,7 +347,7 @@ def main() -> None:
     markdown_path.parent.mkdir(parents=True, exist_ok=True)
     markdown_path.write_text(section, encoding="utf-8")
     if not args.no_report_update:
-        update_phase9_report(args.phase9_report, section)
+        update_final_report(args.report, section)
     print(f"Saved JSON summary to {output.resolve()}")
     print(f"Saved Markdown summary to {markdown_path.resolve()}")
 

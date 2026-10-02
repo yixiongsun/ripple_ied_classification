@@ -1,4 +1,4 @@
-"""Aggregate Phase 8 per-subject metrics across repeated held-out evaluations."""
+"""Aggregate per-subject metrics across repeated held-out evaluations."""
 
 from __future__ import annotations
 
@@ -94,7 +94,7 @@ def build_summary(payload: dict[str, object], source: Path) -> dict[str, object]
 
 def render_markdown(summary: dict[str, object]) -> str:
     lines = [
-        "# Phase 8 per-subject metrics",
+        "# Per-subject metrics",
         "",
         summary["aggregation"],
         "",

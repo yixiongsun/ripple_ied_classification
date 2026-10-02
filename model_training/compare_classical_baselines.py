@@ -182,7 +182,7 @@ def _select_hyperparameters(
     scorer = make_scorer(
         f1_score, labels=labels, average="macro", zero_division=0
     )
-    with tempfile.TemporaryDirectory(prefix="phase10-sklearn-cache-") as cache:
+    with tempfile.TemporaryDirectory(prefix="classical-baseline-cache-") as cache:
         estimator = _build_pipeline(
             waveform_feature_count,
             valid_components[0],
@@ -445,7 +445,7 @@ def run_comparison(
     threshold_candidates: int = 257,
     cache_size_mb: float = 2_048,
     jobs: int = 1,
-    output_path: str | Path = "baseline_results/phase10_svm_comparison.json",
+    output_path: str | Path = "experiment_results/baselines/svm_comparison.json",
     overwrite: bool = False,
 ) -> dict[str, object]:
     """Run both SVM baselines and atomically checkpoint every completed model-fold."""
@@ -518,7 +518,7 @@ def run_comparison(
                 "fold": fold_index,
                 "training_seed": training_seed,
                 "model_fitting_subjects": _subject_names(fitting_samples),
-                # Compatibility with the locked Phase 8 schema.
+                # Compatibility with the locked final-comparison schema.
                 "train_subjects": _subject_names(fitting_samples),
                 "calibration_subjects": _subject_names(calibration_samples),
                 "validation_subjects": _subject_names(validation_samples),
@@ -561,7 +561,7 @@ def run_comparison(
                 save_json(
                     {
                         "schema_version": 1,
-                        "experiment_type": "phase10_classical_baseline_partial",
+                        "experiment_type": "classical_baseline_partial",
                         "started_at_utc": started_at.isoformat(),
                         "parameters": parameters,
                         "completed_runs": len(completed),
@@ -586,7 +586,7 @@ def run_comparison(
     stat = dataset_path.stat()
     payload = {
         "schema_version": 1,
-        "experiment_type": "phase10_classical_baseline_comparison",
+        "experiment_type": "classical_baseline_comparison",
         "started_at_utc": started_at.isoformat(),
         "finished_at_utc": finished_at.isoformat(),
         "duration_seconds": (finished_at - started_at).total_seconds(),
@@ -638,7 +638,7 @@ def main() -> None:
     parser.add_argument("--cache-size-mb", type=float, default=2_048)
     parser.add_argument("--jobs", type=int, default=1)
     parser.add_argument(
-        "--output", default="baseline_results/phase10_svm_comparison.json"
+        "--output", default="experiment_results/baselines/svm_comparison.json"
     )
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()

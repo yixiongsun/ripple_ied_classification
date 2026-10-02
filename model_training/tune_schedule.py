@@ -113,7 +113,7 @@ def run_schedule_tuning(
     started_at = datetime.now(timezone.utc)
     if output_path is None:
         stamp = started_at.strftime("%Y%m%dT%H%M%S.%fZ")
-        output_path = Path("schedule_results") / f"schedules_{stamp}.json"
+        output_path = Path("experiment_results/training_schedule") / f"schedules_{stamp}.json"
     elif Path(output_path).exists() and not overwrite:
         raise FileExistsError(f"Results already exist: {output_path}")
     output_path = Path(output_path)

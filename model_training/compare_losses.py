@@ -326,7 +326,7 @@ def run_loss_comparison(
     started_at = datetime.now(timezone.utc)
     if output_path is None:
         stamp = started_at.strftime("%Y%m%dT%H%M%S.%fZ")
-        output_path = Path("loss_comparison_results") / f"losses_{stamp}.json"
+        output_path = Path("experiment_results/loss_comparison") / f"losses_{stamp}.json"
     elif Path(output_path).exists() and not overwrite:
         raise FileExistsError(f"Results already exist: {output_path}")
 

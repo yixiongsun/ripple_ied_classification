@@ -1,4 +1,4 @@
-"""Run the locked Phase 8 final confirmation."""
+"""Run the locked final model comparison."""
 
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ def main() -> None:
     output = args.output
     if output is None:
         stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
-        output = Path("final_confirmation_results") / f"final_{stamp}.json"
+        output = Path("experiment_results/final_evaluation") / f"final_{stamp}.json"
 
     candidates = build_final_confirmation_candidates()
     print("Prepared locked final confirmation:")

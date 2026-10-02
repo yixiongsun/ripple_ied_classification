@@ -1,4 +1,4 @@
-"""Frozen settings shared by phased model-selection experiments."""
+"""Frozen settings shared by model-selection experiments."""
 
 from __future__ import annotations
 

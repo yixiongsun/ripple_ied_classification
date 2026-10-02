@@ -38,7 +38,7 @@ METRIC_NAMES = ("accuracy", "weighted_f1", "macro_f1")
 
 def _default_results_path(started_at: datetime) -> Path:
     timestamp = started_at.strftime("%Y%m%dT%H%M%S.%fZ")
-    return Path("cross_validation_results") / f"cross_validation_{timestamp}.json"
+    return Path("experiment_results/cross_validation") / f"cross_validation_{timestamp}.json"
 
 
 def _save_results(payload: dict, output_path: str | Path, overwrite: bool) -> Path:
@@ -317,7 +317,7 @@ def main() -> None:
         "--output",
         help=(
             "JSON results path (default: a timestamped file under "
-            "cross_validation_results/)"
+            "experiment_results/cross_validation/)"
         ),
     )
     parser.add_argument("--overwrite", action="store_true")

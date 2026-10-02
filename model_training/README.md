@@ -37,10 +37,10 @@ Run commands from the repository root.
 python -m model_training.final_confirmation --dataset dataset_arcsinh.pkl
 
 # Nested subject-grouped classical baselines
-python -m model_training.compare_classical_baselines --dataset dataset_arcsinh.pkl --folds 5 --seeds 0 1 2 --output baseline_results/svm_comparison.json
+python -m model_training.compare_classical_baselines --dataset dataset_arcsinh.pkl --folds 5 --seeds 0 1 2 --output experiment_results/baselines/svm_comparison.json
 
 # Summarize a completed baseline comparison
-python -m model_training.summarize_baseline_comparison --baseline baseline_results/svm_comparison.json
+python -m model_training.summarize_baseline_comparison --baseline experiment_results/baselines/svm_comparison.json
 
 # General cross-validation and inference utilities
 python -m model_training.cross_validate --help

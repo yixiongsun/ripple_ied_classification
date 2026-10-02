@@ -30,7 +30,7 @@ the least reliable class (mean F1 0.763). These are internal cross-validation
 results, not estimates from an independent cohort.
 
 The full analysis is in
-[`final_confirmation_results/PHASE9_REPORT.md`](final_confirmation_results/PHASE9_REPORT.md).
+[`experiment_results/final_evaluation/FINAL_REPORT.md`](experiment_results/final_evaluation/FINAL_REPORT.md).
 The public presentation is available at
 [Neural event classification](https://yixiongsun.github.io/work/neural-event-classification/).
 
@@ -40,8 +40,7 @@ The public presentation is available at
 | --- | --- |
 | `dataset_pipeline/` | Event detection, preprocessing, sample selection, labeling, and dataset assembly |
 | `model_training/` | Model definitions, grouped validation, frozen evaluation, inference, and classical baselines |
-| `*_results/` | Machine-readable experiment records and concise summaries |
-| `figures/showcase/` | De-identified plotting data, figure source code, and web-ready exports |
+| `experiment_results/` | Machine-readable experiment records and concise summaries |
 | `tests/` | Leakage, determinism, metric, and restartability checks |
 
 ## Installation
@@ -77,7 +76,7 @@ Run commands from the repository root.
 ```powershell
 python -m unittest discover -s tests
 python -m model_training.final_confirmation --dataset dataset_arcsinh.pkl
-python -m model_training.compare_classical_baselines --dataset dataset_arcsinh.pkl --folds 5 --seeds 0 1 2 --output baseline_results/svm_comparison.json
+python -m model_training.compare_classical_baselines --dataset dataset_arcsinh.pkl --folds 5 --seeds 0 1 2 --output experiment_results/baselines/svm_comparison.json
 ```
 
 The locked comparison uses five subject-grouped folds, seeds 0–2, 40 epochs,
@@ -89,30 +88,12 @@ Adam at a learning rate of 0.001, batch size 32, eight subjects per batch, and a
 checkpoint workflow; it is not the command that produced the selected compact
 model results above.
 
-## Reproduce the public figures and data
-
-The de-identified files in `figures/showcase/data/` are the inputs used by the
-public project page. To verify and rebuild those files from the result records:
-
-```powershell
-python figures/showcase/scripts/extract_showcase_data.py
-python figures/showcase/scripts/build_style_tile.py
-python figures/showcase/scripts/build_pipeline_figure.py
-python figures/showcase/scripts/build_representative_events.py
-```
-
-The extraction step also reads the local `labels.csv` to reproduce the
-threshold-derived candidate-rule comparison. Selecting new representative
-events requires the private dataset, but rebuilding the committed figure uses
-the de-identified `representative_events.json`.
-
 ## Data and reporting boundaries
 
-Raw recordings, labels, dataset pickles, subject metadata, and trained
-checkpoints are excluded from version control. Commit aggregate result JSONs,
-de-identified plotting tables, summaries, and figure-generation code; do not
-commit training logs, resumable partial files, smoke-test outputs, or local
-planning notes.
+Raw recordings, labels, dataset pickles, subject metadata, trained checkpoints,
+and portfolio figure assets are excluded from version control. Commit aggregate
+result JSONs and concise scientific summaries; do not commit training logs,
+resumable partial files, smoke-test outputs, or local planning notes.
 
 Because the same 30 subjects informed model development and the final grouped
 comparison, the results may be optimistic. External subjects and previously

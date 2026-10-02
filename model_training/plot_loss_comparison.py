@@ -41,7 +41,7 @@ COMPARABILITY_FIELDS = (
 def resolve_result_paths(values: list[str]) -> list[Path]:
     """Resolve files, directories, and Windows-safe glob expressions."""
     if not values:
-        values = ["loss_comparison_results"]
+        values = ["experiment_results/loss_comparison"]
     paths = []
     for value in values:
         path = Path(value)
@@ -420,7 +420,7 @@ def plot_loss_results(
     warnings = comparability_warnings(runs)
     if output_directory is None:
         stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
-        output_directory = Path("loss_comparison_results") / f"comparison_{stamp}"
+        output_directory = Path("experiment_results/loss_comparison") / f"comparison_{stamp}"
     output_directory = Path(output_directory)
     output_directory.mkdir(parents=True, exist_ok=False)
 
@@ -462,7 +462,7 @@ def main() -> None:
         nargs="*",
         help=(
             "Loss JSON files, directories, or glob patterns. Defaults to all "
-            "losses_*.json files under loss_comparison_results/."
+            "losses_*.json files under experiment_results/loss_comparison/."
         ),
     )
     parser.add_argument("--metric", choices=METRICS, default="macro_f1")

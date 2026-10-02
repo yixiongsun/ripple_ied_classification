@@ -37,7 +37,7 @@ COMPARABILITY_FIELDS = (
 def resolve_result_paths(values: list[str]) -> list[Path]:
     """Resolve files, directories, and shell-independent glob patterns."""
     if not values:
-        values = ["ablation_results"]
+        values = ["experiment_results/architecture"]
     paths = []
     for value in values:
         path = Path(value)
@@ -295,7 +295,7 @@ def compare_runs(
 
     if output_directory is None:
         stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
-        output_directory = Path("ablation_results") / f"comparison_{stamp}"
+        output_directory = Path("experiment_results/architecture") / f"comparison_{stamp}"
     output_directory = Path(output_directory)
     output_directory.mkdir(parents=True, exist_ok=False)
 
@@ -330,7 +330,7 @@ def main() -> None:
         nargs="*",
         help=(
             "Result JSON files, directories, or glob patterns. Defaults to all "
-            "ablations_*.json files under ablation_results/."
+            "ablations_*.json files under experiment_results/architecture/."
         ),
     )
     parser.add_argument("--metric", choices=METRICS, default="macro_f1")
